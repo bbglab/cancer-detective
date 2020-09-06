@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+{% from "utils.html" import info, card %}
+
+{% set active_page = 'game' %}
+
+{% block navbar_middle %}
+<div class="uk-navbar-center">
+    <ul class="uk-dotnav">
+        <li class="step"><a href="#"></a></li>
+        <li class="step"><a href="#"></a></li>
+        <li class="step"><a href="#"></a></li>
+        <li class="step"><a href="#"></a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block footer %}
+<p class="uk-flex-inline uk-flex-center uk-margin-remove-bottom">This is a game, do not take results seriosly</p>
+{% endblock %}
+
+{% block central %}
+<form class="uk-section uk-flex uk-flex-middle uk-text-center" id="main-content" action="submit" method="get">
+    <div class="uk-width-1-1">
+
+        <!-- tumor type selection -->
+        <div class="uk-container tab">
+
+            <p class="uk-margin-medium uk-text-lead">
+                The tumor type
+                {{ info('ttype') }}
+            </p>
+
+            <p class="uk-margin-medium">
+                To start playing, select the tumor type you are interested in
+            </p>
+
+            <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                <div class="uk-first-column uk-width-1-2">
+                    {{ card('skin', 'skin.svg', 'Skin cancer', 'Skin cancer is ... (here we will briefly describe lung cancer)') }}
+                </div>
+                <div class="uk-width-1-2">
+                    {{ card('lung', 'lung.svg', 'Lung cancer', 'Lung cancer is ... (here we will briefly describe lung cancer)') }}
+                </div>
+            </div>
+            <input type="hidden" id="ttype" name="ttype">
+        </div>
+
+        <!-- risk factor I -->
+        <div class="uk-container tab">
+
+            <p class="uk-margin-medium uk-text-lead">
+                Risk factors
+                {{ info('ttype') }}
+            </p>
+
+            <p class="uk-margin-medium">
+                Age
+            </p>
+
+            <div class="branch-skin">
+
+                <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                    <div class="uk-first-column uk-width-1-3">
+                        {{ card(1, 'pell/pell_edat_1.svg', 'Young', 'Mutations accumulate over time. Young people do not have many mutations accumulated.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(2, 'pell/pell_edat_2.svg', 'Middle age', ' Mutations accumulate over time. Middle aged people do accumulate quite a few.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(3, 'pell/pell_edat_3.svg', 'Elderly', ' Mutations accumulate over time. Elderly people have a lot of them.') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="branch-lung">
+
+                <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                    <div class="uk-first-column uk-width-1-3">
+                        {{ card(1, 'lung/lung_edat_1.svg', 'Young', 'Mutations accumulate over time. Young people do not have many mutations accumulated.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(2, 'lung/lung_edat_2.svg', 'Middle age', ' Mutations accumulate over time. Middle aged people do accumulate quite a few.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(3, 'lung/lung_edat_3.svg', 'Elderly', ' Mutations accumulate over time. Elderly people have a lot of them.') }}
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="riskFactor1" name="riskFactor1">
+        </div>
+
+        <!-- risk factor II -->
+        <div class="uk-container tab">
+
+            <p class="uk-margin-medium uk-text-lead">
+                Risk factors
+                {{ info('ttype') }}
+            </p>
+
+            <div class="branch-skin">
+
+                <p class="uk-margin-medium">
+                    Solar exposure
+                </p>
+
+                <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                    <div class="uk-first-column uk-width-1-3">
+                        {{ card(1, 'pell/pell_exposol_1.svg', 'Low sun exposure', 'The less sunlight you get, the less mutations you get due to this cause, but you increase your changes or other problems like lack of vitamines') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(2, 'pell/pell_exposol_2.svg', 'Normal sun exposure', 'Do you take the sun in the summer? Great, but do it with care.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(3, 'pell/pell_exposol_3.svg', 'High sun exposure', ' Do you enjoy laying on the beach and taking long sunbaths? Do you like to be tanned? Lung sun exposures lead to higher mutations') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="branch-lung">
+
+                <p class="uk-margin-medium">
+                    Age
+                </p>
+
+                <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                    <div class="uk-first-column uk-width-1-3">
+                        {{ card(1, 'lung/lung_edat_1.svg', 'Young', 'Mutations accumulate over time. Young people do not have many mutations accumulated.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(2, 'lung/lung_edat_2.svg', 'Middle age', ' Mutations accumulate over time. Middle aged people do accumulate quite a few.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(3, 'lung/lung_edat_3.svg', 'Elderly', ' Mutations accumulate over time. Elderly people have a lot of them.') }}
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="riskFactor2" name="riskFactor2">
+        </div>
+
+        <!-- risk factor III -->
+        <div class="uk-container tab">
+
+            <p class="uk-margin-medium uk-text-lead">
+                Risk factors
+                {{ info('ttype') }}
+            </p>
+
+            <div class="branch-skin">
+
+                <p class="uk-margin-medium">
+                    Solar cream usage
+                </p>
+
+                <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                    <div class="uk-first-column uk-width-1-3">
+                        {{ card(1, 'pell/pell_protecsol_1.svg', 'You use a lot of solar cream') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(2, 'pell/pell_protecsol_2.svg', 'Most of the time you take the solar cream, but from time to time, you forget') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(3, 'pell/pell_protecsol_3.svg', 'Solar cream? I do not care') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="branch-lung">
+
+                <p class="uk-margin-medium">
+                    Age
+                </p>
+
+                <div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+                    <div class="uk-first-column uk-width-1-3">
+                        {{ card(1, 'images/lung/lung_edat_1.svg', 'Young', 'Mutations accumulate over time. Young people do not have many mutations accumulated.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(2, 'images/lung/lung_edat_2.svg', 'Middle age', ' Mutations accumulate over time. Middle aged people do accumulate quite a few.') }}
+                    </div>
+                    <div class="uk-width-1-3">
+                        {{ card(3, 'images/lung/lung_edat_3.svg', 'Elderly', ' Mutations accumulate over time. Elderly people have a lot of them.') }}
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="riskFactor3" name="riskFactor3">
+        </div>
+
+    </div>
+</form>
+
+{% endblock %}
+
+{% block script %}
+{{ super() }}
+<script>
+    // add "for" attribute to each select item
+    $( "span:contains('Select')" ).each(function () {
+       let inputId = $( this ).closest( ".tab" ).find( "input" ).attr( "id" );
+       $( this ).attr( "for", inputId);
+    });
+    // hide all branches
+    $(".branch-skin").hide();
+    $(".branch-lung").hide();
+
+    $(document).ready(function() {
+        showTab(currentTab);
+        $( "span:contains('Select')" ).click(selectCard);
+    });
+    $("#info-ttype").click(function () {
+        swal("The tumor type", "The tumor type...");
+    });
+</script>
+{% endblock %}
+

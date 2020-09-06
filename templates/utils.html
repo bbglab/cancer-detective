@@ -1,0 +1,46 @@
+
+{% macro navbar_item(text, active_page, link) %}
+    {% if active_page == link %}
+    <li class="uk-active">
+        <a>
+            {{ text }}
+        </a>
+    </li>
+    {% else %}
+    <li>
+        <a href="{{ link }}">
+            {{ text }}
+        </a>
+    </li>
+    {% endif %}
+{% endmacro %}
+
+{% macro info(id) %}
+<span uk-tooltip="Click for information">
+    <span uk-icon="info" id="info-{{ id }}"></span>
+</span>
+{% endmacro %}
+
+{% macro card(value, image, title, text) %}
+<div class="card-flip">
+    <div class="uk-card uk-card-hover card">
+        <a href="#" class="uk-position-cover"></a>
+        <div class="front card-face uk-height-large">
+            <img class="uk-height-max-large" src="images/{{ image }}" alt="">
+        </div>
+        <div class="back card-face uk-card uk-height-large uk-card-primary">
+            <div class="uk-card-header">
+                <h3 class="uk-card-title">
+                    {{ title }}
+                </h3>
+            </div>
+            <div class="uk-card-body">
+                {{ text }}
+            </div>
+            <div class="uk-card-footer">
+                <span class="uk-button uk-button-text" value="{{ value }}">Select</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

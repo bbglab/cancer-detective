@@ -1,0 +1,30 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.uk-card .card-face.back {
+  display: none;
+}
+.uk-card .card-face {
+  display: block;
+}
+
+.flipped .back {
+  display: block !important;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  backface-visibility: visible;
+}
+.flipped .front {
+  display: none;
+}
+
+.tab {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

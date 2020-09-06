@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% set active_page = 'home' %}
+
+{% block central_content %}
+
+
+<p class="uk-margin-medium uk-text-lead">
+    A game to learn about cancer
+    <br class="uk-visible@s">
+    and mutations
+</p>
+
+<div uk-grid class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid">
+    <div class="uk-first-column">
+        <a href="game" class="uk-button uk-button-primary tm-button-primary uk-button-large tm-button-large">Play</a>
+    </div>
+    <div>
+        <a href="" class="uk-button uk-button-default tm-button-default uk-button-large tm-button-large uk-visible@s">Read about</a>
+    </div>
+</div>
+
+{% endblock %}
