@@ -11,7 +11,7 @@ _THIS_FOLDER = path.dirname(path.abspath(__file__))
 
 class Game:
 
-    def __init__(self, env, mount_point='/'):
+    def __init__(self, mount_point='/'):
         self._mount_point = mount_point
         self._conf = {
             '/': {
@@ -61,6 +61,7 @@ class Game:
     @cherrypy.expose
     def submit(self, **kwargs):
         return str(kwargs)
+
 
 def start_server(conf_file=None):
 
