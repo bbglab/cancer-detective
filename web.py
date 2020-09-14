@@ -65,7 +65,7 @@ class Game:
 def start_server(conf_file=None):
 
     if conf_file is None:
-        conf_file = path.join(_THIS_FOLDER, 'conf', 'game.cdf')
+        conf_file = path.join(_THIS_FOLDER, 'conf', 'game.cfg')
         conf_file = conf_file if path.exists(conf_file) else None
 
     conf_spec = ConfigObj(path.join(_THIS_FOLDER, 'conf', 'game.spec.cfg'))
