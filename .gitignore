@@ -7,8 +7,5 @@ conf/game.cfg
 # CSS
 *.css.map
 
-# Images
-static/images
-
 # PyCharm
 .idea
