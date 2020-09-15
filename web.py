@@ -78,8 +78,12 @@ class Game:
                 else:
                     mutations += int(risk_factor)
 
+        code = kwargs.get('code', None)
+        if code is not None and not code.isalnum():
+            raise cherrypy.HTTPError(422, f'Invalid code {code}')
+
         # TODO pass a code to mutations so that the cache works
-        return self._env.get_template("results.html").render(mutations=muts.get(ttype, mutations))
+        return self._env.get_template("results.html").render(mutations=muts.get(ttype, mutations, code=code))
 
 
 def start_server(conf_file=None):

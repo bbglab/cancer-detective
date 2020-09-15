@@ -189,6 +189,8 @@
         </div>
 
     </div>
+
+    <input type="hidden" id="code" name="code">
 </form>
 
 {% endblock %}
@@ -208,6 +210,8 @@
     $(document).ready(function() {
         showTab(currentTab);
         $( "span:contains('Select')" ).click(selectCard);
+
+        $("#code").attr( "value", randomCode());
     });
     $("#info-ttype").click(function () {
         swal("The tumor type", "The tumor type...");

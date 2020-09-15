@@ -61,3 +61,13 @@ function selectCard(event) {
 
   nextTab();
 }
+
+const CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+function randomCode() {
+  const length = 5;
+  let result  = '';
+  for ( let i = 0; i < length; i++ ) {
+    result += CHARACTERS.charAt(Math.floor(Math.random() * CHARACTERS.length));
+  }
+  return result;
+}
