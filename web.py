@@ -60,7 +60,26 @@ class Game:
 
     @cherrypy.expose
     def submit(self, **kwargs):
-        return str(kwargs)
+
+        # validate input
+        ttype = kwargs['ttype']
+        if ttype not in {'skin', 'lung'}:
+            raise cherrypy.HTTPError(422, f'Invalid ttype {ttype}')
+
+        mutations = 0
+        for key in ['riskFactor1', 'riskFactor2', 'riskFactor3']:
+            if key not in kwargs:
+                raise cherrypy.HTTPError(422, f'Missing {key}')
+            else:
+                risk_factor = kwargs[key]
+                if risk_factor not in {'1', '2', '3'}:
+                    raise cherrypy.HTTPError(422, f'Invalid risk factor {risk_factor}')
+                else:
+                    mutations += int(risk_factor)
+
+        # TODO select mutations
+
+        return self._env.get_template("results.html").render(mutations=mutations)
 
 
 def start_server(conf_file=None):

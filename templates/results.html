@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% from "utils.html" import info %}
+
+{% set active_page = '' %}
+
+{% block central_content %}
+
+
+<p class="uk-margin-medium uk-text-lead">
+    Sequencing mutations
+    {{ info('sequencing') }}
+</p>
+
+<div id="seq">
+    <span id="seq-spinner" uk-spinner="ratio: 4.5"></span>
+
+    <div id="seq-button">
+        <p>Sequencing finished</p>
+        <button class="uk-button uk-button-primary tm-button-primary uk-button-large tm-button-large" onclick="showResults()">Show results</button>
+    </div>
+</div>
+
+<div id="res" class="uk-child-width-1-3@l uk-child-width-1-1@s uk-child-width-1-2@m uk-text-center uk-grid-match" uk-grid>
+
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+
+<div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+{% block script %}
+{{ super() }}
+<script>
+    $( document ).ready(function() {
+        $("#seq-button").hide();
+        $("#res").hide();
+
+        setTimeout(function() {
+            $("#seq-spinner").hide();
+            $("#seq-button").show();
+            },
+            3500);
+    });
+
+    function showResults() {
+        $("#seq").hide();
+        $("#res").show();
+    }
+
+    $("#info-sequencing").click(function () {
+        swal("The sequencing process", "The sequencing process...");
+    });
+</script>
+{% endblock %}
