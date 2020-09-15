@@ -5,6 +5,7 @@ from configobj import ConfigObj
 from jinja2 import Environment, FileSystemLoader
 from validate import Validator
 
+from game import muts
 
 _THIS_FOLDER = path.dirname(path.abspath(__file__))
 
@@ -77,9 +78,8 @@ class Game:
                 else:
                     mutations += int(risk_factor)
 
-        # TODO select mutations
-
-        return self._env.get_template("results.html").render(mutations=mutations)
+        # TODO pass a code to mutations so that the cache works
+        return self._env.get_template("results.html").render(mutations=muts.get(ttype, mutations))
 
 
 def start_server(conf_file=None):

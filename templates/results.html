@@ -1,17 +1,22 @@
 {% extends "layout.html" %}
-{% from "utils.html" import info %}
+{% from "utils.html" import info, mutation_card %}
 
 {% set active_page = '' %}
 
 {% block central_content %}
 
 
-<p class="uk-margin-medium uk-text-lead">
+<p class="seq uk-margin-medium uk-text-lead">
     Sequencing mutations
     {{ info('sequencing') }}
 </p>
 
-<div id="seq">
+<p class="res uk-margin-medium uk-text-lead">
+    Explore the mutations that have been found
+    and identify the <strong>drivers</strong>.
+</p>
+
+<div class="seq">
     <span id="seq-spinner" uk-spinner="ratio: 4.5"></span>
 
     <div id="seq-button">
@@ -20,27 +25,11 @@
     </div>
 </div>
 
-<div id="res" class="uk-child-width-1-3@l uk-child-width-1-1@s uk-child-width-1-2@m uk-text-center uk-grid-match" uk-grid>
+<div class="res uk-child-width-1-3@l uk-child-width-1-1@s uk-child-width-1-2@m uk-text-center uk-grid-match" uk-grid>
 
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
-
-<div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
+    {% for mut in mutations %}
+        {{ mutation_card(mut) }}
+    {% endfor %}
 
 </div>
 
@@ -54,7 +43,7 @@
 <script>
     $( document ).ready(function() {
         $("#seq-button").hide();
-        $("#res").hide();
+        $(".res").hide();
 
         setTimeout(function() {
             $("#seq-spinner").hide();
@@ -64,8 +53,8 @@
     });
 
     function showResults() {
-        $("#seq").hide();
-        $("#res").show();
+        $(".seq").hide();
+        $(".res").show();
     }
 
     $("#info-sequencing").click(function () {

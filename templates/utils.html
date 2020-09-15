@@ -44,3 +44,40 @@
     </div>
 </div>
 {% endmacro %}
+
+{% macro mutation_card(mut) %}
+<div>
+
+    <div class="uk-card uk-card-default uk-card-body">
+        <dl class="uk-description-list uk-description-list-divider">
+            <dt>
+                Gene
+            </dt>
+            <dd>
+                <a target='_tab' href='http://www.genecards.org/cgi-bin/carddisp.pl?gene={{ mut['gene'] }}'
+                    style="color: #F18914">
+                    <strong>{{ mut['gene'] }}</strong>
+                </a>
+            </dd>
+            <dt>
+                Alteration
+            </dt>
+            <dd>
+                <!--TODO chr and position-->
+                7:22 <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['alt'] }}</span>
+            </dd>
+            <dt>
+                Impact
+            </dt>
+            <dd>
+                {% if mut['driver'] %}
+                Driver
+                {% else %}
+                Passenger
+                {% endif %}
+            </dd>
+        </dl>
+    </div>
+
+</div>
+{% endmacro %}
