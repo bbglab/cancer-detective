@@ -1,0 +1,60 @@
+Biomarker	Gene	Alteration	Drug	Primary Tumor type	Inhibitor type
+ALK_F1174L	ALK	F1174L		LUAD	novel ALK inhibitors
+ALK_E1408V	ALK	E1408V	Brigatinib	LUAD	Pan-TK inhibitor
+ALK_L1196M	ALK	L1196M	Brigatinib	LUAD	Pan-TK inhibitor
+ALK_L1196M	ALK	L1196M	Ceritinib	LUAD	ALK inhibitor
+ALK_S1206Y	ALK	S1206Y	Ceritinib	LUAD	ALK inhibitor
+ALK_G1269A	ALK	G1269A	Ceritinib	LUAD	ALK inhibitor
+ALK_I1171T	ALK	I1171T	Ceritinib	LUAD	ALK inhibitor
+ALK_L1198F	ALK	L1198F	Crizotinib	LUAD	ALK inhibitor
+ALK_C1156Y	ALK	C1156Y	Lorlatinib	LUAD	ALK&ROS1 inhibitor
+ARAF_S214C	ARAF	S214C	Sorafenib	LUAD	Pan-TK inhibitor
+BRAF_V600E	BRAF	V600E		CM	BRAF inhibitor + CDK2/4 inhibitors
+BRAF_L597R	BRAF	L597R		CM	BRAF inhibitors
+BRAF_V600E	BRAF	V600E		LUAD	ERK inhibitors
+BRAF_K601R	BRAF	K601R	Trametinib	CM	MEK inhibitors
+BRAF_L597R	BRAF	L597R	Trametinib	CM	MEK inhibitors
+BRAF_V600R	BRAF	V600R	Trametinib	CM	MEK inhibitors
+BRAF_V600R	BRAF	V600R	Dabrafenib	CM	BRAF inhibitor
+BRAF_V600E	BRAF	V600E	Dabrafenib;Trametinib	CM	BRAF inhibitor + MEK inhibitor
+BRAF_V600K	BRAF	V600K	Dabrafenib;Trametinib	CM	BRAF inhibitor + MEK inhibitor
+BRAF_G466V	BRAF	G466V	Dasatinib	LUAD	BCR-ABL inhibitor 2nd gen
+BRAF_Y472C	BRAF	Y472C	Dasatinib	LUAD	BCR-ABL inhibitor 2nd gen
+BRAF_D594G	BRAF	D594G	Sorafenib	CM	Pan-TK inhibitor
+BRAF_G469E	BRAF	G469E	Sorafenib	CM	Pan-TK inhibitor
+BRAF_V600D	BRAF	V600D	Vemurafenib	CM	BRAF inhibitor
+BRAF_V600K	BRAF	V600K	Vemurafenib	CM	BRAF inhibitor
+BRAF_V600M	BRAF	V600M	Vemurafenib	CM	BRAF inhibitor
+BRAF_V600G	BRAF	V600G	Vemurafenib	CM	BRAF inhibitor
+BRAF_V600R	BRAF	V600R	Vemurafenib	CM	BRAF inhibitor
+ERBB2_G776L	ERBB2	G776L	Trastuzumab	LUAD	ERBB2 mAb inhibitor
+ERBB4_E317K	ERBB4	E317K	Lapatinib	CM	ERBB2 inhibitor
+ERBB4_E452K	ERBB4	E452K	Lapatinib	CM	ERBB2 inhibitor
+ERBB4_R544W	ERBB4	R544W	Lapatinib	CM	ERBB2 inhibitor
+ERBB4_R393W	ERBB4	R393W	Lapatinib	CM	ERBB2 inhibitor
+ERBB4_E872K	ERBB4	E872K	Lapatinib	CM	ERBB2 inhibitor
+FGFR3_S249C	FGFR3	S249C		LUAD	FGFR inhibitors
+FGFR3_G691R	FGFR3	G691R		LUAD	FGFR inhibitors
+GNA11_Q209L	GNA11	Q209L		CM	PI3K pathway inhibitor + MEK inhibitors
+GNA11_Q209P	GNA11	Q209P		CM	PI3K pathway inhibitor + MEK inhibitors
+GNAQ_Q209	GNAQ	Q209		CM	HDAC inhibitors
+KIT_D820Y	KIT	D820Y	Imatinib	CM	BCR-ABL inhibitor 1st gen&KIT inhibitor
+KIT_550-592	KIT	550-592	Sorafenib	CM	Pan-TK inhibitor
+KIT_627-664	KIT	627-664	Sorafenib	CM	Pan-TK inhibitor
+KIT_788-828	KIT	788-828	Sorafenib	CM	Pan-TK inhibitor
+KIT_829-860	KIT	829-860	Sorafenib	CM	Pan-TK inhibitor
+MAP2K1_P124	MAP2K1	P124		CM	ERK inhibitors
+MAP2K1_C121S	MAP2K1	C121S		CM	novel MEK inhibitors
+NRAS_Q61	NRAS	Q61		CM	MEK inhibitors
+PDGFRA_V658A	PDGFRA	V658A	Crenolanib	CM	FLT3 inhibitor
+PDGFRA_P577S	PDGFRA	P577S	Crenolanib	CM	FLT3 inhibitor
+PDGFRA_R841K	PDGFRA	R841K	Crenolanib	CM	FLT3 inhibitor
+PDGFRA_H845Y	PDGFRA	H845Y	Crenolanib	CM	FLT3 inhibitor
+PDGFRA_G853D	PDGFRA	G853D	Crenolanib	CM	FLT3 inhibitor
+PDGFRA_P577S	PDGFRA	P577S	Imatinib	CM	BCR-ABL inhibitor 1st gen&KIT inhibitor
+PDGFRA_R841K	PDGFRA	R841K	Imatinib	CM	BCR-ABL inhibitor 1st gen&KIT inhibitor
+PDGFRA_H845Y	PDGFRA	H845Y	Imatinib	CM	BCR-ABL inhibitor 1st gen&KIT inhibitor
+PDGFRA_G853D	PDGFRA	G853D	Imatinib	CM	BCR-ABL inhibitor 1st gen&KIT inhibitor
+ROS1_G2032R	ROS1	G2032R	Cabozantinib	LUAD	Pan-kinase inhibitor
+ROS1_S1986Y	ROS1	S1986Y	Lorlatinib	LUAD	ALK&ROS1 inhibitor
+ROS1_S1986F	ROS1	S1986F	Lorlatinib	LUAD	ALK&ROS1 inhibitor
