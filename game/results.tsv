@@ -1,0 +1,5 @@
+cancer_type	mutation_id	gene	aa_change	dna_change	driver_passenger	og_tsg	targeted_therapy	targeted_therapy_approved
+skin	BRAF_G469E	BRAF	G469E	7:140781602_C>T	driver	og	Sorafenib	False
+skin	SLC17A3_G135R	SLC17A3	G135R	chr6:25861930_C>T	passenger	unknown	None	False
+skin	KDM5A_P1380S	KDM5A	P1380S	12:297137_G>A	driver	og	None	False
+skin	CYSLTR2_P92L	CYSLTR2	P92L	13:48707092_C>T	driver	og	None	False
