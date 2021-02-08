@@ -9,3 +9,6 @@ conf/game.cfg
 
 # PyCharm
 .idea
+
+# .tsv files
+*.tsv

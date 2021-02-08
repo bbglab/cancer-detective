@@ -6,16 +6,26 @@
 You need Python 3.8+.
 It is recommended to use conda but not required.
 
-Install all dependencies with the requirements file:
+Install:
 
 ```sh
-pip install -r requirements.txt
+python setup.py develop
 ```
 
 Running the website is as simple as:
 
 ```sh
 python web.py
+```
+
+Running as cli:
+```sh
+play -c [lung/skin]
+```
+
+or see help:
+```sh
+play --help
 ```
 
 The website should be accessible by going in your
