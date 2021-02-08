@@ -60,17 +60,17 @@
                 </a>
             </dd>
             <dt>
-                Alteration
+                Protein change
             </dt>
             <dd>
                 <!--TODO chr and position-->
-                7:22 <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['alt'] }}</span>
+                7:22 <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['aa_change'] }}</span>
             </dd>
             <dt>
                 Impact
             </dt>
             <dd>
-                {% if mut['driver'] %}
+                {% if mut['driver_passenger'] %}
                 Driver
                 {% else %}
                 Passenger
