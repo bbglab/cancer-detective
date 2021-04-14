@@ -51,7 +51,7 @@
     <div class="uk-card uk-card-default uk-card-body">
         <dl class="uk-description-list uk-description-list-divider">
             <dt>
-                Gene
+	    Gene
             </dt>
             <dd>
                 <a target='_tab' href='http://www.genecards.org/cgi-bin/carddisp.pl?gene={{ mut['gene'] }}'
@@ -64,17 +64,19 @@
             </dt>
             <dd>
                 <!--TODO chr and position-->
-                7:22 <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['aa_change'] }}</span>
+		<!--                <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['aa_change'] }}</span> -->
+                <span class='uk-badge' style='background-color: yellow; color: black'>{{ mut['aa_change'] }}</span>
             </dd>
             <dt>
                 Impact
             </dt>
             <dd>
-                {% if mut['driver_passenger'] %}
+                <span class='uk-badge' style='background-color: pink; color: black'>{{ mut['driver_passenger'] }}</span>
+ <!--               {% if mut['driver_passenger'] %}
                 Driver
                 {% else %}
                 Passenger
-                {% endif %}
+		{% endif %}-->
             </dd>
         </dl>
     </div>

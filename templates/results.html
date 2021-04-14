@@ -27,7 +27,7 @@
 
 <div class="res uk-child-width-1-3@l uk-child-width-1-1@s uk-child-width-1-2@m uk-text-center uk-grid-match" uk-grid>
 
-    {% for mut in mutations %}
+    {% for mut in mutations.values() %}
         {{ mutation_card(mut) }}
     {% endfor %}
 

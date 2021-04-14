@@ -81,9 +81,10 @@ class Game:
             raise cherrypy.HTTPError(422, f"Invalid code {code}")
 
         # TODO pass a code to mutations so that the cache works
+        df = muts.run(ttype, mutations, code=code)
+        data = df.T.to_dict()
         return self._env.get_template("results.html").render(
-            mutations=muts.run(ttype, mutations, code=code)
-        )
+            mutations=data)
 
 
 def start_server(conf_file=None):
