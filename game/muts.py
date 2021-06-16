@@ -26,7 +26,6 @@ _THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
     help="Path for the output tsv file. Default is the current directory",
 )
 def cli(cancer_type, n_muts, dir_path):
-
     df = run(cancer_type, n_muts, code=None)
 
     if dir_path == False:
@@ -38,7 +37,6 @@ def cli(cancer_type, n_muts, dir_path):
 
 @functools.lru_cache(50)
 def run(cancer_type, n_muts, code=None):
-
     if n_muts == 0:
         n = random.choice(list(range(1, 7)))
     else:
@@ -66,13 +64,14 @@ def run(cancer_type, n_muts, code=None):
                 df_drivers_therapy = df_ct[
                     (df_ct["driver_passenger"] == "driver")
                     & (df_ct["targeted_therapy"] != "None")
-                ]
+                    ]
                 driver_therapy = df_drivers_therapy.sample()
                 final_df = pd.concat([final_df, driver_therapy])
             else:
                 # While loop is in order to not repeat genes.
                 stop = False
-                while stop == False:
+                drivers = []
+                while not stop:
                     # Get the other drivers
                     df_drivers = df_ct[df_ct["driver_passenger"] == "driver"]
                     drivers = df_drivers.sample()
@@ -82,7 +81,8 @@ def run(cancer_type, n_muts, code=None):
         else:
             # While loop is in order to not repeat genes.
             stop = False
-            while stop == False:
+            passengers = []
+            while not stop:
                 # Get the other drivers
                 df_passengers = df_ct[df_ct["driver_passenger"] == "passenger"]
                 passengers = df_passengers.sample()

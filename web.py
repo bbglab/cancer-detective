@@ -54,8 +54,8 @@ class Game:
         return self._env.get_template("about.html").render()
 
     @cherrypy.expose
-    def game(self):
-        return self._env.get_template("game.html").render()
+    def play(self):
+        return self._env.get_template("play.html").render()
 
     @cherrypy.expose
     def submit(self, **kwargs):

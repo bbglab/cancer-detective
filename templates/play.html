@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from "utils.html" import info, card %}
 
-{% set active_page = 'game' %}
+{% set active_page = 'play' %}
 
 {% block navbar_middle %}
 <div class="uk-navbar-center">
@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block footer %}
-<p class="uk-flex-inline uk-flex-center uk-margin-remove-bottom">This is a game, do not take results seriosly</p>
+<p class="uk-flex-inline uk-flex-center uk-margin-remove-bottom">This is a game, do not take results seriously</p>
 {% endblock %}
 
 {% block central %}
@@ -213,21 +213,21 @@
 {{ super() }}
 <script>
     // add "for" attribute to each select item
-    $( "span:contains('Select')" ).each(function () {
+    $( "span:contains('Select')" ).each( function () {
        let inputId = $( this ).closest( ".tab" ).find( "input" ).attr( "id" );
        $( this ).attr( "for", inputId);
     });
     // hide all branches
-    $(".branch-skin").hide();
-    $(".branch-lung").hide();
+    document.querySelectorAll(".branch-skin").forEach(branch => { branch.style.display = "none" })
+    document.querySelectorAll(".branch-lung").forEach(branch => { branch.style.display = "none" })
 
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", () => {
         showTab(currentTab);
         $( "span:contains('Select')" ).click(selectCard);
 
-        $("#code").attr( "value", randomCode());
+        document.querySelector("#code").setAttribute( "value", randomCode());
     });
-    $("#info-ttype").click(function () {
+    document.querySelector("#info-ttype").addEventListener('click', function () {
         swal("The tumor type", "The tumor type...");
     });
 </script>

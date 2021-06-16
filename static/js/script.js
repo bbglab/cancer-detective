@@ -1,43 +1,64 @@
 
+//Check height of web => TODO: remove it and added just with CSS
 function maximizeHeight(itemSelector, removableComponentsSelectors) {
   let heightTotal = $(window).outerHeight();
   let heightConsumed = removableComponentsSelectors.reduce((total, it) => total + $(`${it}`).outerHeight(), 0);
   $(`${itemSelector}`).css("min-height", heightTotal - heightConsumed);
 }
 
-$('.card-flip').hover( function () {
-  $(this).children('.uk-card').toggleClass('flipped');
+document.querySelector('.card-flip').addEventListener("mouseover",  (event) => {
+  console.log('OVER MOUSE')
+  let element = event.target;
+  console.log(element)
+
+  //element.classList.toggle('flipped')
+  //$(this).children('.uk-card').toggleClass('flipped');
+  let element = document.querySelector('.uk-card')
 });
 
 
-
-var currentTab = 0;
-var numberOfTabs = 0;
+let currentTab = 0;
+let numberOfTabs = 0;
 
 function showTab(n) {
-  let allTabs = $(".tab");
-  allTabs.eq(currentTab).hide();
-  allTabs.eq(n).show();
+  let allTabs = document.querySelectorAll(".tab");
+  allTabs.forEach((tab, index) => {
+    if (index === currentTab)
+      tab.style.display = 'none'
+  })
+  allTabs.forEach((tab, index) => {
+    if (index === n)
+      tab.style.display = 'block';
+  })
   fixStepIndicator(n);
   currentTab = n;
 }
 
 function fixStepIndicator(n) {
-  let allSteps = $(".step");
-  allSteps.eq(currentTab).removeClass("uk-active");
-  allSteps.eq(n).addClass("uk-active");
+  let allSteps = document.querySelectorAll(".step");
+  allSteps.forEach((tab, index) => {
+    if (index === currentTab)
+      tab.classList.remove("uk-active")
+  })
+  allSteps.forEach((tab, index) => {
+    if (index === n)
+      tab.classList.add("uk-active")
+  })
   // add option to go back to a previous step
-  var value = currentTab;
-  allSteps.eq(currentTab).on("click", "a", function (event) {
-      showTab(value);
-  });
+  let value = currentTab;
+  allSteps.forEach((tab, index) => {
+    if (index === currentTab)
+      tab.addEventListener("click", event => {
+        showTab(value);
+    })
+  })
 }
 
 function nextTab() {
   if (numberOfTabs === 0) {
-    numberOfTabs = $(".tab").length;
+    numberOfTabs = document.querySelectorAll(".tab").length;
   }
-  if (currentTab + 1 == numberOfTabs){
+  if (currentTab + 1 === numberOfTabs){
     $( "form" ).submit();
   } else {
     showTab(currentTab+1);
@@ -47,16 +68,21 @@ function nextTab() {
 
 
 function selectCard(event) {
-  let element = $(event.currentTarget);
-  const inputId = element.attr("for");
-  const value = element.attr("value");
+  let element = event.target;
+  const inputId = element.getAttribute("for");
+  console.log(inputId)
+  const value = element.getAttribute("value");
+  console.log(value)
   $(`#${inputId}`).attr( "value", value);
+  console.log($(`#${inputId}`))
+  console.log(`#${inputId}`)
+  console.log(document.getElementById(`#${inputId}`))
 
   // hide the non-used path
-  if (value == 'skin') {
-    $(".branch-skin").show();
-  } else if (value == 'lung') {
-    $(".branch-lung").show();
+  if (value === 'skin') {
+    document.querySelectorAll(".branch-skin").forEach(elem => elem.style.display = 'block');
+  } else if (value === 'lung') {
+    document.querySelectorAll(".branch-lung").forEach(elem => elem.style.display = 'block');
   }
 
   nextTab();

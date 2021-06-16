@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: cgi-game
+Version: 1.0.0
+Summary: Cancer Genome Interpreter Game
+Home-page: https://github.com/bbglab/cgi-game
+Author: Barcelona Biomedical Genomics Lab
+Author-email: bbglab@irbbarcelona.org
+License: "Apache 2.0"
+Description: README.md
+Platform: UNKNOWN
+Requires-Python: >=3.8
