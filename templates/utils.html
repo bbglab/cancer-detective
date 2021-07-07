@@ -1,18 +1,18 @@
 
+{% extends "base.html" %}
 {% macro navbar_item(text, active_page, link) %}
+
+    <li>
     {% if active_page == link %}
-    <li class="uk-active">
         <a>
             {{ text }}
         </a>
-    </li>
     {% else %}
-    <li>
-        <a href="{{ link }}">
+        <a class="nav-item" href="{{ link }}">
             {{ text }}
         </a>
-    </li>
     {% endif %}
+    </li>
 {% endmacro %}
 
 {% macro info(id) %}
@@ -21,28 +21,26 @@
 </span>
 {% endmacro %}
 
-{% macro card(value, image, title, text) %}
-<div class="card-flip">
-    <div class="uk-card uk-card-hover card">
-        <a href="#" class="uk-position-cover"></a>
-        <div class="front card-face uk-height-large">
-            <img class="uk-height-max-large" src="images/{{ image }}" alt="">
+{% macro card(type, id, value, image, title, text) %}
+  <div class="card" id="{{ id }}" onclick="selectCard(event)">
+    <div class="card-face card-face-front">
+        <img src="images/{{ image }}" alt="">
+    </div>
+    <div class="card-face card-face-back">
+        <div>
+            <h3 class="card-title">
+                {{ title }}
+            </h3>
         </div>
-        <div class="back card-face uk-card uk-height-large uk-card-primary">
-            <div class="uk-card-header">
-                <h3 class="uk-card-title">
-                    {{ title }}
-                </h3>
-            </div>
-            <div class="uk-card-body">
-                {{ text }}
-            </div>
-            <div class="uk-card-footer">
-                <span class="uk-button uk-button-text" value="{{ value }}">Select</span>
-            </div>
+        <div>
+            {{ text }}
+        </div>
+        <div>
+            <div class="card-select" data-value="{{ value }}" data-type="{{ type }}">
+                Select</div>
         </div>
     </div>
-</div>
+  </div>
 {% endmacro %}
 
 {% macro mutation_card(mut) %}

@@ -1,0 +1,71 @@
+.cards-container
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  text-align: center
+
+.card
+  padding: 20px
+  margin: 15px
+  height: 400px
+  width: 400px
+  position: relative
+  cursor: pointer
+  transform-style: preserve-3d
+  transform-origin: center right
+  transition: transform 1s
+  transition-duration: 10ms
+  font-size: 20px
+  color: var(--light-color)
+
+
+.card.is-flipped
+  transform: translateX(-100%) rotateY(180deg)
+  transition-duration: 10ms
+
+.card-face
+  position: absolute
+  width: 400px
+  height: 400px
+  text-align: center
+  backface-visibility: hidden
+  background-color: var(--light-color)
+
+.card-face img
+  width: 400px
+  height: 400px
+
+.card-face-front
+  background-color: var(--light-color)
+
+.card-face-back
+  transform: rotateY(180deg)
+  background-color: var(--blue-color)
+  border-radius: 10px
+
+.card-title
+  color: var(--light-color)
+  font-size: 20px
+  margin-top: 10px
+  white-space: nowrap
+
+.card-select
+  text-transform: uppercase
+  display: inline-block
+
+.card-select::after
+  content: ''
+  width: 0
+  height: 1px
+  display: block
+  background: var(--light-color)
+  transition: 300ms
+
+.card-select:hover::after
+  width: 100%
+
+.text-lead
+  font-size: 1.5rem
+  line-height: 1.5
+  color: #333
+  margin: 30px auto

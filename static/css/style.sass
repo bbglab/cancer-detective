@@ -1,28 +1,110 @@
+\:root
+  --blue-color: #{rgba(26, 163, 255, 0.8)}
+  --light-color: #{rgb(240,240,240)}
+  --light-color-w-opacity: #{rgba(240,240,240, 0.5)}
+  --dark-color: #{rgb(46, 46, 46)}
+  --title-color: #{rgb(100,100,100)}
+
+@import "home"
+@import "about"
+@import "play"
+@import "utils"
+
 html
   height: 100%
+  font-family: sans-serif
+  background-color: var(--light-color)
 
 body
   min-height: 100%
+  display: flex
+  flex-direction: column
+  text-align: center
 
-// https://gist.github.com/bsakhanov/ac57cfc5a9ffa28d215ac4318686f823
-=backfaceVisibility($property)
-  -webkit-backface-visibility: $property
-  backface-visibility: $property
+.nav-container
+  position: relative
+  min-width: 100%
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  background-color: var(--blue-color)
 
-.uk-card
-  .card-face.back
-    display: none
-  .card-face
-    display: block
+.bbglab-icon
+  padding: 8px 25px
+  background-color: var(--light-color)
 
-.flipped
-  .back
-    display: block !important
-    +backfaceVisibility(visible)
-    backface-visibility: visible
-  .front
-    display: none
+.topnav-container
+  position: absolute
+  bottom: 20%
+  right: 10%
 
 
-.tab
-  display: none
+ul.topnav
+  font-size: 20px
+  list-style-type: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+
+ul.topnav li
+  float: left
+
+ul.topnav li a
+  border-bottom: 5px solid var(--light-color)
+  color: var(--light-color)
+  display: block
+  text-align: center
+  text-decoration: none
+  padding: 5px 15px
+
+a.nav-item:visited, a.nav-item:link
+  text-align: center
+  border: none
+  display: inline-block
+
+a.nav-item:link:hover, a.nav-item:visited:hover
+  border-bottom: 5px solid var(--light-color-w-opacity)
+
+.content-container
+  margin: auto
+
+div.footer-container
+  padding: 25px 0
+  background-color: var(--blue-color)
+  color: var(--dark-color)
+
+div.footer-container .social
+  text-align: center
+  font-size: 30px
+
+div.footer-container .social > a
+  text-decoration: none
+  width: 30px
+  height: 30px
+  display: inline-block
+  text-align: center
+  color: var(--light-color)
+  opacity: 0.85
+
+div.footer-container .social > .github-icon
+  border-radius: 50%
+  border: 1px solid var(--light-color)
+  background-color: var(--light-color)
+  color: var(--dark-color)
+  line-height: 30px
+  margin: 0 10px
+
+.footer-container .social > a:hover
+  opacity: 1
+
+.location
+  text-decoration: none
+  color: var(--light-color)
+  font-size: 20px
+  opacity: 0.85
+
+.location:hover
+  text-decoration: none
+  opacity: 1
+  color: var(--light-color)
+

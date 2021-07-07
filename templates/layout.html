@@ -4,71 +4,45 @@
 {% set active_page = active_page or path_info() -%}
 
 {% block content %}
-<div class="uk-section uk-section-primary uk-padding-remove-vertical">
 
     <!-- NavBar -->
-    <div class="uk-navbar-container uk-navbar-transparent" id="navbar">
-        <div class="uk-container uk-container-expand">
-            <nav class="uk-navbar">
-                <div class="uk-navbar-left">
-                    <a class="uk-navbar-item uk-logo">
-                        <img src="images/bbglab-logo.png" alt="BBGLab" style="max-height: 50px"/>
-                    </a>
-                </div>
-                <div class="uk-navbar-center">
-                    {% block navbar_middle %}{% endblock %}
-                </div>
-                <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav">
-                        {{ navbar_item('Home', active_page, 'home') }}
-                        {{ navbar_item('Play', active_page, 'play') }}
-                        {{ navbar_item('About', active_page, 'about') }}
-                    </ul>
-                </div>
-            </nav>
+    <div class="nav-container">
+        <div class="bbglab-icon">
+            <a href="https://bbglab.irbbarcelona.org/" target="_blank">
+                <img src="images/bbglab-logo.png" alt="BBGLab" style="max-height: 125px"/>
+            </a>
         </div>
-    </div>
 
-    <!-- Main content -->
-    {% block central %}
-    <div class="uk-section uk-flex uk-flex-middle uk-text-center" id="main-content">
-        <div class="uk-width-1-1">
-            <div class="uk-container">
-                {% block central_content %}{% endblock %}
-            </div>
-        </div>
-    </div>
-    {% endblock %}
-
-
-    <!-- Footer-->
-    <footer class="uk-section-small" id="footer">
-        <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
-            {% block footer %}
-            <ul uk-margin="" class="uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
-                <li>
-                    <a href="">Github</a>
-                </li>
-                <li>
-                    <a href="about">About</a>
-                </li>
+        <div class="topnav-container">
+            <ul class="topnav">
+                {{ navbar_item('Home', active_page, 'home') }}
+                {{ navbar_item('Play', active_page, 'play') }}
+                {{ navbar_item('About', active_page, 'about') }}
             </ul>
-            {% endblock %}
         </div>
-    </footer>
-
-</div>
-{% endblock %}
+    </div>
 
 
+   <!-- Main content -->
+    <div class="content-container">
+        {% block navbar_middle %}{% endblock %}
+        {% block central %}
+            {% block central_content %}{% endblock %}
+        {% endblock %}
+    </div>
 
-{% block script %}
-<script>
-    $( document ).ready(function() {
-        maximizeHeight("#main-content", ["#navbar", "#footer"]);
-    });
-    $( window ).resize(function() {
-        maximizeHeight("#main-content", ["#navbar", "#footer"]);
-    });
-</script>
+
+    <div class="footer-container">
+        <footer>
+            <div class="social">
+                <a class="github-icon" href="https://github.com/bbglab/cancer-detective" target="_blank">
+                    <i class="icon ion-social-github"></i>
+                </a>
+                <!--<a href="about">About</a>-->
+                <span class="location"><a class="location" href="https://bbglab.irbbarcelona.org/" target="_blank">BBGLab</a>
+                    - <a class="location" href="https://www.irbbarcelona.org/en" target="_blank">IRB Barcelona</a></span>
+            </div>
+        </footer>
+    </div>
+
 {% endblock %}
