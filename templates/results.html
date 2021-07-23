@@ -42,6 +42,9 @@
 {{ super() }}
 <script>
 
+    const elem = document.getElementById("play")
+    elem.classList.remove("nav-item")
+
     $( document ).ready(function() {
         $("#seq-button").hide();
         $(".res").hide();

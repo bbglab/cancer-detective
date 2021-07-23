@@ -5,7 +5,7 @@
 
 {% block navbar_middle %}
 <div class="slider-nav">
-  <button class="btn-nav active step" data-index="0"></button>
+  <button class="btn-nav active step" data-index="0" onclick="selectStep(event)"></button>
   <button class="btn-nav step" data-index="1"></button>
   <button class="btn-nav step" data-index="2"></button>
   <button class="btn-nav step" data-index="3"></button>
@@ -13,19 +13,23 @@
 {% endblock %}
 
 {% block footer %}
-<p class="uk-flex-inline uk-flex-center uk-margin-remove-bottom">This is a game, do not take results seriously</p>
+<p>This is a game, do not take results seriously</p>
 {% endblock %}
 
 {% block central %}
 <form id="main-content" action="submit" method="get">
-    <div>
-
+    <div data-index="0">
         <!-- tumor type selection -->
         <div id="cancer-type">
-            <p class="text-lead">
-                Sample selection
-                {{ info('ttype') }}
-            </p>
+            <div style="display: flex">
+                <p class="text-lead" >Sample selection</p>
+                <!--<div class="small">
+                    <button class="iconify show-modal" data-icon="ion:information-circle-outline" data-inline="false">
+
+                    </button>
+                </div>-->
+
+            </div>
 
             <p>
                 Two samples have arrived at the lab: one is labelled as lung cancer and the other one as skin cancer.
@@ -45,7 +49,7 @@
         </div>
 
         <!-- risk factor I -->
-        <div class="tab">
+        <div class="tab" data-index="1">
 
             <p class="text-lead">
                 Patient risk factors
@@ -218,6 +222,7 @@
 
 </form>
 
+<script src="./js/play.js?v=1"></script>
 {% endblock %}
 
 

@@ -14,8 +14,10 @@ function selectCard(event) {
     // Hide the non-used path
     if (value === 'skin') {
         document.querySelectorAll(".branch-skin").forEach(elem => elem.style.display = 'block');
+        document.querySelectorAll(".branch-lung").forEach(elem => elem.style.display = 'none');
     } else if (value === 'lung') {
         document.querySelectorAll(".branch-lung").forEach(elem => elem.style.display = 'block');
+        document.querySelectorAll(".branch-skin").forEach(elem => elem.style.display = 'none');
     }
 
     nextTab();
@@ -32,24 +34,27 @@ function nextTab() {
 }
 
 function showTab(n) {
-    if (n === 1)
-        document.getElementById('cancer-type').style.display = 'none'
-    if (n === 0)
-        document.getElementById('cancer-type').style.display = 'block'
-    let allTabs = document.querySelectorAll(".tab");
-    allTabs.forEach((tab, index) => {
-        if (index === currentTab - 1) {
-            tab.style.display = 'none'
-        }
+    if (n <= currentTab+1) {
+        if (n === 1)
+            document.getElementById('cancer-type').style.display = 'none'
+        if (n === 0)
+            document.getElementById('cancer-type').style.display = 'block'
+        let allTabs = document.querySelectorAll(".tab");
+        allTabs.forEach((tab, index) => {
+            if (index === currentTab - 1) {
+                tab.style.display = 'none'
+            }
 
-    })
-    allTabs.forEach((tab, index) => {
-        if (index === n - 1) {
-            tab.style.display = 'block';
-        }
-    })
-    fixStepIndicator(n);
-    currentTab = n;
+        })
+        allTabs.forEach((tab, index) => {
+            if (index === n - 1) {
+                tab.style.display = 'block';
+            }
+        })
+        fixStepIndicator(n);
+        currentTab = n;
+    }
+
 }
 
 function fixStepIndicator(n) {
@@ -69,6 +74,24 @@ function fixStepIndicator(n) {
                 showTab(value);
             })
     })
+}
+
+function selectStep(event) {
+    let element = event.target
+
+    if (element.classList.contains('active')) {
+        const index = element.getAttribute("data-index")
+        document.querySelectorAll(".step").forEach(elem => {
+            if (elem.classList.contains('active') && parseInt(elem.getAttribute("data-index")) > index) {
+                elem.classList.remove('active')
+            }
+        })
+
+        if (index <= currentTab)
+            showTab(index)
+    }
+
+    document.querySelectorAll(".tab").forEach(tab => { tab.style.display = "none" })
 }
 
 let cardIDs = ['SKIN', 'LUNG', 'SKIN_RISK_FACTOR_1_1', 'SKIN_RISK_FACTOR_1_2', 'SKIN_RISK_FACTOR_1_3',

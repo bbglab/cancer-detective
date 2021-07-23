@@ -1,14 +1,13 @@
 
 {% extends "base.html" %}
 {% macro navbar_item(text, active_page, link) %}
-
     <li>
     {% if active_page == link %}
         <a>
             {{ text }}
         </a>
     {% else %}
-        <a class="nav-item" href="{{ link }}">
+        <a class="nav-item" href="{{ link }}" id="{{ link }}">
             {{ text }}
         </a>
     {% endif %}
@@ -16,15 +15,26 @@
 {% endmacro %}
 
 {% macro info(id) %}
-<span uk-tooltip="Click for information">
-    <span uk-icon="info" id="info-{{ id }}"></span>
-</span>
+     <!--<div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>I'm a modal window 😍</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+    <div class="overlay hidden"></div>-->
 {% endmacro %}
 
 {% macro card(type, id, value, image, title, text) %}
   <div class="card" id="{{ id }}" onclick="selectCard(event)">
     <div class="card-face card-face-front">
-        <img src="images/{{ image }}" alt="">
+        <img src="images/{{ image }}" alt="" height="200px" width="200px">
     </div>
     <div class="card-face card-face-back">
         <div>
@@ -32,7 +42,7 @@
                 {{ title }}
             </h3>
         </div>
-        <div>
+        <div class="card-text">
             {{ text }}
         </div>
         <div>

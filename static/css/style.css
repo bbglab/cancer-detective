@@ -1,3 +1,11 @@
+:root {
+  --blue-color: rgba(26, 163, 255, 0.8);
+  --light-color: #f0f0f0;
+  --light-color-w-opacity: rgba(240, 240, 240, 0.5);
+  --dark-color: #2e2e2e;
+  --title-color: #646464;
+}
+
 .title {
   font-size: 50px;
   color: var(--title-color);
@@ -50,8 +58,22 @@ a.read-about:hover {
   color: var(--title-color);
 }
 
+svg.info-icon:hover {
+  background-color: blueviolet;
+  color: blue;
+  opacity: 1;
+}
+
+.small {
+  border: 1px solid var(--light-color);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  opacity: 0.7;
+}
+
 .slider-nav {
   text-align: center;
+  margin-top: 30px;
 }
 
 .btn-nav {
@@ -78,16 +100,58 @@ a.read-about:hover {
   box-sizing: border-box;
 }
 
+.show-modal {
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
   list-style: none;
   text-align: center;
 }
 
 .card {
+  padding: 20px;
   margin: 15px;
   height: 400px;
   width: 400px;
@@ -132,14 +196,20 @@ a.read-about:hover {
 
 .card-title {
   color: var(--light-color);
-  font-size: 40px;
-  margin-top: 10px;
+  font-size: 30px;
+  margin: 15px;
+  white-space: nowrap;
+}
+
+.card-text {
+  margin: 0 20px;
+  font-size: 20px;
 }
 
 .card-select {
-  margin-top: 70px;
   text-transform: uppercase;
   display: inline-block;
+  margin-top: 40px;
 }
 
 .card-select::after {
@@ -159,15 +229,7 @@ a.read-about:hover {
   font-size: 1.5rem;
   line-height: 1.5;
   color: #333;
-  margin: 30px auto;
-}
-
-:root {
-  --blue-color: rgba(26, 163, 255, 0.8);
-  --light-color: #f0f0f0;
-  --light-color-w-opacity: rgba(240, 240, 240, 0.5);
-  --dark-color: #2e2e2e;
-  --title-color: #646464;
+  margin: 10px auto;
 }
 
 html {
