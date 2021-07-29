@@ -30,7 +30,6 @@
                 </div>-->
 
             </div>
-
             <p>
                 Two samples have arrived at the lab: one is labelled as lung cancer and the other one as skin cancer.
                 <br>
@@ -168,7 +167,10 @@
             </p>
 
             <p>
-                Please, select the level of exposure of your patient to known risk factors of the cancer type
+                Please, select the level of exposure of your patient to known risk factors of the cancer type.
+                <br>
+                The number of tumor mutations attributed to sun exposure is likely to be lower those with high protection
+                than those with a low or non-protection.
             </p>
 
             <div class="branch-skin">
@@ -180,15 +182,15 @@
                 <div class="cards-container">
                     <div>
                         {{ card('riskFactor3', 'SKIN_RISK_FACTOR_3_1', 1, 'skin/protection_1.svg', 'High protection',
-                        'The patient frequently uses high-grade factor sunscreen and sun protective clothes when exposed to UV radiation. The number of tumor mutations attributed to sun exposure is likely to be lower than those with intermediate or no sun protection') }}
+                        'Use of high-grade factor sunscreen and sun protective clothes when exposed to UV radiation.') }}
                     </div>
                     <div>
                         {{ card('riskFactor3', 'SKIN_RISK_FACTOR_3_2', 2, 'skin/protection_2.svg', 'Intermediate protection',
-                        'The patient sporadically uses sun protection when exposed to UV radiation. The number of tumor mutations attributed to sun exposure is likely to be lower than those with no sun protection, but higher than those with high protection') }}
+                        'Sporadically use of sun protection when exposed to UV radiation.') }}
                     </div>
                     <div>
                         {{ card('riskFactor3', 'SKIN_RISK_FACTOR_3_3', 3, 'skin/protection_3.svg', 'Low protection',
-                        'The patient does not use sunscreen nor protective clothes when exposed to UV radiation. The number of tumor mutations attributed to sun exposure is likely to be higher than those that use sun protection') }}
+                        'Not use sunscreen nor protective clothes when exposed to UV radiation.') }}
                     </div>
                 </div>
             </div>

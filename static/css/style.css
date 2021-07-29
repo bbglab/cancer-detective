@@ -29,6 +29,7 @@ a.read-about {
   font-size: 30px;
   align-items: center;
   text-align: center;
+  text-decoration: none;
 }
 
 a.read-about:hover {
@@ -39,6 +40,7 @@ a.read-about:hover {
   font-size: 30px;
   padding: 4px 30px;
   display: inline-block;
+  text-decoration: none;
   color: var(--blue-color);
   background-color: var(--light-color);
   border: 4px solid var(--blue-color);
@@ -153,8 +155,8 @@ svg.info-icon:hover {
 .card {
   padding: 20px;
   margin: 15px;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -172,16 +174,16 @@ svg.info-icon:hover {
 
 .card-face {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   text-align: center;
   backface-visibility: hidden;
   background-color: var(--light-color);
 }
 
 .card-face img {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .card-face-front {
@@ -196,14 +198,13 @@ svg.info-icon:hover {
 
 .card-title {
   color: var(--light-color);
-  font-size: 30px;
+  font-size: 25px;
   margin: 15px;
-  white-space: nowrap;
 }
 
 .card-text {
   margin: 0 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .card-select {
@@ -230,6 +231,93 @@ svg.info-icon:hover {
   line-height: 1.5;
   color: #333;
   margin: 10px auto;
+}
+
+#seq-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--blue-color);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+.show-results {
+  font-size: 1.5rem;
+  padding: 4px 30px;
+  display: inline-block;
+  color: var(--blue-color);
+  background-color: var(--light-color);
+  border: 4px solid var(--blue-color);
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.show-results:hover {
+  padding: 8px 34px;
+  background: var(--blue-color);
+  color: var(--light-color);
+  border: none;
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 950px) {
+  .grid {
+    grid: auto/1fr 1fr;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .grid {
+    grid: auto/1fr;
+    width: 90%;
+  }
+}
+.card-mutations {
+  padding: 7px;
+  margin: 15px;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  font-size: 20px;
+  background-color: var(--light-color-w-opacity);
+  outline: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 5px 40px -10px grey;
+}
+
+.card-mutations dt, .card-mutations dd {
+  color: var(--title-color);
+  padding: 5px 0;
+}
+
+.badge {
+  padding: 5px 8px;
+  border-radius: 10px;
 }
 
 html {

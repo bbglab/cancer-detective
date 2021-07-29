@@ -34,7 +34,7 @@
 {% macro card(type, id, value, image, title, text) %}
   <div class="card" id="{{ id }}" onclick="selectCard(event)">
     <div class="card-face card-face-front">
-        <img src="images/{{ image }}" alt="" height="200px" width="200px">
+        <img src="images/{{ image }}" alt="">
     </div>
     <div class="card-face card-face-back">
         <div>
@@ -54,10 +54,9 @@
 {% endmacro %}
 
 {% macro mutation_card(mut) %}
-<div>
 
-    <div class="uk-card uk-card-default uk-card-body">
-        <dl class="uk-description-list uk-description-list-divider">
+    <div class="card-mutations">
+        <dl>
             <dt>
 	    Gene
             </dt>
@@ -73,21 +72,15 @@
             <dd>
                 <!--TODO chr and position-->
 		<!--                <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['aa_change'] }}</span> -->
-                <span class='uk-badge' style='background-color: yellow; color: black'>{{ mut['aa_change'] }}</span>
+                <span class='badge' style='background-color: yellow; color: black'>{{ mut['aa_change'] }}</span>
             </dd>
             <dt>
                 Impact
             </dt>
             <dd>
-                <span class='uk-badge' style='background-color: pink; color: black'>{{ mut['driver_passenger'] }}</span>
- <!--               {% if mut['driver_passenger'] %}
-                Driver
-                {% else %}
-                Passenger
-		{% endif %}-->
+                <span class='badge' style='background-color: pink; color: black'>{{ mut['driver_passenger'] }}</span>
             </dd>
         </dl>
     </div>
 
-</div>
 {% endmacro %}

@@ -5,28 +5,20 @@
 
 {% block central_content %}
 
-
-<p class="seq uk-margin-medium uk-text-lead">
+<p class="text-lead">
     Sequencing mutations
-    {{ info('sequencing') }}
-</p>
-
-<p class="res uk-margin-medium uk-text-lead">
-    Explore the mutations that have been found
-    and identify the <strong>drivers</strong>.
+    {# {{ info('sequencing') }} #}
 </p>
 
 <div class="seq">
-    <span id="seq-spinner" uk-spinner="ratio: 4.5"></span>
+    <div id="seq-spinner"></div>
 
     <div id="seq-button">
-        <p>Sequencing finished</p>
-        <button class="uk-button uk-button-primary tm-button-primary uk-button-large tm-button-large" onclick="showResults()">Show results</button>
+        <button class="show-results" onclick="showResults()">Show results</button>
     </div>
 </div>
 
-<div class="res uk-child-width-1-3@l uk-child-width-1-1@s uk-child-width-1-2@m uk-text-center uk-grid-match" uk-grid>
-
+<div class="res grid">
     {% for mut in mutations.values() %}
         {{ mutation_card(mut) }}
     {% endfor %}
@@ -40,29 +32,5 @@
 
 {% block script %}
 {{ super() }}
-<script>
-
-    const elem = document.getElementById("play")
-    elem.classList.remove("nav-item")
-
-    $( document ).ready(function() {
-        $("#seq-button").hide();
-        $(".res").hide();
-
-        setTimeout(function() {
-            $("#seq-spinner").hide();
-            $("#seq-button").show();
-            },
-            3500);
-    });
-
-    function showResults() {
-        $(".seq").hide();
-        $(".res").show();
-    }
-
-    $("#info-sequencing").click(function () {
-        swal("The sequencing process", "The sequencing process...");
-    });
-</script>
+    <script src="./js/results.js?v=1"></script>
 {% endblock %}
