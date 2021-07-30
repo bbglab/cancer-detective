@@ -1,3 +1,0 @@
-[console_scripts]
-play = game.muts:cli
-

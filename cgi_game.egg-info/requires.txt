@@ -1,5 +1,0 @@
-cherrypy
-click
-configobj
-jinja2
-pandas
