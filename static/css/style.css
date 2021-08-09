@@ -75,7 +75,7 @@ svg.info-icon:hover {
 
 .slider-nav {
   text-align: center;
-  margin-top: 30px;
+  margin: 20px 0;
 }
 
 .btn-nav {
@@ -332,6 +332,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: auto;
 }
 
 .nav-container {
