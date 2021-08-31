@@ -1,0 +1,41 @@
+svg.info-icon:hover {
+    background-color: blueviolet;
+    color: blue;
+    opacity: 1;
+}
+
+.small {
+    border: 1px solid var(--light-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    opacity: 0.7;
+}
+
+.slider-nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-nav {
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    padding: 0;
+    cursor: pointer;
+    margin: 2px;
+    opacity: 20%;
+    background-color: var(--dark-color);
+}
+
+.btn-nav.active {
+    opacity: 1;
+    background-color: var(--dark-color);
+}
+
+#main-content {
+    align-items: center;
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
+}
