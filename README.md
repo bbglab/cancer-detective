@@ -5,8 +5,8 @@
 It is recommended to use [Conda](https://docs.conda.io/en/latest/) or any other type of environment, but not required.
 
 ```bash
-conda create --name conda-detective
-conda activate conda-detective
+conda create --name cancer-detective
+conda activate cancer-detective
 conda install pip
 pip install -r requirements.txt
 python3 setup.py develop
