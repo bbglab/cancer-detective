@@ -41,8 +41,8 @@ In the `conf` folder you can create a file named
 `game.cfg` or you can pass a different location
 to the script:
 
-```sh
-python web.py /path/to/game.cfg
+```bash
+python3 web.py /path/to/game.cfg
 ```
 
 This configuration file can be used to tweak the
