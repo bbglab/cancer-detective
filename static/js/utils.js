@@ -4,8 +4,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnsShowModals = document.querySelectorAll('.show-modal');
-console.log(btnsShowModals);
-//function to open modal
+
 const openModal = function () {
   console.log('button clicked');
   console.log(modal)
@@ -25,8 +24,8 @@ const closeModal = function () {
 for (let i = 0; i < btnsShowModals.length; i++)
   btnsShowModals[i].addEventListener('click', openModal);
 
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+//btnCloseModal.addEventListener('click', closeModal);
+//overlay.addEventListener('click', closeModal);
 
 //close modal through escape
 document.addEventListener('keydown', function (e) {
