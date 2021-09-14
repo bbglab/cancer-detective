@@ -68,8 +68,6 @@ a.read-about:hover {
 }
 
 .img-slide {
-    width: 550px;
-    height: 433px;
    margin: 5px auto;
 }
 
@@ -92,7 +90,7 @@ a.read-about:hover {
   float: left;
   position: absolute;
   border-radius: 50%;
-  background-color: #b225e6;
+  background-color: var(--pulse-color);
   animation: pulse 2.5s linear infinite;
   cursor: pointer;
 }
