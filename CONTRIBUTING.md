@@ -18,7 +18,7 @@ Note: You can add both your fork and main repo to your local git repo as remote.
 Check what you have in remote: `git remote -v`. If you cloned from your fork, then it should
 point there. You can add the main repo with `git remote add`
 
-## Commit message
+## Commit messages
 
 For a good practise is recommended to follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) guidance
 with short and self-explanatory commits.
