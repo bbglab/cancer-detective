@@ -54,7 +54,7 @@ for further details.
 
 Feel free to contribute as much as you want to the code.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing and respect your behaviour specified at [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+See [CONTRIBUTING](CONTRIBUTING.md) for guidelines on contributing and respect your behaviour specified at [CODE OF CONDUCT](CODE_OF_CONDUCT.md).
 
 For more information, see also [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
 
