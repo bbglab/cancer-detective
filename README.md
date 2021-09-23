@@ -1,6 +1,6 @@
 <img src="logo.png" alt="Cancer Detective" width="120px" height="110px">
 
-# Cancer Detective
+# [Cancer Detective](https://bbglab.irbbarcelona.org/cancer-detective/home)
 
 An analysis simulation based on [Cancer Genome Interpreter](https://www.cancergenomeinterpreter.org/home), for an educational purpose. 
 
