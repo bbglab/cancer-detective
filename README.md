@@ -1,4 +1,7 @@
-![](logo.png)
+<img src="logo.png" alt="Cancer Detective" width="120px" height="110px">
+
+
+# Cancer Detective
 
 ## Installation
 
