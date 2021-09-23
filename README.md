@@ -1,4 +1,4 @@
-# Cancer Detective
+![](logo.png)
 
 ## Installation
 
