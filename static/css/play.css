@@ -38,4 +38,5 @@ svg.info-icon:hover {
     display: flex;
     text-align: center;
     box-sizing: border-box;
+    justify-content: center;
 }

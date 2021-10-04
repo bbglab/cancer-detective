@@ -3,6 +3,7 @@
 @import "about.css";
 @import "play.css";
 @import "home.css";
+@import "resources.css";
 
 :root {
   --blue-color: rgba(26, 163, 255, 0.8);
@@ -38,14 +39,13 @@ body {
 }
 
 .bbglab-icon {
-  padding: 8px 25px;
   background-color: var(--light-color);
 }
 
 .cancer-detective-title {
   color: var(--light-color);
   font-size: 70px;
-  margin: auto 60px;
+  margin: 0px 0px 25px 50px;
   font-family: sans-serif;
   font-weight: 900;
 }
@@ -90,7 +90,7 @@ a.nav-item:link:hover, a.nav-item:visited:hover {
 }
 
 .content-container {
-  margin: auto;
+  margin: auto 0;
 }
 
 div.footer-container {

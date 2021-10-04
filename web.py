@@ -58,6 +58,10 @@ class Game:
         return self._env.get_template("play.html").render()
 
     @cherrypy.expose
+    def resources(self):
+        return self._env.get_template("resources.html").render()
+
+    @cherrypy.expose
     def submit(self, **kwargs):
 
         # validate input

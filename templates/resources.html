@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% set active_page = 'resources' %}
+
+{% set ns = namespace(counter=0) %}
+
+{% macro q(is_first=False) %}
+
+    <a name="q{{ ns.counter }}"></a>
+    <div>
+        <div>
+            {{caller()}}
+        </div>
+    </div>
+
+    {% set ns.counter = ns.counter + 1 %}
+
+{% endmacro %}
+
+{% block central_content %}
+
+    <div class="faq">
+            <div class="faq-questions">
+                <h3>Resources</h3>
+                <div>
+                    <div class="qlist">
+
+                        <ul>
+                            <li>
+                                <ul id="general_questions_list">
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    </div>
+            </div>
+
+            <section id="general_questions" class="faq-answers">
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+                {% call q() %}
+                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <p>
+                        <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
+                        for an educational purpose.
+                    </p>
+                {% endcall %}
+
+            </section>
+    </div>
+
+    <script src="./js/resources.js?v=1"></script>
+{% endblock %}

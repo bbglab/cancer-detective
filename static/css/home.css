@@ -16,15 +16,14 @@
     text-align: center;
 }
 
-a.read-about {
-    color: var(--title-color);
+a.skip-intro {
+    color: var(--blue-color);
     font-size: 30px;
     align-items: center;
     text-align: center;
     text-decoration: none;
 }
-
-a.read-about:hover {
+a.skip-intro:hover {
     text-decoration: underline solid var(--blue-color);
 }
 
@@ -48,6 +47,7 @@ a.read-about:hover {
 }
 
 .slide {
+    margin: auto;
     display: flex;
     flex-direction: row;
     height: 610px;
