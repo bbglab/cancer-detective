@@ -41,7 +41,7 @@
 }
 
 .grid {
-    display: grid;
+    display: inline-grid;
     flex-wrap: wrap;
     padding: 0;
     list-style: none;
@@ -64,7 +64,7 @@
 .card-mutations {
     padding: 7px;
     margin: 15px;
-    height: 250px;
+    height: 320px;
     width: 250px;
     position: relative;
     transform-style: preserve-3d;

@@ -8,6 +8,7 @@ $( document ).ready(function() {
     setTimeout(function() {
             $("#seq-spinner").hide();
             $("#seq-button").show();
+            $(".text-lead").hide();
         },
         3500);
 });

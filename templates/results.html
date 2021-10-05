@@ -6,7 +6,7 @@
 {% block central_content %}
 
 <p class="text-lead">
-    Sequencing mutations
+    Sequencing mutations.
     {# {{ info('sequencing') }} #}
 </p>
 
@@ -18,6 +18,11 @@
     </div>
 </div>
 
+<img class="res grid" src="images/slides/card_explanation.png" style=" height: 433px;">
+<br>
+<h2 class="res">
+    The mutations observed in your sample:<br>
+</h2>
 <div class="res grid">
     {% for mut in mutations.values() %}
         {{ mutation_card(mut) }}

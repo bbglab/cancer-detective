@@ -78,7 +78,21 @@
                 Impact
             </dt>
             <dd>
-                <span class='badge' style='background-color: pink; color: black'>{{ mut['driver_passenger'] }}</span>
+                {% if  mut['driver_passenger']  == 'driver' %}
+                <span class='badge' style='background-color: palevioletred; color: black'>{{ mut['driver_passenger'] }}</span>
+            {% else %}
+                <span class='badge' style='background-color: lightgreen; color: black'>{{ mut['driver_passenger'] }}</span>
+            {% endif %}
+            </dd>
+            <dt>
+                Treatment
+            </dt>
+            <dd>
+            {% if  mut['targeted_therapy']  == 'None' %}
+                <span class='badge' style='background-color: lightgray; color: black'>{{ mut['targeted_therapy'] }}</span>
+            {% else %}
+                <span class='badge' style='background-color: deepskyblue; color: black'>{{ mut['targeted_therapy'] }}</span>
+            {% endif %}
             </dd>
         </dl>
     </div>
