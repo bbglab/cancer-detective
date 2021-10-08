@@ -14,6 +14,7 @@
     float: left;
     margin: 40px 100px;
     text-align: center;
+    cursor: pointer;
 }
 
 a.skip-intro {

@@ -5,6 +5,10 @@ document.querySelectorAll(".tab").forEach(tab => { tab.style.display = "none" })
 document.querySelectorAll(".branch-skin").forEach(branch => { branch.style.display = "none" })
 document.querySelectorAll(".branch-lung").forEach(branch => { branch.style.display = "none" })
 
+
+document.getElementById("main-content").style.display = "none";
+document.getElementById("nav").style.display = "none";
+
 function selectCard(event) {
     const element = event.target
     const inputId = element.getAttribute("data-type");
@@ -110,4 +114,9 @@ for ( const type of cardIDs) {
     card.addEventListener('mouseout', function () {
         card.classList.remove('is-flipped');
     });
+}
+function showGame() {
+    $(".instructions").hide();
+    $("#main-content").show();
+    $("#nav").show();
 }

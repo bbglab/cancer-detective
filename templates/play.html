@@ -4,7 +4,7 @@
 {% set active_page = 'play' %}
 
 {% block navbar_middle %}
-<div class="slider-nav">
+<div class="slider-nav" id="nav">
   <button class="btn-nav active step" data-index="0" onclick="selectStep(event)"></button>
   <button class="btn-nav step" data-index="1"></button>
   <button class="btn-nav step" data-index="2"></button>
@@ -17,6 +17,30 @@
 {% endblock %}
 
 {% block central %}
+<div class="slide instructions">
+        <div class="slide-content">
+            <img src="images/slides/card_explanation.png" alt="CancerDetective" style="max-height: 170px;"/>
+            <p >
+                These are the intructions
+                <br>
+                These are the intructions
+                <br>
+                These are the intructions
+                <br>
+                These are the intructions
+                <br>
+            </p>
+            <div class="buttons-container">
+                <div class="floated">
+                    <a class="skip-intro" onclick="showGame()">Let's start</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 <form id="main-content" action="submit" method="get">
     <div data-index="0">
         <!-- tumor type selection -->
@@ -25,7 +49,6 @@
                 <p class="text-lead" >Sample selection</p>
                 <!--<div class="small">
                     <button class="iconify show-modal" data-icon="ion:information-circle-outline" data-inline="false">
-
                     </button>
                 </div>-->
 
@@ -227,7 +250,4 @@
 
 <script src="./js/play.js?v=1"></script>
 {% endblock %}
-
-
-
 
