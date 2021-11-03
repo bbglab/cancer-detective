@@ -81,7 +81,7 @@
                 {% if  mut['driver_passenger']  == 'driver' %}
                 <span class='badge' style='background-color: palevioletred; color: black'>{{ mut['driver_passenger'] }}</span>
             {% else %}
-                <span class='badge' style='background-color: lightgreen; color: black'>{{ mut['driver_passenger'] }}</span>
+                <span class='badge' style='background-color: #d3d3d3; color: black'>{{ mut['driver_passenger'] }}</span>
             {% endif %}
             </dd>
             <dt>
@@ -89,9 +89,9 @@
             </dt>
             <dd>
             {% if  mut['targeted_therapy']  == 'None' %}
-                <span class='badge' style='background-color: lightgray; color: black'>{{ mut['targeted_therapy'] }}</span>
+                <span class='badge' style='background-color: #cde5fa; color: black'>{{ mut['targeted_therapy'] }}</span>
             {% else %}
-                <span class='badge' style='background-color: deepskyblue; color: black'>{{ mut['targeted_therapy'] }}</span>
+                <span class='badge' style='background-color: #00bfff; color: black'>{{ mut['targeted_therapy'] }}</span>
             {% endif %}
             </dd>
         </dl>
