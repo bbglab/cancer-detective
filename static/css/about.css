@@ -1,4 +1,33 @@
 .about-text {
-    font-size: 27px;
+    font-size: 24px;
     color: var(--title-color);
+    text-align: justify;
+    text-justify: inter-word;
+    line-height:32px;
+    margin: 85px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-people {
+    padding: 7px;
+    margin: 15px;
+    height: 400px;
+    width: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    font-size: 20px;
+    background-color: var(--light-color-w-opacity);
+    border-radius: 20px;
+    box-shadow: 0 5px 40px -10px grey;
+}
+
+.people-grid {
+    display: inline-grid;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 45px auto ;
 }

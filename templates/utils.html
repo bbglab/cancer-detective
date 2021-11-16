@@ -98,3 +98,26 @@
     </div>
 
 {% endmacro %}
+
+{% macro people_card(picture,complete_name, position, link) %}
+<div class="card-people">
+    <dl>
+        <dt>
+            <a href= {{ link }} target="_blank">
+            <img src="images/people/{{ picture }}" alt="{{ complete_name }}" style="width: 80%; "></a>
+        </dt>
+        <dt>
+            <h3>
+                {{ complete_name }}
+            </h3>
+        </dt>
+        <dt>
+            <h3>
+               {{ position }}
+            </h3>
+        </dt>
+    </dl>
+</div>
+
+{% endmacro %}
+

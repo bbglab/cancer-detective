@@ -1,9 +1,47 @@
 {% extends "layout.html" %}
+{% from "utils.html" import people_card %}
 
 {% set active_page = 'about' %}
 
 {% block central_content %}
-<p class="about-text">
-    This is an educational resource developed by the BBGLab research group.
-</p>
+     <div class="about-text" >
+                <table width=1300px >
+                <tr>
+                <td width="20%">
+                <img src="images/cancer-detective-logo.png" alt="CancerDetective" style="max-height: 230px;"/>
+                </td>
+
+                <td width="60%">
+                <p>
+                This website is an educational resource developed by the
+                <a href="https://bbglab.irbbarcelona.org/" target="_blank">Barcelona Biomedical Genomics Lab</a> (BBGLab). <br>
+
+                The BBGLab is a research group dedicated to the computational study of cancer
+                at a genomic level. It is integrated in the Institute for Research in Biomedicine (IRB) in Barcelona.<br> <br>
+                Our research is focused on the study of cancer from a genomics perspective.
+                We are particularly interested in the identification of cancer driver mutations, genes and pathways across tumour types and in the study of the mutational processes across tissues and genomic regions.
+                </p>
+                </td>
+                </tr>
+                </table>
+
+        </div>
+
+<h1 >The people involved in the development of this website:   </h1>
+<div class="people-grid">
+    {{ people_card('claudia.jpg', 'Claudia Arnedo', '', 'https://www.irbbarcelona.org/es/research/claudia-arnedo')}}
+    {{ people_card('raquel.jpg', 'Raquel Blanco', '', 'https://www.irbbarcelona.org/es/research/raquel-blanco')}}
+    {{ people_card('martina.jpg', 'Martina Gasull', '', 'https://www.irbbarcelona.org/es/research/martina-gasull')}}
+    {{ people_card('paula.jpg', 'Paula Gomis', '', 'https://www.irbbarcelona.org/en/research/paula-gomis')}}
+    {{ people_card('erika.jpg', 'Erika López', '', 'https://www.irbbarcelona.org/es/research/erika-lopez')}}
+    {{ people_card('david.jpg', 'David Martinez', '', 'https://www.irbbarcelona.org/es/research/david-martinez')}}
+    {{ people_card('monica.jpg', 'Monica Sanchez', '', 'https://www.irbbarcelona.org/es/research/monica-sanchez')}}
+
+    {{ people_card('jordi.jpg', 'Jordi Deu', '', 'https://www.irbbarcelona.org/es/research/jordi-deu')}}
+    {{ people_card('iker.jpg', 'Iker Reyes', '', 'https://www.irbbarcelona.org/es/research/iker-reyes')}}
+    {{ people_card('lenka.jpg', 'Lenka Segura', '', 'https://www.irbbarcelona.org/es/research/lenka-segura')}}
+
+
+</div>
+
 {% endblock %}
