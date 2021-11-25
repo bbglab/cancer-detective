@@ -31,3 +31,5 @@
     grid-template-columns: repeat(4, 1fr);
     margin: 45px auto ;
 }
+
+li{font-size: 20px;}

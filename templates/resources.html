@@ -18,34 +18,76 @@
 {% endmacro %}
 
 {% block central_content %}
-
     <div class="faq">
             <div class="faq-questions">
                 <h3>Resources</h3>
                 <div>
                     <div class="qlist">
-
                         <ul>
                             <li>
                                 <ul id="general_questions_list">
+                                    <table>
+                                    <tr>
+                                    <td>
                                     <li><a href="#q0">What is Cancer Detective?</a></li>
                                     <li><a href="#q1">Cells</a></li>
                                         <ul>
-                                            <li>Black tea</li>
-                                            <li>Green tea</li>
+                                            <li><a href="#q2">Nucleus</a></li>
+                                            <li><a href="#q3">Cytoplasm</a></li>
+                                            <li><a href="#q4">Ribosomes</a></li>
                                         </ul>
+                                    <li><a href="#q5">The genome</a></li>
+                                        <ul>
+                                            <li><a href="#q6">DNA</a></li>
+                                            <li><a href="#q7">Genes</a></li>
+                                            <li><a href="#q8">RNA</a></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                    <li><a href="#q9">The proteins</a></li>
+                                    <li><a href="#q10">The mutations</a></li>
+                                        <ul>
+                                            <li><a href="#q11">Mutational processes</a></li>
+                                        </ul>
+                                    <li><a href="#q12">Cancer </a></li>
+                                        <ul>
+                                            <li><a href="#q13">Cancer driver mutations</a></li>
+                                            <li><a href="#q14">Cancer driver genes</a></li>
+                                        </ul>
+                                    <li><a href="#q15">Tumors </a></li>
+                                    <li><a href="#q16">Selective advantage </a></li>
+                                    </td>
+                                    <td>
+                                    <li><a href="#q17">Precision cancer medicine </a></li>
+                                        <ul>
+                                            <li><a href="#q18">Targeted therapies</a></li>
+                                        </ul>
+                                    <li><a href="#q19">Biopsy </a></li>
+                                    <li><a href="#q20">Bioinformatics </a></li>
+                                        <ul>
+                                            <li><a href="#q21">Machine learning</a></li>
+                                            <li><a href="#q22">Algorithms</a></li>
+                                            <li><a href="#q23">IntOGen</a></li>
+                                            <li><a href="#q24">BoostDM</a></li>
+                                            <li><a href="#q25">The cancer genome interpreter</a></li>
+                                        </ul>
+                                    </td>
+                                    </tr>
+                                    </table>
                                 </ul>
                             </li>
                         </ul>
                     </div>
 
-                    </div>
+
+                </div>
+
             </div>
 
             <section id="general_questions" class="faq-answers">
 
                 {% call q() %}
-                    <h3 class="answer">What is <b>Cancer Detective</b>?</h3>
+                    <h3 class="answer" >What is <b>Cancer Detective</b>?</h3>
                     <p>
                         <b>Cancer Detective</b> is an analysis simulation based on <a href="https://www.cancergenomeinterpreter.org/home" target="_blank">Cancer Genome Interpreter</a>,
                         for an educational purpose.
@@ -61,7 +103,6 @@
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer"> <b>Nucleus</b></h3>
                     <p>
                         <b>The nucleus</b> is the “control center of the cell”, a membrane-bound organelle found in eukaryotic cells, enclosed by the nuclear envelope,
                         isolating its contents from the cytoplasm; it contains all of the cell's genome (except for the small amount of mitochondrial DNA),
@@ -70,7 +111,6 @@
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer"> <b> Cytoplasm</b></h3>
                     <p>
                         <b>The cytoplasm</b> is  all of the material of eukaryotic cells, enclosed by the cell membrane,
                         except for the cell nucleus; mainly composed of cytosol (a gel-like substance) and the organelles (the cell's internal sub-structures).
@@ -78,7 +118,6 @@
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer"> <b> Ribosomes</b></h3>
                     <p>
                         <b>The ribosomes</b> macromolecular machines that perform biological protein synthesis (mRNA translation).
                     </p>
@@ -93,7 +132,6 @@
 
 
                 {% call q() %}
-                    <h3 class="answer"> <b>DNA</b></h3>
                     <p>
                         <b>The DNA</b> is a molecule composed of two polynucleotide chains that coil around each other to form a double helix,
                         carrying genetic instructions for the development, functioning, growth and reproduction of all known organisms.
@@ -102,14 +140,12 @@
 
 
                 {% call q() %}
-                    <h3 class="answer"> <b> Genes </b></h3>
                     <p>
                         <b>A gene</b> is a basic unit of heredity and a sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein.
                     </p>
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer"> <b> RNA</b></h3>
                     <p>
                         <b>The RNA</b> is a molecule composed of one polynucleotide chain, essential in various biological roles in coding, decoding,
                         regulation and expression of genes; cellular organisms use messenger RNA (mRNA) to convey genetic information that directs synthesis of specific proteins.
@@ -137,7 +173,6 @@
 
 
                 {% call q() %}
-                    <h3 class="answer">  <b> Mutational processes </b></h3>
                     <p>
                         <b>The mutational processes </b> are a set of mechanisms that introduce mutations in the DNA.
                         They can be classified as external (exogenous) or internal (endogenous) processes according to their origin.
@@ -154,16 +189,13 @@
                     </p>
                 {% endcall %}
 
-
                 {% call q() %}
-                    <h3 class="answer">  <b> Cancer driver mutations </b></h3>
                     <p>
                         <b>Cancer driver mutations </b> are mutations that confer selective advantage to the cells bearing them, allowing them to survive and proliferate more.
                     </p>
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer">  <b> Cancer driver genes </b></h3>
                     <p>
                         <b>Cancer driver genes </b> are  genes or proteins that are affected by cancer driver mutations.
                     </p>
@@ -176,14 +208,11 @@
                     </p>
                 {% endcall %}
 
-
-
                 {% call q() %}
                     <h3 class="answer">  <b> Selective advantage </b></h3>
                     <p>
                         Regarding cells, <b>the selective advantage </b> refers to the characteristic that enables them to survive and proliferate better than other cells in a population
                         in a given environment; the basis for evolution by natural selection.
- .
                     </p>
                 {% endcall %}
 
@@ -195,9 +224,9 @@
                     </p>
                 {% endcall %}
                 {% call q() %}
-                    <h3 class="answer">  <b> Targeted therapies  </b></h3>
                     <p>
-                        <b>Targeted therapies  </b> are the type of treatments that use drugs or other substances to identify and attack specific types of cancer cells with less harm to normal cells.
+                        <b>Targeted therapies  </b> are the type of treatments that use drugs or other substances to identify and attack specific
+                        types of cancer cells with less harm to normal cells.
                     </p>
                 {% endcall %}
 
@@ -208,7 +237,6 @@
                         (1) <b>incisional biopsy</b>, in which only a sample of tissue is removed;
                         (2) <b>excisional biopsy</b>, in which an entire lump or suspicious area is removed;
                         and (3) <b>needle biopsy</b>, in which a sample of tissue or fluid is removed with a needle.
- .
                     </p>
                 {% endcall %}
 
@@ -221,7 +249,6 @@
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer">  <b> Machine learning </b></h3>
                     <p>
                         <b>Machine learning </b> is the use and development of computer systems that are able to learn and adapt without following explicit instructions,
                         by using algorithms and statistical models to analyse and draw inferences from patterns in data.
@@ -229,28 +256,25 @@
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer">  <b> Algorithm </b></h3>
                     <p>
                         <b>An algorithm </b> is a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.
                     </p>
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer">  <b> IntOGen </b></h3>
+                    <h3 class="answer">  <b> BBGLab bioinformatic tools </b></h3>
                     <p>
                         <b>IntOGen </b>  is a unified resource that merges information from different statistical methods and identifies cancer driver proteins.
                     </p>
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer">  <b> BoostDM </b></h3>
                     <p>
                         <b>BoostDM </b> is a machine learning algorithm that can predict which mutations within cancer driver proteins are actually driver mutations.
                     </p>
                 {% endcall %}
 
                 {% call q() %}
-                    <h3 class="answer">  <b> The Cancer Genome Interpreter </b></h3>
                     <p>
                         <b>The Cancer Genome Interpreter </b> is a algorithm that uses the data generated by IntOGen and other resources to inform us whether
                         a mutation in a protein is a cancer driver and if there is a specific therapy for cancers with this alteration.
