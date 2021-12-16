@@ -96,6 +96,17 @@ a.skip-intro:hover {
   cursor: pointer;
 }
 
+.pulse_click {
+    opacity: 1;
+    height: 25px;
+    width: 25px;
+    float: left;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--pulse-color);
+    cursor: pointer;
+}
+
 .pulse:hover {
     animation: none;
 }
@@ -114,28 +125,41 @@ a.skip-intro:hover {
 
 
 .popover {
-  opacity: 0;
-  visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
     font-size: 17px;
-  position: absolute;
+    position: absolute;
     border-radius: 20px;
-
     background-color: var(--dark-color);
-  padding: 20px;
-
-    color: var(--light-color)
+    padding: 20px;
+    color: var(--light-color);
+    cursor: text;
 }
 .popover:before {
-  position: absolute;
-  content: "";
-  top: -3px;
-  transition-duration: 0.6s;
-  transition-property: transform;
+    position: absolute;
+    content: "";
+    top: -3px;
+    transition-duration: 0.6s;
+    transition-property: transform;
 }
 .pulse:hover .popover {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0, -20px);
-  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-  z-index:1;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+    z-index:1;
+}
+
+.popover_click {
+    font-size: 17px;
+    position: absolute;
+    border-radius: 20px;
+    background-color: var(--dark-color);
+    padding: 20px;
+    color: var(--light-color);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    z-index:1;
+    cursor: text;
 }
