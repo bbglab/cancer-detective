@@ -53,6 +53,18 @@
   </div>
 {% endmacro %}
 
+{% macro result_card(image, title) %}
+<div>
+    <div>
+        <img src="images/{{ image }}">
+        <div>
+            <h3>
+                {{ title }}
+            </h3>
+        </div>
+    </div>
+</div>
+{% endmacro %}
 {% macro mutation_card(mut) %}
 
     <div class="card-mutations">

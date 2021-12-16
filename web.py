@@ -61,6 +61,18 @@ class Game:
     def resources(self):
         return self._env.get_template("resources.html").render()
 
+    def _get_name_card(self, type):
+        names = {
+            'lung': 'Lung cancer',
+            'skin': 'Skin cancer',
+            'riskFactor1': 'Age',
+            'riskFactor2lung': 'Smoking',
+            'riskFactor2skin': 'Sun exposure',
+            'riskFactor3lung': 'Smoking exposure',
+            'riskFactor3skin': 'Sun protection',
+        }
+        return names[type]
+
     @cherrypy.expose
     def submit(self, **kwargs):
 
@@ -87,8 +99,20 @@ class Game:
         # TODO pass a code to mutations so that the cache works
         df = muts.run(ttype, mutations, code=code)
         data = df.T.to_dict()
+
+        attributes = {}
+        attributes['ttype'] = {'type': kwargs.get("ttype", None),
+                               'name': self._get_name_card(kwargs.get("ttype", None))}
+
+        attributes['riskFactor1'] = {'type': kwargs.get("riskFactor1", None),
+                                     'name': self._get_name_card("riskFactor1")}
+        attributes['riskFactor2'] = {'type': kwargs.get("riskFactor2", None),
+                                     'name': self._get_name_card("riskFactor2" + kwargs.get("ttype", None))}
+        attributes['riskFactor3'] = {'type': kwargs.get("riskFactor3", None),
+                                     'name': self._get_name_card("riskFactor3" + kwargs.get("ttype", None))}
+
         return self._env.get_template("results.html").render(
-            mutations=data)
+            mutations=data, attributes=attributes)
 
 
 def start_server(conf_file=None):

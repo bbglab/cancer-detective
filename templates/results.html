@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% from "utils.html" import info, mutation_card %}
+{% from "utils.html" import info, mutation_card, result_card %}
 
 {% set active_page = '' %}
 
@@ -16,6 +16,17 @@
     <div id="seq-button">
         <button class="show-results" onclick="showResults()">Show results</button>
     </div>
+    <div>
+        {{  result_card(attributes.get('ttype').get('type') + '.svg', attributes.get('ttype').get('name'))  }}
+
+        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor1_' + attributes.get('riskFactor1').get('type') + '.svg',
+                        attributes.get('riskFactor3').get('name'))  }}
+        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor2_' + attributes.get('riskFactor2').get('type') + '.svg',
+                        attributes.get('riskFactor2').get('name'))  }}
+        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor3_' + attributes.get('riskFactor3').get('type') + '.svg',
+                        attributes.get('riskFactor3').get('name'))  }}
+    </div>
+
 </div>
 
 <img class="res " src="images/slides/card_explanation.png" style=" height: 473px;margin: 75px;">
