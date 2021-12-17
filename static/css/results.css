@@ -22,7 +22,7 @@
     }
 }
 .show-results {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 4px 30px;
     display: inline-block;
     color: var(--blue-color);
@@ -83,4 +83,44 @@
 .badge {
     padding: 5px 8px;
     border-radius: 10px;
+}
+
+.card-risk-factors {
+    padding: 2%;
+    margin: auto;
+    height: 340px;
+    width: 65%;
+    position: relative;
+    transform-style: preserve-3d;
+    font-size: 20px;
+    background-color: var(--light-color-w-opacity);
+    border-radius: 20px;
+    box-shadow: 0 5px 40px -10px grey;
+}
+.card-risk-factors2 {
+    padding: 2%;
+    margin: auto;
+    height: 480px;
+    width: 35%;
+    position: relative;
+    transform-style: preserve-3d;
+    font-size: 20px;
+    background-color: var(--light-color-w-opacity);
+    border-radius: 20px;
+    box-shadow: 0 5px 40px -10px grey;
+}
+.result_card_content{
+    padding: 2%;
+    height: 85%;
+    width: 20%;
+    position: relative;
+    transform-style: preserve-3d;
+    font-size: 20px;
+    display: inline-flex;
+    margin: auto;
+}
+.seq{
+    margin: auto;
+    position: relative;
+    padding: 2%;
 }

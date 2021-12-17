@@ -12,7 +12,7 @@
 }
 
 .faq-questions {
-  margin: 0;
+  margin: 55px;
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -20,7 +20,7 @@
   text-decoration: none;
   list-style-type: none;
   border: none;
-  color: var(--blue-color);
+  color: var(--blue-color-dark);
   font-weight: normal;
   margin-bottom: 5px;
 }
@@ -28,6 +28,7 @@
   font-size: 1.2rem;
   margin-top: 0px;
   font-family: "Open Sans", sans-serif;
+  list-style-type: square;
 }
 
 .faq-questions .qlist ul li a {
@@ -37,6 +38,9 @@
 
 .faq-questions .qlist ul li a:hover {
   text-decoration: underline;
+}
+.faq-questions .qlist .topic{
+  color: var(--blue-color-dark);
 }
 
 
