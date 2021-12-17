@@ -4,31 +4,53 @@
 {% set active_page = '' %}
 
 {% block central_content %}
-
-<p class="text-lead">
-    Sequencing mutations...
-</p>
-
-<div class="seq">
-    <div id="seq-spinner"></div>
-
-    <div id="seq-button">
-        <button class="show-results" onclick="showResults()">Show results</button>
-    </div>
-    <div>
-        {{  result_card(attributes.get('ttype').get('type') + '.svg', attributes.get('ttype').get('name'))  }}
+    <div class="card-risk-factors seq">
+    <h3> The characteristics of your sample:</h3>
+        {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
 
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor1_' + attributes.get('riskFactor1').get('type') + '.svg',
-                        attributes.get('riskFactor3').get('name'))  }}
+                        attributes.get('riskFactor1').get('name'))  }}
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor2_' + attributes.get('riskFactor2').get('type') + '.svg',
                         attributes.get('riskFactor2').get('name'))  }}
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor3_' + attributes.get('riskFactor3').get('type') + '.svg',
                         attributes.get('riskFactor3').get('name'))  }}
     </div>
 
+
+
+<div class="seq">
+    <p class="text-lead">
+        Sequencing mutations.
+    </p>
+    <div id="seq-spinner"></div>
+
+    <div id="seq-button">
+        <button class="show-results" onclick="showResults()">Show results</button>
+    </div>
+
+
 </div>
 
-<img class="res " src="images/slides/card_explanation.png" style=" height: 473px;margin: 75px;">
+<div class="res" style="display: flex; margin: auto;width:1300px; margin-top: 75px;">
+    <div class="card-risk-factors2 " >
+        <h3> The characteristics of your sample:</h3>
+        <div style="display: flex; ">
+        {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
+
+        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor1_' + attributes.get('riskFactor1').get('type') + '.svg',
+                        attributes.get('riskFactor1').get('name'))  }}
+        </div>
+        <div style="display: flex;">
+        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor2_' + attributes.get('riskFactor2').get('type') + '.svg',
+                        attributes.get('riskFactor2').get('name'))  }}
+        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor3_' + attributes.get('riskFactor3').get('type') + '.svg',
+                        attributes.get('riskFactor3').get('name'))  }}
+        </div>
+    </div>
+
+<img src="images/slides/card_explanation.png" style=" height: 450px;margin: auto;">
+</div>
+
 <br>
 <h2 class="res">
     The mutations observed in your sample:<br>

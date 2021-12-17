@@ -5,8 +5,7 @@
 {% block central_content %}
 
     <div class="slide" >
-        <div class="arrow">
-        </div>
+
         <div class="slide-content" >
 
             <img src="images/cancer-detective-logo.png" alt="CancerDetective" style="max-height: 170px;"/>
@@ -18,13 +17,14 @@
 
             <div class="buttons-container">
                 <div class="floated">
-                    <a class="skip-intro" href="play">Skip introduction</a>
+                    <a class="buttons_slide1" href="play">Start</a>
+                </div>
+                <div class="floated">
+                    <a class="buttons_slide1" onclick="moveForward(event)"  data-index="1">Learn more</a>
                 </div>
             </div>
         </div>
-        <div class="arrow" onclick="moveForward(event)"  data-index="1" >
-            <i class="icon ion-chevron-right" ></i>
-        </div>
+
 
     </div>
 
