@@ -18,18 +18,13 @@ function showResults() {
     $(".res").show();
 }
 
-$("#info-sequencing").click(function () {
-    swal("The sequencing process", "The sequencing process...");
-});
-
-
 function downloadPDF(mutations) {
     var pdf = new jsPDF('p', 'px', 'a4');
     pdf.setFontSize(20);
     pdf.text('Mutations observed by Cancer Detective', 225, 80, null, null, "center");
     pdf.addPage("a4");
     var results = document.getElementById("results-grid")
-    pdf.addHTML(results, function() {
+    pdf.addHTML(results, () => {
         pdf.save('cancer_detective_results.pdf');
     });
 }

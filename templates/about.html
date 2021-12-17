@@ -4,26 +4,22 @@
 {% set active_page = 'about' %}
 
 {% block central_content %}
-     <div class="about-text" >
-                <table width=1300px >
-                <tr>
-                <td width="20%">
-                <img src="images/cancer-detective-logo.png" alt="CancerDetective" style="max-height: 230px;"/>
-                </td>
-
-                <td width="60%">
-                <p>
-                This website is an educational resource developed by the
-                <a href="https://bbglab.irbbarcelona.org/" target="_blank">Barcelona Biomedical Genomics Lab</a> (BBGLab). <br>
-
-                The BBGLab is a research group dedicated to the computational study of cancer
-                at a genomic level. It is integrated in the Institute for Research in Biomedicine (IRB) in Barcelona.<br> <br>
-                Our research is focused on the study of cancer from a genomics perspective.
-                We are particularly interested in the identification of cancer driver mutations, genes and pathways across tumour types and in the study of the mutational processes across tissues and genomic regions.
-                </p>
-                </td>
-                </tr>
-                </table>
+     <div class="about-text" style="width: 1300px">
+     <div style="width: 20%; margin: auto;">
+         <img src="images/cancer-detective-logo.png" alt="CancerDetective" style="max-height: 230px;"/>
+     </div>
+         <div style="width: 60%; margin: auto;">
+             <p>
+                 This website is an educational resource developed by the
+                 <a href="https://bbglab.irbbarcelona.org/" target="_blank" >Barcelona Biomedical Genomics Lab</a> (BBGLab).
+                 <br> <br>
+                 The BBGLab is a research group dedicated to the computational study of cancer
+                 at a genomic level. It is integrated in the Institute for Research in Biomedicine (IRB) in Barcelona.
+                 <br> <br>
+                 Our research is focused on the study of cancer from a genomics perspective.
+                 We are particularly interested in the identification of cancer driver mutations, genes and pathways across tumour types and in the study of the mutational processes across tissues and genomic regions.
+             </p>
+         </div>
 
         </div>
 
@@ -42,16 +38,22 @@
     {{ people_card('lenka.jpg', 'Lenka Segura', '', 'https://www.irbbarcelona.org/es/research/lenka-segura')}}--->
 
 </div>
-<h1 >People involved in previously in the project:   </h1>
-<ul>
-  <li>Iker Reyes</li>
-  <li>Lenka Segura</li>
-  <li>Laia Abelló</li>
-  <li>Hanna Kranas</li>
-  <li>Ricard Lambea</li>
-  <li>Francisco Martínez</li>
-  <li>Ferran Muiños</li>
-  <li>Winona Oliveros</li>
-</ul>
 
+<div class="formers">
+    <h1 >People involved in previously in the project:</h1>
+    <div class="formers_list">
+    <ul>
+      <li>Iker Reyes</li>
+      <li>Lenka Segura</li>
+      <li>Laia Abelló</li>
+      <li>Hanna Kranas</li>
+    </ul>
+    <ul>
+      <li>Ricard Lambea</li>
+      <li>Francisco Martínez</li>
+      <li>Ferran Muiños</li>
+      <li>Winona Oliveros</li>
+    </ul>
+    </div>
+</div>
 {% endblock %}

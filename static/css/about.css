@@ -4,7 +4,7 @@
     text-align: justify;
     text-justify: inter-word;
     line-height:32px;
-    margin: 85px;
+    margin: 35px auto;
     display: flex;
     justify-content: center;
 }
@@ -13,7 +13,6 @@
 .card-people {
     padding: 7px;
     margin: 15px;
-    height: 400px;
     width: 250px;
     position: relative;
     transform-style: preserve-3d;
@@ -29,7 +28,34 @@
     padding: 0;
     list-style: none;
     grid-template-columns: repeat(4, 1fr);
-    margin: 45px auto ;
+    margin: 15px auto ;
 }
 
 li{font-size: 20px;}
+
+.formers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.formers_list {
+    display: flex;
+    flex-direction: row;
+}
+
+.formers .formers_list ul li {
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+    color: var(--blue-color-dark);
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 20px;
+    margin-top: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
