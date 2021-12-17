@@ -54,13 +54,13 @@
 {% endmacro %}
 
 {% macro result_card(image, title) %}
-<div>
+<div class="result_card_content">
     <div>
-        <img src="images/{{ image }}">
+        <img src="images/{{ image }}" width="70%" >
         <div>
-            <h3>
+            <h4>
                 {{ title }}
-            </h3>
+            </h4>
         </div>
     </div>
 </div>
@@ -74,7 +74,7 @@
             </dt>
             <dd>
                 <a target='_tab' href='http://www.genecards.org/cgi-bin/carddisp.pl?gene={{ mut['gene'] }}'
-                    style="color: #F18914">
+                    style="color: #F18914" title="{{ mut['gene'] }}">
                     <strong>{{ mut['gene'] }}</strong>
                 </a>
             </dd>
@@ -124,9 +124,9 @@
             </h3>
         </dt>
         <dt>
-            <h3>
+            <h4>
                {{ position }}
-            </h3>
+            </h4>
         </dt>
     </dl>
 </div>

@@ -17,15 +17,15 @@
     cursor: pointer;
 }
 
-a.skip-intro {
+.buttons_slide1 {
     color: var(--blue-color);
-    font-size: 30px;
+    font-size: 40px;
     align-items: center;
     text-align: center;
     text-decoration: none;
 }
-a.skip-intro:hover {
-    text-decoration: underline solid var(--blue-color);
+.buttons_slide1:hover {
+    color: var(--blue-color-dark);
 }
 
 .play {
