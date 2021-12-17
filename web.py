@@ -98,6 +98,8 @@ class Game:
 
         # TODO pass a code to mutations so that the cache works
         df = muts.run(ttype, mutations, code=code)
+        df['targeted_therapy_approved'] = df['targeted_therapy_approved'].astype(str)
+
         data = df.T.to_dict()
 
         attributes = {}

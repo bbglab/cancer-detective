@@ -47,6 +47,8 @@
     list-style: none;
     grid-template-columns: repeat(3, 1fr);
     margin: 20px auto;
+    background-color: var(--light-color);
+    border-radius: 5%;
 }
 
 @media screen and (max-width: 950px) {
@@ -69,7 +71,6 @@
     position: relative;
     transform-style: preserve-3d;
     font-size: 20px;
-    background-color: var(--light-color-w-opacity);
     border-radius: 20px;
     box-shadow: 0 5px 40px -10px grey;
 }

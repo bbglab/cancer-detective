@@ -6,7 +6,7 @@
 {% block central_content %}
 
 <p class="text-lead">
-    Sequencing mutations.
+    Sequencing mutations...
 </p>
 
 <div class="seq">
@@ -33,16 +33,20 @@
 <h2 class="res">
     The mutations observed in your sample:<br>
 </h2>
-<div class="res grid">
+<br>
+<div class="res">
+    <a onclick="downloadPDF({{ mutations.values()|list }})">
+    Download results as PDF
+    </a>
+    </div>
+<br>
+<div class="res grid" id="results-grid" style="background-color: white">
     {% for mut in mutations.values() %}
         {{ mutation_card(mut) }}
     {% endfor %}
-
 </div>
 
-
 {% endblock %}
-
 
 
 {% block script %}
