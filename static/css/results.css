@@ -99,9 +99,9 @@
     box-shadow: 0 5px 40px -10px grey;
 }
 .card-risk-factors2 {
-    padding: 2%;
-    margin: auto;
-    height: 480px;
+    padding: 1%;
+    margin: 0 auto;
+    height: 420px;
     width: 35%;
     position: relative;
     transform-style: preserve-3d;
@@ -111,7 +111,6 @@
     box-shadow: 0 5px 40px -10px grey;
 }
 .result_card_content{
-    padding: 2%;
     height: 85%;
     width: 20%;
     position: relative;
@@ -124,4 +123,15 @@
     margin: auto;
     position: relative;
     padding: 2%;
+}
+.download_results {
+    color: var(--blue-color);
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.download_results:hover {
+    color: var(--blue-color-dark);
 }
