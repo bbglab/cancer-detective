@@ -61,10 +61,11 @@
                 </div>-->
 
             </div>
-            <p>
+            <p><!--
                 Two samples have arrived at the lab: one is labelled as lung cancer and the other one as skin cancer.
                 <br>
-                To start the analysis, choose one of them
+                To start the analysis, choose one of them-->
+                Select the type of sample you want to analyze:
             </p>
 
             <div class="cards-container">
@@ -82,16 +83,15 @@
         <div class="tab" data-index="1">
 
             <p class="text-lead">
-                Patient risk factors
+                Patient characteristics: Age <br>
                 {{ info('ttype') }}
             </p>
-
-            <p>
-                Please, select the level of exposure of your patient to known risk factors of the cancer type
+            <p class="explanation_exposure">
+                Since mutations accumulate over time, older cancer
+                <br>  patients tend to present a higher number of mutations.
             </p>
-
-            <p class="text-lead">
-                Age
+            <p>
+                Please, select the age of your patient.
             </p>
 
             <div class="branch-skin">
@@ -99,15 +99,15 @@
                 <div class="cards-container">
                     <div>
                         {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_1', 1, 'skin/riskFactor1_1.svg', 'Young',
-                        'Generally, cancers of young people have few mutations') }}
+                        '') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_2', 2, 'skin/riskFactor1_2.svg', 'Middle age',
-                        'Generally, cancers of middle age people will have more mutations than those from young people, but less than the elderly') }}
+                        '') }}
                     </div>
                     <div>
-                        {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_3', 3, 'skin/riskFactor1_3.svg','',
-                        'Generally, cancers of aged people have more mutations than those of younger age') }}
+                        {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_3', 3, 'skin/riskFactor1_3.svg','Elderly',
+                        '') }}
                     </div>
                 </div>
             </div>
@@ -117,15 +117,15 @@
                 <div class="cards-container">
                     <div>
                         {{ card('riskFactor1', 'LUNG_RISK_FACTOR_1_1', 1, 'lung/riskFactor1_1.svg', 'Young',
-                        'Mutations accumulate over time. Young people do not have many mutations accumulated.') }}
+                        '') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'LUNG_RISK_FACTOR_1_2', 2, 'lung/riskFactor1_2.svg', 'Middle age',
-                        'Mutations accumulate over time. Middle aged people do accumulate quite a few.') }}
+                        '') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'LUNG_RISK_FACTOR_1_3', 3, 'lung/riskFactor1_3.svg', 'Elderly',
-                        'Mutations accumulate over time. Elderly people have a lot of them.') }}
+                        '') }}
                     </div>
                 </div>
             </div>
@@ -136,38 +136,45 @@
         <!-- risk factor II -->
         <div class="tab">
 
-            <p class="text-lead">
-                Patient risk factors
-                {{ info('ttype') }}
-            </p>
-
-            <p>
-                Please, select the level of exposure of your patient to known risk factors of the cancer type
-            </p>
-
             <div class="branch-skin">
-
                 <p class="text-lead">
-                    Sun exposure
+                    Patient sun exposure
+                    {{ info('ttype') }}
+                </p>
+                <p class="explanation_exposure">
+                    A higher exposure to UV radiation is related <br>
+                    to a higher number of mutations. [cite]
+                </p>
+                <p>
+                    Please, select the level of sun exposure of your patient.
                 </p>
 
                 <div class="cards-container">
                     <div>
-                        {{ card('riskFactor2', 'SKIN_RISK_FACTOR_2_1', 1, 'skin/riskFactor2_1.svg', 'Low sun exposure', 'The patient exposure to UV radiation is below the average. The number of tumor mutations attributed to sun exposure is likely to be low') }}
+                        {{ card('riskFactor2', 'SKIN_RISK_FACTOR_2_1', 1, 'skin/riskFactor2_1.svg', 'Low sun exposure',
+                        'The patient exposure to UV radiation is below the average.') }}
                     </div>
                     <div>
-                        {{ card('riskFactor2', 'SKIN_RISK_FACTOR_2_2', 2, 'skin/riskFactor2_2.svg', 'Moderate sun exposure', 'The patient exposure to UV radiation is on the average. The number of tumor mutations attributed to sun exposure is likely to be moderate') }}
+                        {{ card('riskFactor2', 'SKIN_RISK_FACTOR_2_2', 2, 'skin/riskFactor2_2.svg', 'Moderate sun exposure',
+                        'The patient exposure to UV radiation is on the average.') }}
                     </div>
                     <div>
-                        {{ card('riskFactor2', 'SKIN_RISK_FACTOR_2_3', 3, 'skin/riskFactor2_3.svg', 'High sun exposure', 'The patient exposure to UV radiation is above the average. The number of tumor mutations attributed to sun exposure is likely to be high') }}
+                        {{ card('riskFactor2', 'SKIN_RISK_FACTOR_2_3', 3, 'skin/riskFactor2_3.svg', 'High sun exposure',
+                        'The patient exposure to UV radiation is above the average.') }}
                     </div>
                 </div>
             </div>
 
             <div class="branch-lung">
-
                 <p class="text-lead">
-                    Smoking
+                    Patient's smoking habits
+                    {{ info('ttype') }}
+                </p>
+                <p class="explanation_exposure">
+                    Smokers tend to present a higher number of mutations. [cite]
+                </p>
+                <p>
+                    Please, select the smoking habits of your patient.
                 </p>
 
                 <div class="cards-container">
@@ -192,23 +199,18 @@
         <!-- risk factor III -->
         <div class="tab">
 
-            <p class="text-lead">
-                Patient risk factors
-                {{ info('ttype') }}
-            </p>
-
-            <p>
-                Please, select the level of exposure of your patient to known risk factors of the cancer type.
-            </p>
-
             <div class="branch-skin">
+
                 <p class="text-lead">
-                    Sun protection
+                    Patient's sun protection
+                    {{ info('ttype') }}
                 </p>
-                <br>
-                <p style="margin: auto">
-                    The number of tumor mutations attributed to sun exposure is likely to be lower those with high protection
-                    than those with a low or non-protection.
+                <p class="explanation_exposure">
+                    The number of tumor mutations attributed to sun exposure  is likely to <br>
+                    be lower those with high protection than those with a low or non-protection. [cite]
+                </p>
+                <p>
+                    Please, select the use of sun protection of your patient.
                 </p>
 
                 <div class="cards-container">
@@ -228,9 +230,15 @@
             </div>
 
             <div class="branch-lung">
-
                 <p class="text-lead">
-                    Smoking exposure
+                    Patient's exposure to smoke
+                    {{ info('ttype') }}
+                </p>
+                <p class="explanation_exposure">
+                    A high exposition to smoke can cause mutations in lung cells. [cite]
+                </p>
+                <p>
+                    Please, select the smoke exposition of your patient.
                 </p>
 
                 <div class="cards-container">
@@ -244,7 +252,7 @@
                     </div>
                     <div>
                         {{ card('riskFactor3', 'LUNG_RISK_FACTOR_3_3', 3, 'lung/riskFactor3_3.svg',
-                        'Passive smoker', 'Close relatives/friends are smoker and you are with them regularly') }}
+                        'Passive smoker', 'Close relatives/friends are smokers and you are with them regularly') }}
                     </div>
                 </div>
             </div>

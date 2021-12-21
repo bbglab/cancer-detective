@@ -40,4 +40,9 @@ svg.info-icon:hover {
     box-sizing: border-box;
     justify-content: center;
 }
-
+p{
+    font-size: 16pt;
+}
+p.explanation_exposure{
+    font-size: 18pt;
+}
