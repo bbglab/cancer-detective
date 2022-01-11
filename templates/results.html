@@ -5,7 +5,7 @@
 
 {% block central_content %}
 
-    <div class="card-risk-factors seq">
+    <div class="card-risk-factors seq" style="margin: 4% auto auto auto;">
     <h3> The characteristics of your sample:</h3>
         {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
 
@@ -21,14 +21,20 @@
     <p class="text-lead">
         Sequencing mutations...
     </p>
-    <div id="seq-spinner"></div>
+    <div id="seq-spinner">
+        <img src="images/slides/sequencer.gif" alt="Sequencer"/>
+
+        <img src="images/slides/computer.gif" alt="Sequencer"/>
+    </div>
 
     <div id="seq-button">
         <button class="show-results" onclick="showResults()">Show results</button>
     </div>
 </div>
 
-<div class="res" style="display: flex; width:1300px; margin: 45px auto auto auto;">
+
+<div id="res">
+<div style="display: flex; width:1300px; margin: 4% auto auto auto;">
     <div class="card-risk-factors2 " >
         <h3> The characteristics of your sample:</h3>
         <div style="display: flex; ">
@@ -49,22 +55,23 @@
 </div>
 
 <br>
-<h2 class="res">
+<h2>
     The mutations observed in your sample:<br>
 </h2>
 <br>
-<div class="res">
+<div>
     <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }})">
         Download results as PDF
     </a>
     </div>
 <br>
-<div class="res grid" id="results-grid">
+<div class="grid" id="results-grid">
     {% for mut in mutations.values() %}
         {{ mutation_card(mut) }}
     {% endfor %}
 </div>
 
+</div>
 {% endblock %}
 
 

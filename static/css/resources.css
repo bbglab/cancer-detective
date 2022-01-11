@@ -42,6 +42,7 @@
 }
 .faq-questions .qlist .topic{
   color: var(--blue-color-dark);
+  font-weight: bold;
 }
 
 

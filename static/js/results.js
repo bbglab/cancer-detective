@@ -3,19 +3,19 @@ elem.classList.remove("nav-item")
 
 $( document ).ready(function() {
     $("#seq-button").hide();
-    $(".res").hide();
+    $("#res").hide();
 
     setTimeout(function() {
             $("#seq-spinner").hide();
             $("#seq-button").show();
             $(".text-lead").hide();
         },
-        3500);
+        4500);
 });
 
 function showResults() {
     $(".seq").hide();
-    $(".res").show();
+    $("#res").show();
 }
 
 function downloadPDF(mutations) {
