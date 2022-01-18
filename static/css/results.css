@@ -22,7 +22,7 @@
         -webkit-transform: rotate(360deg);
     }
 }
-.show-results {
+.results-button {
     font-size: 2rem;
     padding: 4px 30px;
     display: inline-block;
@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-.show-results:hover {
+.results-button:hover {
     padding: 8px 34px;
     background: var(--blue-color);
     color: var(--light-color);

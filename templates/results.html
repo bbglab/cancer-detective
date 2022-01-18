@@ -18,17 +18,41 @@
     </div>
 
 <div class="seq">
+    <div id="start">
+        <button class="results-button" onclick="show_sequencer()">Start DNA <br> sequencing</button>
+    </div>
+
+
+    <div id="step1">
     <p class="text-lead">
         Sequencing mutations...
     </p>
     <div id="seq-spinner">
         <img src="images/slides/sequencer.gif" alt="Sequencer"/>
-
-        <img src="images/slides/computer.gif" alt="Sequencer"/>
+    </div>
     </div>
 
-    <div id="seq-button">
-        <button class="show-results" onclick="showResults()">Show results</button>
+
+    <div id="step2">
+    <p class="text-lead">
+        Mutations ready
+    </p>
+        <img src="images/cancer-detective-logo.png" alt="computer"/>
+        <button class="results-button" onclick="show_computer()">Find drivers and <br> targeted therapy</button>
+    </div>
+
+    <div id="step3">
+    <p class="text-lead">
+        Performing analysis...
+    </p>
+    <div id="seq-spinner">
+        <img src="images/slides/computer.gif" alt="drivers analysis"/>
+        <img src="images/slides/computer.gif" alt="drivers analysis"/>
+    </div>
+    </div>
+
+    <div id="step4">
+        <button class="results-button" onclick="showResults()">Show results</button>
     </div>
 </div>
 

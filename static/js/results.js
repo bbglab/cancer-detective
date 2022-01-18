@@ -2,16 +2,32 @@ const elem = document.getElementById("play")
 elem.classList.remove("nav-item")
 
 $( document ).ready(function() {
-    $("#seq-button").hide();
+    $("#step1").hide();
+    $("#step2").hide();
+    $("#step3").hide();
+    $("#step4").hide();
     $("#res").hide();
+});
 
+function show_sequencer() {
+    $("#start").hide();
+    $("#step1").show();
     setTimeout(function() {
-            $("#seq-spinner").hide();
-            $("#seq-button").show();
-            $(".text-lead").hide();
+            $("#step1").hide();
+            $("#step2").show();
         },
         4500);
-});
+}
+
+function show_computer() {
+    $("#step2").hide();
+    $("#step3").show();
+    setTimeout(function() {
+            $("#step3").hide();
+            $("#step4").show();
+        },
+        4500);
+}
 
 function showResults() {
     $(".seq").hide();
