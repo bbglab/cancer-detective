@@ -68,20 +68,23 @@
 
 
 <div id="res">
-<div style="display: flex; width:1300px; margin: 4% auto auto auto;">
+<div style="display: flex; width:1300px; margin: 2% auto auto auto;">
     <div class="card-risk-factors2 " >
         <h3> The characteristics of your sample:</h3>
-        <div style="display: flex; ">
+        <div style="display: flex; margin: 2%">
         {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
 
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor1_' + attributes.get('riskFactor1').get('type') + '.svg',
-                        attributes.get('riskFactor1').get('name'))  }}
+                        attributes.get('riskFactor1').get('name'),
+                        attributes.get('riskFactor1').get('description'))  }}
         </div>
-        <div style="display: flex;">
+        <div style="display: flex; margin: 2%">
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor2_' + attributes.get('riskFactor2').get('type') + '.svg',
-                        attributes.get('riskFactor2').get('name'))  }}
+                        attributes.get('riskFactor2').get('name'),
+                        attributes.get('riskFactor2').get('description'))  }}
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor3_' + attributes.get('riskFactor3').get('type') + '.svg',
-                        attributes.get('riskFactor3').get('name'))  }}
+                        attributes.get('riskFactor3').get('name'),
+                        attributes.get('riskFactor3').get('description'))  }}
         </div>
     </div>
 

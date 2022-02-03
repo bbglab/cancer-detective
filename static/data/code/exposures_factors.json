@@ -1,0 +1,20 @@
+{
+  "lung::riskFactor1_1": "Young (1-20 years old)",
+  "lung::riskFactor1_2": "Middle-aged adult (21-60 years old)",
+  "lung::riskFactor1_3": "Old adult (61 or older)",
+  "lung::riskFactor2_1": "Non-smoker",
+  "lung::riskFactor2_2": "Occasional smoker",
+  "lung::riskFactor2_3": "Regular smoker",
+  "lung::riskFactor3_1": "Never passive smoker",
+  "lung::riskFactor3_2": "Occasional passive smoker",
+  "lung::riskFactor3_3": "Regular passive smoker",
+  "skin::riskFactor1_1": "Young (1-20 years old)",
+  "skin::riskFactor1_2": "Middle-aged adult (20-60 years old)",
+  "skin::riskFactor1_3": "Old adult (61 or older)",
+  "skin::riskFactor2_1": "Low",
+  "skin::riskFactor2_2": "Moderate",
+  "skin::riskFactor2_3": "High",
+  "skin::riskFactor3_1": "High",
+  "skin::riskFactor3_2": "Moderate",
+  "skin::riskFactor3_3": "Low"
+}

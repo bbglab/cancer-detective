@@ -1,7 +1,10 @@
+import json
+import os
 from os import path
 
 import cherrypy
 import random
+
 from configobj import ConfigObj
 from jinja2 import Environment, FileSystemLoader
 from validate import Validator
@@ -32,7 +35,11 @@ class Game:
             lstrip_blocks=True,
         )
         env.globals["path_info"] = lambda: cherrypy.request.path_info
+        cherrypy.config.update({'error_page.404': self._error_page, 'error_page.422': self._error_page})
         self._env = env
+
+    def _error_page(self, status, message, traceback, version):
+        return self._env.get_template("error.html").render(status=status, message=message)
 
     @property
     def mount_point(self):
@@ -74,6 +81,25 @@ class Game:
         }
         return names[type]
 
+    def _get_attributes(self, kwargs):
+        print(_THIS_FOLDER)
+        f = open(_THIS_FOLDER + "/static/data/code/exposures_factors.json", 'r')
+        df = json.load(f)
+        return {'ttype': {'type': kwargs.get("ttype", None),
+                          'name': self._get_name_card(kwargs.get("ttype", None))},
+                'riskFactor1': {'type': kwargs.get("riskFactor1", None),
+                                'name': self._get_name_card("riskFactor1"),
+                                'description': df[
+                                    kwargs.get("ttype", None) + "::riskFactor1_" + kwargs.get("riskFactor1", None)]},
+                'riskFactor2': {'type': kwargs.get("riskFactor2", None),
+                                'name': self._get_name_card("riskFactor2" + kwargs.get("ttype", None)),
+                                'description': df[
+                                    kwargs.get("ttype", None) + "::riskFactor2_" + kwargs.get("riskFactor2", None)]},
+                'riskFactor3': {'type': kwargs.get("riskFactor3", None),
+                                'name': self._get_name_card("riskFactor3" + kwargs.get("ttype", None)),
+                                'description': df[
+                                    kwargs.get("ttype", None) + "::riskFactor3_" + kwargs.get("riskFactor3", None)]}}
+
     @cherrypy.expose
     def submit(self, **kwargs):
 
@@ -103,61 +129,55 @@ class Game:
 
         data = df.T.to_dict()
 
-        attributes = {}
-        attributes['ttype'] = {'type': kwargs.get("ttype", None),
-                               'name': self._get_name_card(kwargs.get("ttype", None))}
+        attributes = self._get_attributes(kwargs)
 
-        attributes['riskFactor1'] = {'type': kwargs.get("riskFactor1", None),
-                                     'name': self._get_name_card("riskFactor1")}
-        attributes['riskFactor2'] = {'type': kwargs.get("riskFactor2", None),
-                                     'name': self._get_name_card("riskFactor2" + kwargs.get("ttype", None))}
-        attributes['riskFactor3'] = {'type': kwargs.get("riskFactor3", None),
-                                     'name': self._get_name_card("riskFactor3" + kwargs.get("ttype", None))}
+        questions_results = []
+        passenger_muts = df[df['driver_passenger'] == 'passenger']['mutation_id'].to_list()
+        driver_muts = df[df['driver_passenger'] == 'driver']['mutation_id'].to_list()
 
-        questions_results=[]
-        passenger_muts=df[df['driver_passenger']=='passenger']['mutation_id'].to_list()
-        driver_muts=df[df['driver_passenger']=='driver']['mutation_id'].to_list()
-        #question 1
-        questions_results.append({'question':'How many drivers were found in your sample?',
-                                  'answers':[{'answer': mutations, 'correct': False},
-                                            {'answer': len(driver_muts), 'correct': True},
-                                            {'answer': 0, 'correct': False},
-                                            {'answer': len(df[df['driver_passenger']=='passenger']), 'correct': False},
-                                            {'answer': len(df[df['driver_passenger'] == 'driver'])+1,'correct': False}]
-                                })
+        # Question 1
+        questions_results.append({'question': 'How many drivers were found in your sample?',
+                                  'answers': [{'answer': mutations, 'correct': False},
+                                              {'answer': len(driver_muts), 'correct': True},
+                                              {'answer': 0, 'correct': False},
+                                              {'answer': len(df[df['driver_passenger'] == 'passenger']),
+                                               'correct': False},
+                                              {'answer': len(df[df['driver_passenger'] == 'driver']) + 1,
+                                               'correct': False}]
+                                  })
 
-        #question 2
-        questions_results.append({'question':'Which of these mutations is a driver mutation?',
-                                  'answers':[{'answer': 'There are no driver mutations', 'correct': False},
-                                            {'answer': passenger_muts[0].split('_')[1], 'correct': False},
-                                            {'answer': passenger_muts[-1].split('_')[1], 'correct': False},
-                                            {'answer': driver_muts[0].split('_')[1], 'correct': True}]
-                                })
-        #question 3
-        questions_results.append({'question':'Which of these genes is mutated in your sample?',
-                                  'answers':[{'answer': driver_muts[0].split('_')[1], 'correct': False},
-                                            {'answer': passenger_muts[0].split('_')[1], 'correct': False},
-                                            {'answer': passenger_muts[-1].split('_')[0], 'correct': True},
-                                            {'answer': 'None of the above', 'correct': False}]
-                                })
-        #question 4
-        df_treatment=df.dropna(axis=0,subset=['targeted_therapy'])
-        other_therapies=random.sample(set(['Dabrafenib','Erlotinib','Rociletinib,HM61713','Afatinib','Dasatinib',
-                                            'Dabrafenib;Trametinib','Vemurafenib','Sorafenib'
-                                            ]) - set(df_treatment['targeted_therapy'].to_list()),3)
+        # Question 2
+        questions_results.append({'question': 'Which of these mutations is a driver mutation?',
+                                  'answers': [{'answer': 'There are no driver mutations', 'correct': False},
+                                              {'answer': passenger_muts[0].split('_')[1], 'correct': False},
+                                              {'answer': passenger_muts[-1].split('_')[1], 'correct': False},
+                                              {'answer': driver_muts[0].split('_')[1], 'correct': True}]
+                                  })
+        # Question 3
+        questions_results.append({'question': 'Which of these genes is mutated in your sample?',
+                                  'answers': [{'answer': driver_muts[0].split('_')[1], 'correct': False},
+                                              {'answer': passenger_muts[0].split('_')[1], 'correct': False},
+                                              {'answer': passenger_muts[-1].split('_')[0], 'correct': True},
+                                              {'answer': 'None of the above', 'correct': False}]
+                                  })
+        # Question 4
+        df_treatment = df.dropna(axis=0, subset=['targeted_therapy'])
+        other_therapies = random.sample(
+            {'Dabrafenib', 'Erlotinib', 'Rociletinib,HM61713', 'Afatinib', 'Dasatinib', 'Dabrafenib;Trametinib',
+             'Vemurafenib', 'Sorafenib'} - set(df_treatment['targeted_therapy'].to_list()), 3)
 
-        questions_results.append({'question':'Which treatments of personalised medicine could be used in this patient?',
-                                  'answers':[{'answer': other_therapies[0], 'correct': False},
-                                            {'answer': other_therapies[1], 'correct': False},
-                                            {'answer': df_treatment['targeted_therapy'].to_list()[0], 'correct': True},
-                                            {'answer': other_therapies[2], 'correct': False}]
-                                })
+        questions_results.append(
+            {'question': 'Which treatments of personalised medicine could be used in this patient?',
+             'answers': [{'answer': other_therapies[0], 'correct': False},
+                         {'answer': other_therapies[1], 'correct': False},
+                         {'answer': df_treatment['targeted_therapy'].to_list()[0], 'correct': True},
+                         {'answer': other_therapies[2], 'correct': False}]
+             })
         return self._env.get_template("results.html").render(
-            mutations=data, attributes=attributes,questions_results=questions_results)
+            mutations=data, attributes=attributes, questions_results=questions_results)
 
 
 def start_server(conf_file=None):
-
     if conf_file is None:
         conf_file = path.join(_THIS_FOLDER, "conf", "game.cfg")
         conf_file = conf_file if path.exists(conf_file) else None

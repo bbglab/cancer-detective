@@ -1,1 +1,184 @@
-[{"answers": [{"answer": "The branch of biology that studies the genomes of tumours", "correct": true}, {"answer": "The olympic games of ancient Greece", "correct": false}, {"answer": "The study of forensics by the police at a crime scene", "correct": false}], "question": "Cancer Genomics is\u2026"}, {"answers": [{"answer": "Something that gives you superpowers", "correct": false}, {"answer": "An error or a change in the DNA sequence of a cell", "correct": true}, {"answer": "Something found on a crime scene", "correct": false}], "question": "What is a mutation?"}, {"answers": [{"answer": "The basic units of our bodies", "correct": true}, {"answer": "The basic information to build the human body", "correct": false}, {"answer": "A piece of our skin", "correct": false}, {"answer": "A lego block", "correct": false}], "question": "What is a cell?"}, {"answers": [{"answer": "Nucleus", "correct": false}, {"answer": "Cytoplasm", "correct": false}, {"answer": "Ribosomes", "correct": false}, {"answer": "Meme", "correct": true}], "question": "Which of the following is not a part of an eukaryotic cell"}, {"answers": [{"answer": "It carries the genetic instructions for the development, functioning, growth and reproduction of all known organisms", "correct": true}, {"answer": "DNA is a company that creates personalised medicine for cancer patients", "correct": false}, {"answer": "Instructions to cook a perfect cake", "correct": false}], "question": "What is the function of the DNA?"}, {"answers": [{"answer": "Exposure to UV light", "correct": false}, {"answer": "Aging", "correct": false}, {"answer": "Tobacco", "correct": false}, {"answer": "Dancing", "correct": true}], "question": "Which mechanism does not lead to a mutation (produce mutations)?"}, {"answers": [{"answer": "All cancer mutations are driver mutations", "correct": false}, {"answer": "Cancer driver mutations confer selective advantage to the cells bearing them", "correct": true}, {"answer": "Driver mutations receive their name because they were discovered by a taxi driver", "correct": false}], "question": "Which of the following sentences is correct regarding driver mutations"}, {"answers": [{"answer": "Cancer is a very simple disease and all tumours are the same regardless of the organ they grow in", "correct": false}, {"answer": "Cancer is a group of diseases characterized by the uncontrolled growth and proliferation of cells within the body", "correct": true}, {"answer": "Cancer is an infectious disease caused by a tropical mosquito bite", "correct": false}], "question": "Cancer"}, {"answers": [{"answer": "are the type of treatments that use drugs or other substances to identify and attack specific types of cancer cells with Iless harm to normal cells", "correct": true}, {"answer": "is the use and development of computer systems that are able to learn and adapt without following explicit instructions, by using algorithms and statistical models to analyse and draw inferences from patterns in data", "correct": false}], "question": "Targeted therapies"}, {"answers": [{"answer": "Intogen", "correct": false}, {"answer": "BoostDM", "correct": false}, {"answer": "Cancer Genome Interpreter", "correct": false}, {"answer": "Bionstagram", "correct": true}], "question": "What of the following bioinformatic tools was not developed by the BBG Lab?"}]
+[
+  {
+    "answers": [
+      {
+        "answer": "The branch of biology that studies the genomes of tumours",
+        "correct": true
+      },
+      {
+        "answer": "The olympic games of ancient Greece",
+        "correct": false
+      },
+      {
+        "answer": "The study of forensics by the police at a crime scene",
+        "correct": false
+      }
+    ],
+    "question": "Cancer Genomics is\u2026"
+  },
+  {
+    "answers": [
+      {
+        "answer": "Something that gives you superpowers",
+        "correct": false
+      },
+      {
+        "answer": "An error or a change in the DNA sequence of a cell",
+        "correct": true
+      },
+      {
+        "answer": "Something found on a crime scene",
+        "correct": false
+      }
+    ],
+    "question": "What is a mutation?"
+  },
+  {
+    "answers": [
+      {
+        "answer": "The basic units of our bodies",
+        "correct": true
+      },
+      {
+        "answer": "The basic information to build the human body",
+        "correct": false
+      },
+      {
+        "answer": "A piece of our skin",
+        "correct": false
+      },
+      {
+        "answer": "A lego block",
+        "correct": false
+      }
+    ],
+    "question": "What is a cell?"
+  },
+  {
+    "answers": [
+      {
+        "answer": "Nucleus",
+        "correct": false
+      },
+      {
+        "answer": "Cytoplasm",
+        "correct": false
+      },
+      {
+        "answer": "Ribosomes",
+        "correct": false
+      },
+      {
+        "answer": "Meme",
+        "correct": true
+      }
+    ],
+    "question": "Which of the following is not a part of an eukaryotic cell"
+  },
+  {
+    "answers": [
+      {
+        "answer": "It carries the genetic instructions for the development, functioning, growth and reproduction of all known organisms",
+        "correct": true
+      },
+      {
+        "answer": "DNA is a company that creates personalised medicine for cancer patients",
+        "correct": false
+      },
+      {
+        "answer": "Instructions to cook a perfect cake",
+        "correct": false
+      }
+    ],
+    "question": "What is the function of the DNA?"
+  },
+  {
+    "answers": [
+      {
+        "answer": "Exposure to UV light",
+        "correct": false
+      },
+      {
+        "answer": "Aging",
+        "correct": false
+      },
+      {
+        "answer": "Tobacco",
+        "correct": false
+      },
+      {
+        "answer": "Dancing",
+        "correct": true
+      }
+    ],
+    "question": "Which mechanism does not lead to a mutation (produce mutations)?"
+  },
+  {
+    "answers": [
+      {
+        "answer": "All cancer mutations are driver mutations",
+        "correct": false
+      },
+      {
+        "answer": "Cancer driver mutations confer selective advantage to the cells bearing them",
+        "correct": true
+      },
+      {
+        "answer": "Driver mutations receive their name because they were discovered by a taxi driver",
+        "correct": false
+      }
+    ],
+    "question": "Which of the following sentences is correct regarding driver mutations"
+  },
+  {
+    "answers": [
+      {
+        "answer": "Cancer is a very simple disease and all tumours are the same regardless of the organ they grow in",
+        "correct": false
+      },
+      {
+        "answer": "Cancer is a group of diseases characterized by the uncontrolled growth and proliferation of cells within the body",
+        "correct": true
+      },
+      {
+        "answer": "Cancer is an infectious disease caused by a tropical mosquito bite",
+        "correct": false
+      }
+    ],
+    "question": "Cancer"
+  },
+  {
+    "answers": [
+      {
+        "answer": "are the type of treatments that use drugs or other substances to identify and attack specific types of cancer cells with Iless harm to normal cells",
+        "correct": true
+      },
+      {
+        "answer": "is the use and development of computer systems that are able to learn and adapt without following explicit instructions, by using algorithms and statistical models to analyse and draw inferences from patterns in data",
+        "correct": false
+      }
+    ],
+    "question": "Targeted therapies"
+  },
+  {
+    "answers": [
+      {
+        "answer": "Intogen",
+        "correct": false
+      },
+      {
+        "answer": "BoostDM",
+        "correct": false
+      },
+      {
+        "answer": "Cancer Genome Interpreter",
+        "correct": false
+      },
+      {
+        "answer": "Bionstagram",
+        "correct": true
+      }
+    ],
+    "question": "What of the following bioinformatic tools was not developed by the BBG Lab?"
+  }
+]

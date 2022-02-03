@@ -102,8 +102,6 @@
 .card-risk-factors2 {
     padding: 1%;
     margin: 0 auto;
-    height: 450px;
-    width: 35%;
     position: relative;
     transform-style: preserve-3d;
     font-size: 20px;
@@ -113,7 +111,6 @@
 }
 .result_card_content{
     height: 85%;
-    width: 20%;
     position: relative;
     transform-style: preserve-3d;
     font-size: 20px;

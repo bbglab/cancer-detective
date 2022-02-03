@@ -53,7 +53,7 @@
   </div>
 {% endmacro %}
 
-{% macro result_card(image, title) %}
+{% macro result_card(image, title, description) %}
 <div class="result_card_content">
     <div>
         <img src="images/{{ image }}" width="70%" >
@@ -61,6 +61,9 @@
             <h4>
                 {{ title }}
             </h4>
+            <p style="font-size: 15px;">
+                {{ description }}
+            </p>
         </div>
     </div>
 </div>
