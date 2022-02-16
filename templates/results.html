@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% from "utils.html" import info, mutation_card, result_card %}
+{% from "utils.html" import info, mutation_card, result_card, card %}
 
 {% set active_page = '' %}
 
@@ -50,7 +50,7 @@
     <p class="text-lead">
         Performing analysis...
     </p>
-    <div id="seq-spinner" ">
+    <div id="seq-spinner" >
             <img src="images/slides/computer.gif" alt="drivers analysis">
         <div >
             <img src="images/slides/machine.gif" alt="drivers analysis" style="height: 110px;">
@@ -104,9 +104,10 @@
 <br>
 <div class="grid" id="results-grid">
     {% for mut in mutations.values() %}
-        {{ mutation_card(mut) }}
+        {{ mutation_card(mut,loop.index) }}
     {% endfor %}
 </div>
+
 
 </div>
 {% endblock %}

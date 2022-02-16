@@ -16,7 +16,7 @@ function show_sequencer() {
             $("#step1").hide();
             $("#step2").show();
         },
-        4500);
+        45);
 }
 
 function show_computer() {
@@ -26,7 +26,7 @@ function show_computer() {
             $("#step3").hide();
             $("#step4").show();
         },
-        4500);
+        45);
 }
 
 function showResults() {
@@ -42,5 +42,19 @@ function downloadPDF(mutations) {
     var results = document.getElementById("results-grid")
     pdf.addHTML(results, () => {
         pdf.save('cancer_detective_results.pdf');
+    });
+}
+let mutcardIDs = ['mutation_card_1', 'mutation_card_2', 'mutation_card_3', 'mutation_card_4', 'mutation_card_5',
+    'mutation_card_6', 'mutation_card_7', 'mutation_card_8', 'mutation_card_9']
+
+for ( const type of mutcardIDs) {
+    let card = document.getElementById(type);
+    card.addEventListener('mouseover', function () {
+        if (!card.classList.contains('is-flipped')) {
+            card.classList.toggle('is-flipped');
+        }
+    });
+    card.addEventListener('mouseout', function () {
+        card.classList.remove('is-flipped');
     });
 }

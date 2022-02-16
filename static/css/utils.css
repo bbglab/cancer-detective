@@ -91,6 +91,11 @@
     background-color: var(--blue-color);
     border-radius: 10px;
 }
+#mut_card_back {
+    transform: rotateY(180deg);
+    background-color: var(--light-color);
+    border-radius: 10px;
+}
 
 .card-title {
     color: var(--light-color);
