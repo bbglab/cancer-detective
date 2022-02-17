@@ -100,7 +100,7 @@
 </h2>
 <br>
 <div>
-    <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }})">
+    <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }},{{ attributes.get('ttype').get('name') }})">
         Download results as PDF
     </a>
     </div>

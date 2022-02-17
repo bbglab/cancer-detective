@@ -16,7 +16,7 @@ function show_sequencer() {
             $("#step1").hide();
             $("#step2").show();
         },
-        45);
+        4500);
 }
 
 function show_computer() {
@@ -26,7 +26,7 @@ function show_computer() {
             $("#step3").hide();
             $("#step4").show();
         },
-        45);
+        4500);
 }
 
 function showResults() {
@@ -34,10 +34,14 @@ function showResults() {
     $("#res").show();
 }
 
-function downloadPDF(mutations) {
+function downloadPDF(mutations,type_cancer) {
+    console.log(type_cancer)
     var pdf = new jsPDF('p', 'px', 'a4');
     pdf.setFontSize(20);
-    pdf.text('Mutations observed by Cancer Detective', 225, 80, null, null, "center");
+    pdf.text('Your sample is from a patient with '+type_cancer+'\n'+
+        'Your sample has '+String(mutations.length)+' driver mutations\n'
+        +'The mutations observed by Cancer Detective are in the following page', 225, 80, null, null, "center");
+
     pdf.addPage("a4");
     var results = document.getElementById("results-grid")
     pdf.addHTML(results, () => {
