@@ -46,3 +46,8 @@ p{
 p.explanation_exposure{
     font-size: 18pt;
 }
+p.sample_arrived{
+    width: 25%;
+    margin: auto;
+    font-size: 18px
+}

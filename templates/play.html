@@ -17,17 +17,21 @@
 {% endblock %}
 
 {% block central %}
-<div class="slide instructions">
+<div class="slide" id="instructions">
         <div class="slide-content" >
-            <p>
-                Imagine you are a Cancer Detective.<br>
-                Your objective is to find mutations in tumor samples and <br>
-                extract as much information as possible from them.
+            <div style="display: inline-flex; width: 93%;  margin: auto;">
+            <p class="sample_arrived">
+                A sample has arrived to the lab!<br>
+                Imagine you are a cancer detective.<br>
+                First, you have to annotate some data from this patient.<br>
+                Then, you have to sequence the sample’s DNA to obtain the mutations.<br>
+                Finally, you have to find the driver mutations in this sample and the targeted therapy
+                that can be used to treat this patient.
 
             </p>
 
-            <img src="images/slides/fig6_slide.png" alt="CancerDetective" style="max-height: 330px;"/>
-
+            <img src="images/slides/fig6_slide.png" alt="CancerDetective" style=" width: 70%""/>
+            </div>
 
             <div class="buttons-container">
                 <div class="floated">

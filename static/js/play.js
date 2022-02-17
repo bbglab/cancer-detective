@@ -116,7 +116,7 @@ for ( const type of cardIDs) {
     });
 }
 function showGame() {
-    $(".instructions").hide();
+    $("#instructions").hide();
     $("#main-content").show();
     $("#nav").show();
 }

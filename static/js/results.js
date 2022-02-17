@@ -49,12 +49,12 @@ let mutcardIDs = ['mutation_card_1', 'mutation_card_2', 'mutation_card_3', 'muta
 
 for ( const type of mutcardIDs) {
     let card = document.getElementById(type);
-    card.addEventListener('mouseover', function () {
+    card.addEventListener('click', function (){
         if (!card.classList.contains('is-flipped')) {
             card.classList.toggle('is-flipped');
         }
-    });
-    card.addEventListener('mouseout', function () {
-        card.classList.remove('is-flipped');
+        else if (card.classList.contains('is-flipped')) {
+            card.classList.remove('is-flipped');
+        }
     });
 }
