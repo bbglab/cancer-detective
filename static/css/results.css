@@ -133,3 +133,10 @@
 .download_results:hover {
     color: var(--blue-color-dark);
 }
+.btn-close{
+    float: right;
+    float: top;
+    background-color: var(--blue-color);
+    border-radius: 5px;
+    box-shadow: 0 5px 40px -10px grey;
+}

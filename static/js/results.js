@@ -7,16 +7,18 @@ $( document ).ready(function() {
     $("#step3").hide();
     $("#step4").hide();
     $("#res").hide();
+    $("#btn-close").hide();
 });
 
 function show_sequencer() {
     $("#start").hide();
     $("#step1").show();
+    $("#characteristics").hide();
     setTimeout(function() {
             $("#step1").hide();
             $("#step2").show();
         },
-        4500);
+        45);
 }
 
 function show_computer() {
@@ -25,14 +27,28 @@ function show_computer() {
     setTimeout(function() {
             $("#step3").hide();
             $("#step4").show();
+            $("#characteristics").show();
         },
-        4500);
+        45);
 }
 
+
 function showResults() {
+    $("#characteristics").hide();
     $(".seq").hide();
     $("#res").show();
 }
+function showCharacteristics() {
+    $("#characteristics").show();
+    $("#btn-close").show();
+    $("#char_button").hide();
+}
+function hideCharacteristics() {
+    $("#characteristics").hide();
+    $("#btn-close").hide();
+    $("#char_button").show();
+}
+
 
 function downloadPDF(mutations,type_cancer) {
     console.log(type_cancer)

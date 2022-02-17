@@ -5,8 +5,10 @@
 
 {% block central_content %}
 
-    <div class="card-risk-factors seq" style="margin: 4% auto auto auto;">
+    <div class="card-risk-factors " id="characteristics" style="margin: 4% auto auto auto;">
+    <button type="button" class="btn-close" onclick="hideCharacteristics()" >x</button>
     <h3> The characteristics of your sample:</h3>
+
         {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
 
         {{  result_card(attributes.get('ttype').get('type') + '/riskFactor1_' + attributes.get('riskFactor1').get('type') + '.svg',
@@ -71,26 +73,9 @@
 
 
 <div id="res">
-    <div class="card-risk-factors" style="margin: 4% auto auto auto;">
-
-        <h3> The characteristics of your sample:</h3>
-
-        {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
-
-        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor1_' + attributes.get('riskFactor1').get('type') + '.svg',
-                        attributes.get('riskFactor1').get('name'),
-                        attributes.get('riskFactor1').get('description'))  }}
-        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor2_' + attributes.get('riskFactor2').get('type') + '.svg',
-                        attributes.get('riskFactor2').get('name'),
-                        attributes.get('riskFactor2').get('description'))  }}
-        {{  result_card(attributes.get('ttype').get('type') + '/riskFactor3_' + attributes.get('riskFactor3').get('type') + '.svg',
-                        attributes.get('riskFactor3').get('name'),
-                        attributes.get('riskFactor3').get('description'))  }}
-
-    </div>
-<br>
-<br>
-<br>
+<br><br><br>
+<button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of your sample.</button>
+<br><br><br>
     <img src="images/slides/card_explanation.png" style=" height: 500px;margin: auto;">
 
 
