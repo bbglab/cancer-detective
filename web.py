@@ -1,5 +1,4 @@
 import json
-import os
 from os import path
 
 import cherrypy
@@ -35,7 +34,8 @@ class Game:
             lstrip_blocks=True,
         )
         env.globals["path_info"] = lambda: cherrypy.request.path_info
-        cherrypy.config.update({'error_page.404': self._error_page, 'error_page.422': self._error_page})
+        cherrypy.config.update({'error_page.404': self._error_page, 'error_page.422': self._error_page,
+                                'error_page.500': self._error_page})
         self._env = env
 
     def _error_page(self, status, message, traceback, version):
@@ -101,6 +101,11 @@ class Game:
                                     kwargs.get("ttype", None) + "::riskFactor3_" + kwargs.get("riskFactor3", None)]}}
 
     @cherrypy.expose
+    def result_test(self, **kwargs):
+        print(kwargs)
+        return self._env.get_template("about.html").render()
+
+    @cherrypy.expose
     def submit(self, **kwargs):
 
         # validate input
@@ -131,9 +136,15 @@ class Game:
 
         attributes = self._get_attributes(kwargs)
 
-        questions_results = []
+        questions_general, questions_results = [], []
         passenger_muts = df[df['driver_passenger'] == 'passenger']['mutation_id'].to_list()
         driver_muts = df[df['driver_passenger'] == 'driver']['mutation_id'].to_list()
+
+        with open("./static/data/code/general_questions.json", "rt") as f:
+            all_questions_general = json.load(f)
+
+        for q in random.sample(all_questions_general, 5):
+            questions_general.append(random.sample(q, 1)[0])
 
         # Question 1
         questions_results.append({'question': 'How many drivers were found in your sample?',
@@ -174,7 +185,8 @@ class Game:
                          {'answer': other_therapies[2], 'correct': False}]
              })
         return self._env.get_template("results.html").render(
-            mutations=data, attributes=attributes, questions_results=questions_results)
+            mutations=data, attributes=attributes, questions_general=questions_general,
+            questions_results=questions_results)
 
 
 def start_server(conf_file=None):

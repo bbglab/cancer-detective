@@ -85,7 +85,7 @@
 </h2>
 <br>
 <div>
-    <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }},{{ attributes.get('ttype').get('name') }})">
+    <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }}, {{ attributes }})">
         Download results as PDF
     </a>
     </div>
@@ -97,11 +97,25 @@
 </div>
 
 
+<div class="survey" id="survey">
+<form id="test" action="result_test" method="get">
+
+    {% for question in questions_general %}
+        {{ question.sentence }}
+        <br>
+        <label>True</label><input type="checkbox" name="{{ loop.index }}true">
+        <label>False</label><input type="checkbox" name="{{ loop.index }}false">
+        <br>
+    {% endfor %}
+</form>
+    <button type="submit" onclick="submitTest({{ questions_general|list }})">Submit</button>
+</div>
+
 </div>
 {% endblock %}
 
 
 {% block script %}
 {{ super() }}
-    <script src="./js/results.js?v=1"></script>
+     <script type="text/javascript" src="./js/results.js?v=1"></script>
 {% endblock %}
