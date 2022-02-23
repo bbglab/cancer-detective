@@ -101,11 +101,6 @@ class Game:
                                     kwargs.get("ttype", None) + "::riskFactor3_" + kwargs.get("riskFactor3", None)]}}
 
     @cherrypy.expose
-    def result_test(self, **kwargs):
-        print(kwargs)
-        return self._env.get_template("about.html").render()
-
-    @cherrypy.expose
     def submit(self, **kwargs):
 
         # validate input
@@ -148,28 +143,26 @@ class Game:
 
         # Question 1
         questions_results.append({'question': 'How many drivers were found in your sample?',
-                                  'answers': [{'answer': mutations, 'correct': False},
-                                              {'answer': len(driver_muts), 'correct': True},
-                                              {'answer': 0, 'correct': False},
-                                              {'answer': len(df[df['driver_passenger'] == 'passenger']),
-                                               'correct': False},
-                                              {'answer': len(df[df['driver_passenger'] == 'driver']) + 1,
+                                  'answers': [{'id': 1, 'answer': mutations, 'correct': False},
+                                              {'id': 2, 'answer': len(driver_muts), 'correct': True},
+                                              {'id': 3, 'answer': 0, 'correct': False},
+                                              {'id': 4, 'answer': len(df[df['driver_passenger'] == 'passenger']),
                                                'correct': False}]
                                   })
 
         # Question 2
         questions_results.append({'question': 'Which of these mutations is a driver mutation?',
-                                  'answers': [{'answer': 'There are no driver mutations', 'correct': False},
-                                              {'answer': passenger_muts[0].split('_')[1], 'correct': False},
-                                              {'answer': passenger_muts[-1].split('_')[1], 'correct': False},
-                                              {'answer': driver_muts[0].split('_')[1], 'correct': True}]
+                                  'answers': [{'id': 1, 'answer': 'There are no driver mutations', 'correct': False},
+                                              {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': False},
+                                              {'id': 3, 'answer': passenger_muts[-1].split('_')[1], 'correct': False},
+                                              {'id': 4, 'answer': driver_muts[0].split('_')[1], 'correct': True}]
                                   })
         # Question 3
         questions_results.append({'question': 'Which of these genes is mutated in your sample?',
-                                  'answers': [{'answer': driver_muts[0].split('_')[1], 'correct': False},
-                                              {'answer': passenger_muts[0].split('_')[1], 'correct': False},
-                                              {'answer': passenger_muts[-1].split('_')[0], 'correct': True},
-                                              {'answer': 'None of the above', 'correct': False}]
+                                  'answers': [{'id': 1, 'answer': driver_muts[0].split('_')[1], 'correct': False},
+                                              {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': False},
+                                              {'id': 3, 'answer': passenger_muts[-1].split('_')[0], 'correct': True},
+                                              {'id': 4, 'answer': 'None of the above', 'correct': False}]
                                   })
         # Question 4
         df_treatment = df.dropna(axis=0, subset=['targeted_therapy'])
@@ -179,11 +172,12 @@ class Game:
 
         questions_results.append(
             {'question': 'Which treatments of personalised medicine could be used in this patient?',
-             'answers': [{'answer': other_therapies[0], 'correct': False},
-                         {'answer': other_therapies[1], 'correct': False},
-                         {'answer': df_treatment['targeted_therapy'].to_list()[0], 'correct': True},
-                         {'answer': other_therapies[2], 'correct': False}]
+             'answers': [{'id': 1, 'answer': other_therapies[0], 'correct': False},
+                         {'id': 2, 'answer': other_therapies[1], 'correct': False},
+                         {'id': 3, 'answer': df_treatment['targeted_therapy'].to_list()[0], 'correct': True},
+                         {'id': 4, 'answer': other_therapies[2], 'correct': False}]
              })
+
         return self._env.get_template("results.html").render(
             mutations=data, attributes=attributes, questions_general=questions_general,
             questions_results=questions_results)

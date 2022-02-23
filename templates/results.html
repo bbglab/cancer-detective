@@ -99,12 +99,20 @@
 
 <div class="survey" id="survey">
 <form id="test" action="result_test" method="get">
-
     {% for question in questions_general %}
         {{ question.sentence }}
         <br>
-        <label>True</label><input type="checkbox" name="{{ loop.index }}true">
-        <label>False</label><input type="checkbox" name="{{ loop.index }}false">
+        <label>True</label> - <input id="{{ loop.index }}true" type="radio" name="{{ loop.index }}true" onclick="markTrue({{ loop.index  }})">
+        <label>False</label> - <input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
+        <br>
+    {% endfor %}
+    {% for question in questions_results %}
+        {% set outer_loop = loop %}
+        {{ question['question'] }}
+        <br>
+        {% for ans in question['answers'] %}
+            <label>{{ ans['answer'] }}</label> - <input id="{{ outer_loop.index }}{{ ans['id'] }}" type="checkbox" name="{{ loop.index }}true" onclick="markAnswer(String({{ outer_loop.index  }}) + String({{ ans['id'] }}))">
+        {% endfor %}
         <br>
     {% endfor %}
 </form>

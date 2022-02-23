@@ -80,15 +80,29 @@ for ( const type of mutcardIDs) {
 
 }
 
+function markTrue(index) {
+    document.getElementById(index + "false").checked = false;
+}
+
+function markFalse(index) {
+    document.getElementById(index + "true").checked = false;
+}
+
+function markAnswer(index) {
+
+    for (let i = 1; i < 5; i++) {
+        console.log(index, String(index[0])+String(i))
+        if (String(index) !== String(index[0])+String(i)) {
+            document.getElementById(String(index[0])+String(i)).checked = false;
+        }
+    }
+
+}
 
 function submitTest(questions) {
 
     const formData = new FormData(document.getElementById( "test" ))
     let correct_ans = 0
-
-
-    console.log(questions[0])
-
 
     for (const name of formData.entries()) {
         correct_ans += Number(name[0][0] + questions[Number(name[0][0]) - 1]['response'] === name[0])
