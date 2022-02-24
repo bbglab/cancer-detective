@@ -18,7 +18,7 @@ function show_sequencer() {
             $("#step1").hide();
             $("#step2").show();
         },
-        45);
+        4500);
 }
 
 function show_computer() {
