@@ -18,7 +18,7 @@ function show_sequencer() {
             $("#step1").hide();
             $("#step2").show();
         },
-        4500);
+        45);
 }
 
 function show_computer() {
@@ -29,7 +29,7 @@ function show_computer() {
             $("#step4").show();
             $("#characteristics").show();
         },
-        4500);
+        45);
 }
 
 

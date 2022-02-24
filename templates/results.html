@@ -95,8 +95,10 @@
         <div style="align-items: center">
         <div class="question-title">{{ question.sentence }}</div>
         <div class="radio_container">
-            <label>True</label><input id="{{ loop.index }}true" type="radio" name="{{ loop.index }}true" onclick="markTrue({{ loop.index  }})">
-            <label>False</label><input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
+            <input id="{{ loop.index }}true" type="radio" name="{{ loop.index }}true" onclick="markTrue({{ loop.index  }})">
+            <label class="label-general-question" for="{{ loop.index }}true">True</label>
+            <input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
+            <label class="label-general-question" for="{{ loop.index }}false">False</label>
         </div>
         </div>
     {% endfor %}
