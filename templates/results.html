@@ -42,10 +42,9 @@
     <p class="text-lead">
         Mutations ready
     </p>
-        <div style="display: inline flex;">
+        <div style="display: inline flex; margin: 3% auto;">
             <img src="images/slides/computer.png" alt="computer">
-            <div>
-                <br><br>
+            <div style="margin: auto">
                 <button  class="results-button" onclick="show_computer()">Find drivers and <br> targeted therapy</button>
             </div>
         </div>
@@ -55,10 +54,10 @@
     <p class="text-lead">
         Performing analysis...
     </p>
-    <div id="seq-spinner" >
+    <div id="seq-spinner" style="display: inline flex; margin: 3% auto;">
             <img src="images/slides/computer.gif" alt="drivers analysis">
-        <div >
-            <img src="images/slides/machine.gif" alt="drivers analysis" style="height: 110px;">
+            <div style="margin: auto">
+                <img src="images/slides/machine.gif" alt="drivers analysis" style="height: 110px;">
             <div>
                 <img src="images/slides/logos.svg" alt="drivers analysis" style="height: 110px;" >
             </div>
@@ -73,23 +72,16 @@
 
 
 <div id="res">
-<br><br><br>
-<button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of your sample.</button>
-<br><br><br>
-    <img src="images/slides/card_explanation.png" style=" height: 500px;margin: auto;">
-
-
-<br>
-<h2>
-    The mutations observed in your sample:<br>
-</h2>
-<br>
-<div>
+    <div style="display: flex; flex-direction: column; margin: 2% auto;">
+    <button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of your sample</button>
+    <img src="images/slides/card_explanation.png" style=" height: 400px;margin: 1.5% auto;">
+    </div>
+    <h2>The mutations observed in your sample:</h2>
+    <div>
     <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }}, {{ attributes }})">
         Download results as PDF
     </a>
     </div>
-<br>
 <div class="grid" id="results-grid">
     {% for mut in mutations.values() %}
         {{ mutation_card(mut,loop.index) }}
@@ -100,23 +92,24 @@
 <div class="survey" id="survey">
 <form id="test" action="result_test" method="get">
     {% for question in questions_general %}
-        {{ question.sentence }}
-        <br>
-        <label>True</label> - <input id="{{ loop.index }}true" type="radio" name="{{ loop.index }}true" onclick="markTrue({{ loop.index  }})">
-        <label>False</label> - <input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
-        <br>
+        <div style="align-items: center">
+        <div class="question-title">{{ question.sentence }}</div>
+        <div class="radio_container">
+            <label>True</label><input id="{{ loop.index }}true" type="radio" name="{{ loop.index }}true" onclick="markTrue({{ loop.index  }})">
+            <label>False</label><input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
+        </div>
+        </div>
     {% endfor %}
     {% for question in questions_results %}
         {% set outer_loop = loop %}
         {{ question['question'] }}
-        <br>
         {% for ans in question['answers'] %}
             <label>{{ ans['answer'] }}</label> - <input id="{{ outer_loop.index }}{{ ans['id'] }}" type="checkbox" name="{{ loop.index }}true" onclick="markAnswer(String({{ outer_loop.index  }}) + String({{ ans['id'] }}))">
+            <br>
         {% endfor %}
-        <br>
     {% endfor %}
 </form>
-    <button type="submit" onclick="submitTest({{ questions_general|list }})">Submit</button>
+    <button class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }})">Check results !</button>
 </div>
 
 </div>

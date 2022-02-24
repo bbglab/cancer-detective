@@ -29,7 +29,7 @@ function show_computer() {
             $("#step4").show();
             $("#characteristics").show();
         },
-        45);
+        4500);
 }
 
 
@@ -89,7 +89,6 @@ function markFalse(index) {
 }
 
 function markAnswer(index) {
-
     for (let i = 1; i < 5; i++) {
         console.log(index, String(index[0])+String(i))
         if (String(index) !== String(index[0])+String(i)) {
