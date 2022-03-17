@@ -1,6 +1,9 @@
 const elem = document.getElementById("play")
 elem.classList.remove("nav-item")
 
+
+document.getElementById("test").reset();
+
 $( document ).ready(function() {
     $("#step1").hide();
     $("#step2").hide();
@@ -39,6 +42,8 @@ function showResults() {
     $("#res").show();
 }
 function showCharacteristics() {
+    let btn_close = document.getElementById('btn-close-characteristics')
+    btn_close.style.display = 'block'
     $("#characteristics").show();
     $("#btn-close").show();
     $("#char_button").hide();
@@ -90,7 +95,6 @@ function markFalse(index) {
 
 function markAnswer(index) {
     for (let i = 1; i < 5; i++) {
-        console.log(index, String(index[0])+String(i))
         if (String(index) !== String(index[0])+String(i)) {
             document.getElementById(String(index[0])+String(i)).checked = false;
         }
@@ -98,19 +102,31 @@ function markAnswer(index) {
 
 }
 
-function submitTest(questions) {
+function submitTest(questions_general, questions_result) {
+
 
     const formData = new FormData(document.getElementById( "test" ))
-    let correct_ans = 0
+    const response_test = Array.from(formData.entries())
+    if (response_test.length < 9)
+        alert("Responde TODO")
+    else {
+        console.log(questions_general);
+        console.log(questions_result);
 
-    for (const name of formData.entries()) {
-        correct_ans += Number(name[0][0] + questions[Number(name[0][0]) - 1]['response'] === name[0])
-        //const ques = questions[Number(pair[0][0])]
-        //console.log(ques)
-        //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
+        let correct_ans = 0
+
+
+        for (const [ element, _ ] of response_test) {
+            console.log(element)
+            //correct_ans += Number(element[0][0] + questions_general[Number(element[0][0]) - 1]['response'] === element[0])
+            //const ques = questions[Number(pair[0][0])]
+            //console.log(ques)
+            //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
+        }
+        console.log("Correct answers: ", correct_ans)
+
+        document.getElementById("test").reset();
     }
-    console.log("Correct answers: ", correct_ans)
 
-    document.getElementById("test").reset();
 }
 

@@ -77,7 +77,38 @@
         <img src="images/chromosomes/chr{{ i }}.png" alt="" style="height: 70%; width: 50%;">
     </div>
     <div class="card-face card-face-back" id="mut_card_back">
-        <dl>
+        <div class="element_mutation_result">Gene</div>
+        <div>
+        <a target='_tab' href='http://www.genecards.org/cgi-bin/carddisp.pl?gene={{ mut['gene'] }}'
+           style="color: #F18914" title="{{ mut['description'] }}">
+            <strong>{{ mut['gene'] }}</strong>
+        </a>
+        </div>
+
+        <div class="element_mutation_result">Protein change</div>
+        <div><span class='badge' style='background-color: yellow; color: black'>{{ mut['aa_change'] }}</span></div>
+
+        <div class="element_mutation_result">Impact</div>
+        <div>
+        {% if  mut['driver_passenger']  == 'driver' %}
+            <span class='badge' style='background-color: palevioletred; color: black'>{{ mut['driver_passenger'] }}</span>
+        {% else %}
+            <span class='badge' style='background-color: #d3d3d3; color: black'>{{ mut['driver_passenger'] }}</span>
+        {% endif %}
+        </div>
+
+        <div class="element_mutation_result">
+            Treatment
+        </div>
+        <div>
+            {% if  mut['targeted_therapy']  == 'None' %}
+                <span class='badge' style='background-color: #cde5fa; color: black'>{{ mut['targeted_therapy'] }}</span>
+            {% else %}
+                <span class='badge' style='background-color: #00bfff; color: black'>{{ mut['targeted_therapy'] }}</span>
+            {% endif %}
+        </div>
+
+        <!--<dl>
             <dt>
 	            Gene
             </dt>
@@ -91,8 +122,6 @@
                 Protein change
             </dt>
             <dd>
-                <!--TODO chr and position-->
-		<!--                <span class='uk-badge' style='background-color: {{ mut['color'] }}; color: white'>{{ mut['aa_change'] }}</span> -->
                 <span class='badge' style='background-color: yellow; color: black'>{{ mut['aa_change'] }}</span>
             </dd>
             <dt>
@@ -115,7 +144,7 @@
                 <span class='badge' style='background-color: #00bfff; color: black'>{{ mut['targeted_therapy'] }}</span>
             {% endif %}
             </dd>
-        </dl>
+        </dl>-->
     </div>
   </div>
 

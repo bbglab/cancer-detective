@@ -82,7 +82,6 @@ class Game:
         return names[type]
 
     def _get_attributes(self, kwargs):
-        print(_THIS_FOLDER)
         f = open(_THIS_FOLDER + "/static/data/code/exposures_factors.json", 'r')
         df = json.load(f)
         return {'ttype': {'type': kwargs.get("ttype", None),
@@ -143,26 +142,26 @@ class Game:
 
         # Question 1
         questions_results.append({'question': 'How many drivers were found in your sample?',
-                                  'answers': [{'id': 1, 'answer': mutations, 'correct': False},
-                                              {'id': 2, 'answer': len(driver_muts), 'correct': True},
-                                              {'id': 3, 'answer': 0, 'correct': False},
+                                  'answers': [{'id': 1, 'answer': mutations, 'correct': "false"},
+                                              {'id': 2, 'answer': len(driver_muts), 'correct': "true"},
+                                              {'id': 3, 'answer': 0, 'correct': "false"},
                                               {'id': 4, 'answer': len(df[df['driver_passenger'] == 'passenger']),
-                                               'correct': False}]
+                                               'correct': "false"}]
                                   })
 
         # Question 2
         questions_results.append({'question': 'Which of these mutations is a driver mutation?',
-                                  'answers': [{'id': 1, 'answer': 'There are no driver mutations', 'correct': False},
-                                              {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': False},
-                                              {'id': 3, 'answer': passenger_muts[-1].split('_')[1], 'correct': False},
-                                              {'id': 4, 'answer': driver_muts[0].split('_')[1], 'correct': True}]
+                                  'answers': [{'id': 1, 'answer': 'There are no driver mutations', 'correct': "false"},
+                                              {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': "false"},
+                                              {'id': 3, 'answer': passenger_muts[-1].split('_')[1], 'correct': "false"},
+                                              {'id': 4, 'answer': driver_muts[0].split('_')[1], 'correct': "true"}]
                                   })
         # Question 3
         questions_results.append({'question': 'Which of these genes is mutated in your sample?',
-                                  'answers': [{'id': 1, 'answer': driver_muts[0].split('_')[1], 'correct': False},
-                                              {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': False},
-                                              {'id': 3, 'answer': passenger_muts[-1].split('_')[0], 'correct': True},
-                                              {'id': 4, 'answer': 'None of the above', 'correct': False}]
+                                  'answers': [{'id': 1, 'answer': driver_muts[0].split('_')[1], 'correct': "false"},
+                                              {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': "false"},
+                                              {'id': 3, 'answer': passenger_muts[-1].split('_')[0], 'correct': "true"},
+                                              {'id': 4, 'answer': 'None of the above', 'correct': "false"}]
                                   })
         # Question 4
         df_treatment = df.dropna(axis=0, subset=['targeted_therapy'])
@@ -172,10 +171,10 @@ class Game:
 
         questions_results.append(
             {'question': 'Which treatments of personalised medicine could be used in this patient?',
-             'answers': [{'id': 1, 'answer': other_therapies[0], 'correct': False},
-                         {'id': 2, 'answer': other_therapies[1], 'correct': False},
-                         {'id': 3, 'answer': df_treatment['targeted_therapy'].to_list()[0], 'correct': True},
-                         {'id': 4, 'answer': other_therapies[2], 'correct': False}]
+             'answers': [{'id': 1, 'answer': other_therapies[0], 'correct': "false"},
+                         {'id': 2, 'answer': other_therapies[1], 'correct': "false"},
+                         {'id': 3, 'answer': df_treatment['targeted_therapy'].to_list()[0], 'correct': "true"},
+                         {'id': 4, 'answer': other_therapies[2], 'correct': "false"}]
              })
 
         return self._env.get_template("results.html").render(

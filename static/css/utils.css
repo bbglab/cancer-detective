@@ -133,3 +133,8 @@
     color: #333;
     margin: 10px auto;
 }
+
+.element_mutation_result {
+    margin: 3.5% auto;
+    color: var(--dark-color);
+}

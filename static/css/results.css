@@ -137,10 +137,11 @@
 
 .btn-close{
     float: right;
-    background-color: var(--blue-color);
-    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 5px 40px -10px grey;
+    border: none;
+    background-color: inherit;
+    box-shadow: none;
+    font-size: 25px;
 }
 
 .survey {
@@ -162,18 +163,26 @@
 .question-title {
     font-size: 22px;
     margin: 2%;
+    font-weight: bold;
 }
 
-.radio_container {
+
+.answers_container_all {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #cecece;
-    width: 280px;
+    background-color: var(--gray-color);
     height: 50px;
     border-radius: 9999px;
-    box-shadow: inset 0.5px 0.5px 2px 0 rgba(0, 0, 0, 0.15);
     margin: auto;
+}
+
+.answers_container_general {
+    width: 30%;
+}
+
+.answers_container_result {
+    width: 80%;
 }
 
 .label-general-question {
@@ -193,13 +202,27 @@
     color: var(--dark-color);
 }
 
+.label-general-result {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--dark-color);
+    border-radius: 9999px;
+    transition: linear 0.3s;
+    padding: 0.4% 1.5%;
+}
 
-input[type="radio"] {
+input {
     appearance: none;
     display: none;
 }
 
-input[type="radio"]:checked + label {
+input:checked + label {
     background-color: var(--blue-color);
     color: var(--light-color);
     transition: 0.3s;

@@ -6,7 +6,10 @@
 {% block central_content %}
 
     <div class="card-risk-factors " id="characteristics" style="margin: 4% auto auto auto;">
-    <button type="button" class="btn-close" onclick="hideCharacteristics()" >x</button>
+    <button type="button" id="btn-close-characteristics" class="btn-close" onclick="hideCharacteristics()" style="display: none">
+        <i class="icon ion-close" style="color: var(--blue-color)"></i>
+    </button>
+
     <h3> The characteristics of your sample:</h3>
 
         {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
@@ -74,7 +77,7 @@
 <div id="res">
     <div style="display: flex; flex-direction: column; margin: 2% auto;">
     <button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of your sample</button>
-    <img src="images/slides/card_explanation.png" style=" height: 400px;margin: 1.5% auto;">
+    <img src="images/slides/card_explanation.png" style=" height: 350px;margin: 1.5% auto;">
     </div>
     <h2>The mutations observed in your sample:</h2>
     <div>
@@ -94,7 +97,7 @@
     {% for question in questions_general %}
         <div style="align-items: center">
         <div class="question-title">{{ question.sentence }}</div>
-        <div class="radio_container">
+        <div class="answers_container_all answers_container_general">
             <input id="{{ loop.index }}true" type="radio" name="{{ loop.index }}true" onclick="markTrue({{ loop.index  }})">
             <label class="label-general-question" for="{{ loop.index }}true">True</label>
             <input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
@@ -104,14 +107,16 @@
     {% endfor %}
     {% for question in questions_results %}
         {% set outer_loop = loop %}
-        {{ question['question'] }}
+        <div class="question-title">{{ question['question'] }}</div>
+        <div class="answers_container_all answers_container_result">
         {% for ans in question['answers'] %}
-            <label>{{ ans['answer'] }}</label> - <input id="{{ outer_loop.index }}{{ ans['id'] }}" type="checkbox" name="{{ loop.index }}true" onclick="markAnswer(String({{ outer_loop.index  }}) + String({{ ans['id'] }}))">
-            <br>
+            <input id="{{ outer_loop.index }}{{ ans['id'] }}" type="checkbox" name="{{ outer_loop.index }}{{ ans['id'] }}" onclick="markAnswer(String({{ outer_loop.index  }}) + String({{ ans['id'] }}))">
+            <label class="label-general-result" for="{{ outer_loop.index }}{{ ans['id'] }}">{{ ans['answer'] }}</label>
         {% endfor %}
+        </div>
     {% endfor %}
 </form>
-    <button class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }})">Check results !</button>
+    <button class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }}, {{ questions_results|list }})">Check results !</button>
 </div>
 
 </div>
