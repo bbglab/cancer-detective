@@ -11,6 +11,7 @@ $( document ).ready(function() {
     $("#step4").hide();
     $("#res").hide();
     $("#btn-close").hide();
+    $("#survey").hide();
 });
 
 function show_sequencer() {
@@ -48,6 +49,10 @@ function showCharacteristics() {
     $("#btn-close").show();
     $("#char_button").hide();
 }
+function showSurvey() {
+    $("#surv_button").hide();
+    $("#survey").show();
+}
 function hideCharacteristics() {
     $("#characteristics").hide();
     $("#btn-close").hide();
@@ -58,9 +63,21 @@ function downloadPDF(mutations, attributes) {
     let cancer_type = attributes['ttype']
     const pdf = new jsPDF('p', 'px', 'a4');
     pdf.setFontSize(15);
-    pdf.text('Your sample is from a patient with '+ cancer_type['name'].toLowerCase() +'\n'+
-        'Your sample has '+String(mutations.length)+' driver mutations\n'
-        +'The mutations observed by Cancer Detective are in the following page', 225, 80, null, null, "center");
+    pdf.text('Your sample is from a patient with '+ cancer_type['name'].toLowerCase() +'.\n'
+        +'The cancer detective has found ' +String(mutations.length)+' driver mutations in the sample.\n'
+        +'The patient is ' + attributes['riskFactor1']['description'].toLowerCase() +' and his/her characteristics are:\n'
+        +attributes['riskFactor2']['description'].toLowerCase() +' and '
+        +attributes['riskFactor3']['description'].toLowerCase() +'.\n'
+        +'The mutations observed by the Cancer Detective are the following:', 210, 65, null, null, "center");
+
+    i=0
+    for ( const mut of mutations) {
+    pdf.text('Gene: '+ mut['gene']+ ', Protein change: '+mut['aa_change']+
+        ', Impact: '+mut['driver_passenger']+  ', Treatment: '+mut['targeted_therapy'],
+            50, 135+i, null, null);
+    i=i+20
+    }
+
     pdf.addPage("a4");
     const results = document.getElementById("results-grid");
     pdf.addHTML(results, () => {
