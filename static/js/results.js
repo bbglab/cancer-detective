@@ -107,22 +107,37 @@ function submitTest(questions_general, questions_result) {
 
     const formData = new FormData(document.getElementById( "test" ))
     const response_test = Array.from(formData.entries())
-    if (response_test.length < 9)
-        alert("Responde TODO")
+    if (response_test.length < 9) {
+        let test_alert = document.getElementById('test-alert')
+        test_alert.style.display = 'block';
+    }
     else {
-        console.log(questions_general);
-        console.log(questions_result);
+        let test_alert = document.getElementById('test-alert')
+        test_alert.style.display = 'none';
+        console.log(questions_general, questions_result);
 
         let correct_ans = 0
+        let anw_general = response_test.slice(0, 5)
+        let anw_results = response_test.slice(5, response_test.length)
+        console.log(anw_general, anw_results)
 
-
-        for (const [ element, _ ] of response_test) {
+        for (const [ element, _ ] of anw_general) {
             console.log(element)
             //correct_ans += Number(element[0][0] + questions_general[Number(element[0][0]) - 1]['response'] === element[0])
-            //const ques = questions[Number(pair[0][0])]
-            //console.log(ques)
+            const ques = questions_general[Number(element[0]) - 1]
+            console.log(ques)
             //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
         }
+
+        for (const [ element, _ ] of anw_results) {
+            console.log(element)
+            //correct_ans += Number(element[0][0] + questions_general[Number(element[0][0]) - 1]['response'] === element[0])
+            const ques = questions_result[Number(element[0]) - 1]
+            console.log(ques)
+            //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
+        }
+
+
         console.log("Correct answers: ", correct_ans)
 
         document.getElementById("test").reset();

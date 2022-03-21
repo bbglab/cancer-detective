@@ -228,3 +228,14 @@ input:checked + label {
     transition: 0.3s;
     cursor: pointer;
 }
+
+.alert-empty {
+    color: var(--alert-color);
+    margin: 2% 0 1% 0;
+    font-weight: bold;
+}
+
+.alert-icon {
+   font-size: x-large;
+    margin: 0.5%;
+}

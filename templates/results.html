@@ -116,6 +116,11 @@
         </div>
     {% endfor %}
 </form>
+    <div id="test-alert" class="alert-empty" style="display: none">
+        <i class="icon ion-alert alert-icon"></i>
+        Remain questions to answer, fill them up to check the results
+        <i class="icon ion-alert alert-empty alert-icon"></i>
+    </div>
     <button class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }}, {{ questions_results|list }})">Check results !</button>
 </div>
 
