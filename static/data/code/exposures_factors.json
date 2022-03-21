@@ -11,10 +11,10 @@
   "skin::riskFactor1_1": "Young (1-20 years old)",
   "skin::riskFactor1_2": "Middle-aged adult (20-60 years old)",
   "skin::riskFactor1_3": "Old adult (61 or older)",
-  "skin::riskFactor2_1": "Low",
-  "skin::riskFactor2_2": "Moderate",
-  "skin::riskFactor2_3": "High",
-  "skin::riskFactor3_1": "High",
-  "skin::riskFactor3_2": "Moderate",
-  "skin::riskFactor3_3": "Low"
+  "skin::riskFactor2_1": "Low sun exposure",
+  "skin::riskFactor2_2": "Moderate sun exposure",
+  "skin::riskFactor2_3": "High sun exposure",
+  "skin::riskFactor3_1": "High sun protection",
+  "skin::riskFactor3_2": "Moderate sun protection",
+  "skin::riskFactor3_3": "Low sun protection"
 }

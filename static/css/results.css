@@ -24,7 +24,7 @@
 }
 .results-button {
     font-size: 2rem;
-    padding: 4px 30px;
+    padding: 8px 30px;
     display: inline-block;
     color: var(--blue-color);
     background-color: var(--light-color);
@@ -34,7 +34,7 @@
 }
 
 .results-button:hover {
-    padding: 8px 34px;
+    padding: 12px 34px;
     background: var(--blue-color);
     color: var(--light-color);
     border: none;
@@ -227,6 +227,11 @@ input:checked + label {
     color: var(--light-color);
     transition: 0.3s;
     cursor: pointer;
+}
+p.survey-title{
+    color: var(--blue-color-dark);
+    font-size: 28pt;
+    font-weight: bold;
 }
 
 .alert-empty {
