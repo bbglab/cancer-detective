@@ -173,16 +173,12 @@ function submitTest(questions_general, questions_result) {
     else {
         let test_alert = document.getElementById('test-alert')
         test_alert.style.display = 'none';
-        console.log(questions_general, questions_result);
 
         let correct_ans = 0
         let anw_general = response_test.slice(0, 5)
         let anw_results = response_test.slice(5, response_test.length)
-        console.log(anw_general, anw_results)
 
         for (const [ element, _ ] of anw_general) {
-            console.log('**', element)
-            //correct_ans += Number(element[0][0] + questions_general[Number(element[0][0]) - 1]['response'] === element[0])
             const ques = questions_general[Number(element[0]) - 1]
             const is_correct = ques['response'] === element.substring(1, element.length)
             if (is_correct) {
@@ -192,26 +188,51 @@ function submitTest(questions_general, questions_result) {
                 let res_alert =  document.getElementById("wrong_general_" +  String(element[0]))
                 res_alert.style.display = 'block';
             }
-                
             correct_ans += Number(is_correct)
-            
-
-            //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
         }
 
         for (const [ element, _ ] of anw_results) {
-            console.log(element)
-            //correct_ans += Number(element[0][0] + questions_general[Number(element[0][0]) - 1]['response'] === element[0])
             const ques = questions_result[Number(element[0]) - 1]
-            console.log(ques)
-            //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
+            const response = Number(element[1]) - 1
+            const is_correct = ques['answers'][response]['correct'] === 'true'
+
+            if (is_correct) {
+                let res_alert =  document.getElementById("correct_results_" +  String(element[0]))
+                res_alert.style.display = 'block';
+            } else {
+                let res_alert =  document.getElementById("wrong_results_" +  String(element[0]))
+                res_alert.style.display = 'block';
+            }
+            correct_ans += Number(is_correct)
         }
 
 
-        console.log("Correct answers: ", correct_ans)
 
-        document.getElementById("test").reset();
+        const rating = document.getElementById("rating")
+        const score_class = correct_ans < 3 ? "bad" : correct_ans < 6 ? "meh" : "good";
+        const score_text = correct_ans < 3 ? "You can do it better!" : correct_ans < 6 ? "Well done!" : "You are a pro cancer detective!";
+        rating.classList.add(score_class);
+
+        const rating_color = window.getComputedStyle(rating).backgroundColor;
+        const gradient = `background: conic-gradient(${rating_color} ${correct_ans/9 * 100}%, transparent 0 100%)`;
+        rating.setAttribute("style", gradient);
+        rating.innerHTML = `<span style="font-size: 60px">${correct_ans}</span><span style="font-size: 0.35em">out of 9</span>`;
+        rating.style.display = 'flex';
+
+        const rating_text = document.getElementById("rating-text")
+        rating_text.innerHTML = score_text;
+        rating_text.style.display = 'flex'
+
+        const check_results = document.getElementById("check-results")
+        check_results.style.display = 'none';
+
+
+        const retake_test = document.getElementById("retake-test")
+        retake_test.style.display = 'flex';
     }
 
 }
 
+function retakeTest(questions_general, questions_result) {
+    
+}

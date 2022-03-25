@@ -17,6 +17,15 @@
   --alert-color: #c71e12;
   --correct-color: #2cab13;
   --wrong-color: #ff1f0f;
+
+  --rating-size: 10rem;
+  --bar-size: 1rem;
+  --background-color: #e7f2fa;
+  --rating-color-default: #2980b9;
+  --rating-color-background: #c7e1f3;
+  --rating-color-good: #27ae60;
+  --rating-color-meh: #f1c40f;
+  --rating-color-bad: #e74c3c;
 }
 
 
