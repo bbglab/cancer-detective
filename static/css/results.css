@@ -240,7 +240,21 @@ p.survey-title{
     font-weight: bold;
 }
 
-.alert-icon {
+.correct-answer {
+    color: var(--correct-color);
+    margin: 2% 0 1% 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.wrong-answer {
+    color: var(--wrong-color);
+    margin: 2% 0 1% 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.icon {
    font-size: x-large;
     margin: 0.5%;
 }

@@ -106,6 +106,14 @@
             <input id="{{ loop.index }}false" type="radio" name="{{ loop.index }}false" onclick="markFalse({{ loop.index  }})">
             <label class="label-general-question" for="{{ loop.index }}false">False</label>
         </div>
+            <div id="correct_general_{{ loop.index }}" class="correct-answer" style="display: none">
+                <i class="icon ion-checkmark-round icon" style="font-size: 38px"></i>
+                Correct
+            </div>
+            <div id="wrong_general_{{ loop.index }}" class="wrong-answer" style="display: none">
+                <i class="icon ion-close-round icon" style="font-size: 38px"></i>
+                Wrong
+            </div>
         </div>
     {% endfor %}
     {% for question in questions_results %}
@@ -116,13 +124,21 @@
             <input id="{{ outer_loop.index }}{{ ans['id'] }}" type="checkbox" name="{{ outer_loop.index }}{{ ans['id'] }}" onclick="markAnswer(String({{ outer_loop.index  }}) + String({{ ans['id'] }}))">
             <label class="label-general-result" for="{{ outer_loop.index }}{{ ans['id'] }}">{{ ans['answer'] }}</label>
         {% endfor %}
+            <!--<div id="correct_general_{{ loop.index }}" class="correct-answer">
+                <i class="icon ion-checkmark-round icon" style="font-size: 38px"></i>
+                Correct
+            </div>
+            <div id="wrong_general_{{ loop.index }}" class="wrong-answer">
+                <i class="icon ion-close-round icon" style="font-size: 38px"></i>
+                Wrong
+            </div>-->
         </div>
     {% endfor %}
 </form>
     <div id="test-alert" class="alert-empty" style="display: none">
         <i class="icon ion-alert alert-icon"></i>
         Remain questions to answer, fill them up to check the results
-        <i class="icon ion-alert alert-empty alert-icon"></i>
+        <i class="icon ion-alert alert-empty icon"></i>
     </div>
     <button class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }}, {{ questions_results|list }})">Check results !</button>
 </div>

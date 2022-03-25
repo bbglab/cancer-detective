@@ -120,8 +120,6 @@ function markAnswer(index) {
 }
 
 function submitTest(questions_general, questions_result) {
-
-
     const formData = new FormData(document.getElementById( "test" ))
     const response_test = Array.from(formData.entries())
     if (response_test.length < 9) {
@@ -139,10 +137,21 @@ function submitTest(questions_general, questions_result) {
         console.log(anw_general, anw_results)
 
         for (const [ element, _ ] of anw_general) {
-            console.log(element)
+            console.log('**', element)
             //correct_ans += Number(element[0][0] + questions_general[Number(element[0][0]) - 1]['response'] === element[0])
             const ques = questions_general[Number(element[0]) - 1]
-            console.log(ques)
+            const is_correct = ques['response'] === element.substring(1, element.length)
+            if (is_correct) {
+                let res_alert =  document.getElementById("correct_general_" +  String(element[0]))
+                res_alert.style.display = 'block';
+            } else {
+                let res_alert =  document.getElementById("wrong_general_" +  String(element[0]))
+                res_alert.style.display = 'block';
+            }
+                
+            correct_ans += Number(is_correct)
+            
+
             //correct_ans += Number(String(pair[0][0] + ques['response']) === pair[0])
         }
 
