@@ -330,5 +330,10 @@ p.survey-title{
 }
 
 .rating-text{
-    margin: auto auto auto 3em;
+    margin: auto 15px;
+    color: var(--blue-color);
+    font-size: 2.5em;
+    font-weight: bold;
+    width: 500px;
+    justify-content: center;
 }

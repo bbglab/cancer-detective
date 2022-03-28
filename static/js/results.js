@@ -209,8 +209,8 @@ function submitTest(questions_general, questions_result) {
 
 
         const rating = document.getElementById("rating")
-        const score_class = correct_ans < 3 ? "bad" : correct_ans < 6 ? "meh" : "good";
-        const score_text = correct_ans < 3 ? "You can do it better!" : correct_ans < 6 ? "Well done!" : "You are a pro cancer detective!";
+        const score_class = correct_ans < 5 ? "bad" : correct_ans < 7 ? "meh" : "good";
+        const score_text = correct_ans < 5 ? "You can do it better!" : correct_ans < 7 ? "Well done!" : "You are a pro cancer detective!";
         rating.classList.add(score_class);
 
         const rating_color = window.getComputedStyle(rating).backgroundColor;
