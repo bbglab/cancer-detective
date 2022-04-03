@@ -85,7 +85,7 @@ function downloadPDF(mutations, attributes) {
         +'The patient is ' + attributes['riskFactor1']['description'].toLowerCase() +' and his/her characteristics are: '
         +attributes['riskFactor2']['description'].toLowerCase() +' and '
         +attributes['riskFactor3']['description'].toLowerCase() +'.\n\n'+
-        'The cancer detective has found ' +String(mutations.length)+' driver mutations in the sample.\n'+
+        'The cancer detective has found ' +String(mutations.length)+' mutations in the sample.\n'+
         'The mutations observed by the Cancer Detective are the following:'
 
     var textLines = pdf
@@ -109,7 +109,7 @@ function downloadPDF(mutations, attributes) {
         });
     };
 
-    pdf.table(50, 225, muts_dict,headers);
+    pdf.table(50, 210, muts_dict,headers);
 
     /*
     pdf.setFontSize(12);

@@ -150,7 +150,7 @@ class Game:
                                   })
 
         # Question 2
-        questions_results.append({'question': 'Which of these mutations is a driver mutation?',
+        questions_results.append({'question': 'Which of these mutations is a driver mutation in your sample?',
                                   'answers': [{'id': 1, 'answer': 'There are no driver mutations', 'correct': "false"},
                                               {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': "false"},
                                               {'id': 3, 'answer': passenger_muts[-1].split('_')[1], 'correct': "false"},
@@ -161,7 +161,7 @@ class Game:
                                   'answers': [{'id': 1, 'answer': driver_muts[0].split('_')[1], 'correct': "false"},
                                               {'id': 2, 'answer': passenger_muts[0].split('_')[1], 'correct': "false"},
                                               {'id': 3, 'answer': passenger_muts[-1].split('_')[0], 'correct': "true"},
-                                              {'id': 4, 'answer': 'None of the above', 'correct': "false"}]
+                                              {'id': 4, 'answer': 'None of the others', 'correct': "false"}]
                                   })
         # Question 4
         df_treatment = df.dropna(axis=0, subset=['targeted_therapy'])
