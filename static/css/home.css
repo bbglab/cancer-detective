@@ -111,15 +111,15 @@
 .pulse:hover {
     animation: none;
 }
+
 .press_buttons {
-  height: 120px;
-  width: 200px;
-  float: left;
-  position: absolute;
-  border-radius: 80%;
-  animation: pulse 2.5s linear 2;
-  cursor: pointer;
-  background-color: var(--blue-color);
+    height: auto;
+    width: 200px;
+    position: absolute;
+    border-radius: 5%;
+    color: var(--dark-color);
+    border: var(--blue-color) solid;
+    padding: 10px;
 }
 @keyframes pulse{
   0%, 100%{

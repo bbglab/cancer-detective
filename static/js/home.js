@@ -28,7 +28,7 @@ function pinPulse(event) {
 
         element.children[0].classList.remove("popover");
         element.children[0].classList.add("popover_click");
-    } else if (window.getSelection().toString() == ''){
+    } else if (window.getSelection().toString() === ''){
         element.classList.remove("pulse_click");
         element.classList.add("pulse");
 
