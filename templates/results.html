@@ -79,8 +79,9 @@
     <button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of your sample</button>
     <img src="images/slides/card_explanation.png" style=" height: 350px;margin: 1.5% auto;">
     </div>
-    <h2>The mutations observed in your sample:</h2>
+    <h1>The mutations observed in your sample:</h1>
     <div>
+    <h3>CLICK THE CHROMOSOMES TO DISCOVER THE MUTATIONS</h3>
     <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }}, {{ attributes }})">
         Download results as PDF
     </a>
