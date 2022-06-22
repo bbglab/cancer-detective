@@ -137,7 +137,7 @@ class Game:
         with open("./static/data/code/general_questions.json", "rt") as f:
             all_questions_general = json.load(f)
 
-        for q in random.sample(all_questions_general, 5):
+        for q in random.sample(all_questions_general, 6):
             questions_general.append(random.sample(q, 1)[0])
 
         # Question 1

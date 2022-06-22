@@ -10,7 +10,7 @@
         <i class="icon ion-close" style="color: var(--blue-color)"></i>
     </button>
 
-    <h3> The characteristics of your sample:</h3>
+    <h3> Characteristics of the sample:</h3>
 
         {{  result_card(attributes.get('ttype').get('type') + '2.svg', attributes.get('ttype').get('name'))}}
 
@@ -43,12 +43,12 @@
 
     <div id="step2" >
     <p class="text-lead">
-        Mutations ready
+        Mutations are ready!
     </p>
         <div style="display: inline flex; margin: 3% auto;">
             <img src="images/slides/computer.png" alt="computer">
             <div style="margin: auto">
-                <button  class="results-button" onclick="show_computer()">Find drivers and <br> targeted therapy</button>
+                <button  class="results-button" onclick="show_computer()">Find driver mutations <br> and targeted therapies</button>
             </div>
         </div>
     </div>
@@ -76,10 +76,10 @@
 
 <div id="res">
     <div style="display: flex; flex-direction: column; margin: 2% auto;">
-    <button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of your sample</button>
+    <button class="results-button" id="char_button" onclick="showCharacteristics()" style="margin: auto">Show the characteristics of the sample</button>
     <img src="images/slides/card_explanation.png" style=" height: 350px;margin: 1.5% auto;">
     </div>
-    <h1>The mutations observed in your sample:</h1>
+    <h1>The mutations observed in the sample:</h1>
     <div>
     <h3>CLICK THE CHROMOSOMES TO DISCOVER THE MUTATIONS</h3>
     <a class="download_results" onclick="downloadPDF({{ mutations.values()|list }}, {{ attributes }})">

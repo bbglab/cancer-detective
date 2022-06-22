@@ -81,11 +81,12 @@ function downloadPDF(mutations, attributes) {
 
     pdf.setFontSize(15);
 
-    const mytext='Your sample is from a patient with '+ cancer_type['name'].toLowerCase() +'.\n'
-        +'The patient is ' + attributes['riskFactor1']['description'].toLowerCase() +' and his/her characteristics are: '
-        +attributes['riskFactor2']['description'].toLowerCase() +' and '
-        +attributes['riskFactor3']['description'].toLowerCase() +'.\n\n'+
-        'The cancer detective has found ' +String(mutations.length)+' mutations in the sample.\n'+
+    const mytext='The sample comes from a patient with '+ cancer_type['name'].toLowerCase() +'.\n'
+        +'The patient characteristics are: '+' \n\n '
+        +' - '+attributes['riskFactor1']['description'].toLowerCase() +' \n '
+        +' - '+attributes['riskFactor2']['description'].toLowerCase() +' \n '
+        +' - '+attributes['riskFactor3']['description'].toLowerCase() +'\n\n'+
+        'The cancer detective has identified ' +String(mutations.length)+' mutations in the sample.\n'+
         'The mutations observed by the Cancer Detective are the following:'
 
     var textLines = pdf
@@ -97,19 +98,19 @@ function downloadPDF(mutations, attributes) {
 
 
 
-    var headers = createHeaders(['Gene','Change','Impact','Treatment']);
+    var headers = createHeaders(['Gene','Mutation','Type','Therapy']);
 
     var muts_dict=[];
     for (const mut of mutations) {
         muts_dict.push({
           Gene: mut['gene'],
-          Change: mut['aa_change'],
-          Impact: mut['driver_passenger'],
-          Treatment: mut['targeted_therapy'],
+          Mutation: mut['aa_change'],
+          Type: mut['driver_passenger'],
+          Therapy: mut['targeted_therapy'],
         });
     };
 
-    pdf.table(50, 210, muts_dict,headers);
+    pdf.table(50, 250, muts_dict,headers);
 
     /*
     pdf.setFontSize(12);
@@ -155,7 +156,7 @@ function markFalse(index) {
 }
 
 function markAnswer(index) {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
         if (String(index) !== String(index[0])+String(i)) {
             document.getElementById(String(index[0])+String(i)).checked = false;
         }
@@ -166,7 +167,7 @@ function markAnswer(index) {
 function submitTest(questions_general, questions_result) {
     const formData = new FormData(document.getElementById( "test" ))
     const response_test = Array.from(formData.entries())
-    if (response_test.length < 9) {
+    if (response_test.length < 10) {
         let test_alert = document.getElementById('test-alert')
         test_alert.style.display = 'block';
     }
@@ -175,8 +176,8 @@ function submitTest(questions_general, questions_result) {
         test_alert.style.display = 'none';
 
         let correct_ans = 0
-        let anw_general = response_test.slice(0, 5)
-        let anw_results = response_test.slice(5, response_test.length)
+        let anw_general = response_test.slice(0, 6)
+        let anw_results = response_test.slice(6, response_test.length)
 
         for (const [ element, _ ] of anw_general) {
             const ques = questions_general[Number(element[0]) - 1]
@@ -214,9 +215,9 @@ function submitTest(questions_general, questions_result) {
         rating.classList.add(score_class);
 
         const rating_color = window.getComputedStyle(rating).backgroundColor;
-        const gradient = `background: conic-gradient(${rating_color} ${correct_ans/9 * 100}%, transparent 0 100%)`;
+        const gradient = `background: conic-gradient(${rating_color} ${correct_ans/10 * 100}%, transparent 0 100%)`;
         rating.setAttribute("style", gradient);
-        rating.innerHTML = `<span style="font-size: 60px">${correct_ans}</span><span style="font-size: 0.35em">out of 9</span>`;
+        rating.innerHTML = `<span style="font-size: 60px">${correct_ans}</span><span style="font-size: 0.35em">out of 10</span>`;
         rating.style.display = 'flex';
 
         const rating_text = document.getElementById("rating-text")

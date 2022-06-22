@@ -17,11 +17,12 @@
 
             <div class="buttons-container">
                 <div class="floated">
-                    <a class="buttons_slide1" href="play">Start</a>
+                    <a class="buttons_slide1" onclick="moveForward(event)"  data-index="1">Start</a>
                 </div>
-                <div class="floated">
-                    <a class="buttons_slide1" onclick="moveForward(event)"  data-index="1">Learn more</a>
-                </div>
+
+            </div>
+            <div style="margin-left:70%; margin-top: -8%;margin-bottom: -5%;color: var(--title-color); ">
+                    <p > Not your first time here? <br> <a class="buttons_slide1_small" href="play">Skip introduction</a></p>
             </div>
         </div>
 
@@ -36,9 +37,10 @@
             <p>
                 The branch of biology that studies the genomes of tumours is known as <b>Cancer Genomics</b>. Before explaining what Cancer Genomics is, let’s look at the basic structures of our bodies: the <b>cells</b>.
             </p>
-                <div class="press_buttons" style="left: 10%; top: 21%;" onclick="pinPulse(event)">
+                <div class="press_buttons" style="left: 10%; top: 21%;" >
                         <b>Press the purple buttons to learn more!</b>
                 </div>
+
                 <div class="pulse" style="left: 34%; top: 21%;" onclick="pinPulse(event)">
                     <div class="popover" style="left: -170px; top: -500%; width: 320px;">
                         <b>Cells</b> are the basic units of our bodies, the "building blocks of life".<br>
@@ -254,7 +256,11 @@
 
         <div class="slide-content">
             <div class="floated">
-                <a class="play" href="play" type="button">Start <br> Analysis</a>
+                <img src="images/cancer-detective-logo.png" alt="CancerDetective" style="max-height: 170px;"/>
+                <img src="images/bbglab-logo.png" alt="CancerDetective" style="max-height: 170px;"/>
+            </div>
+            <div class="floated">
+                <a class="play" href="play" type="button">Start Analysis</a>
             </div>
         </div>
 
