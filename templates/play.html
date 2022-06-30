@@ -19,8 +19,9 @@
 {% block central %}
 <div class="slide" id="instructions">
         <div class="slide-content" >
-            <div style="display: inline-flex; width: 95%;  margin: auto;">
+            <div style="display: inline-flex; width: 95%;  margin: auto; align-items: center;">
             <p class="sample_arrived">
+                <br><br><br><br>
                 A sample has arrived to the lab! Can you help the Cancer Detective?<br>
                 You are about to start a simulation where you will analyze a tumour sample from an imaginary cancer patient.<br>
                 <br>Follow these steps:<br>
@@ -66,10 +67,10 @@
 
             <div class="cards-container">
                 <div>
-                    {{ card('ttype','SKIN','skin', 'skin.svg', 'Skin cancer', 'Skin cancer develops from the cells that made up the skin') }}
+                    {{ card('ttype','SKIN','skin', 'skin.svg', 'Skin cancer', 'Skin cancer develops from the cells in the skin') }}
                 </div>
                 <div>
-                    {{ card('ttype','LUNG','lung', 'lung.svg', 'Lung cancer', 'Lung cancer  develops from the cells that made up the lungs') }}
+                    {{ card('ttype','LUNG','lung', 'lung.svg', 'Lung cancer', 'Lung cancer develops from the cells in the lungs') }}
                 </div>
             </div>
             <input type="hidden" id="ttype" name="ttype">
@@ -83,8 +84,7 @@
                 {{ info('ttype') }}
             </p>
             <p class="explanation_exposure">
-                Since mutations accumulate over time, older cancer
-                <br>  patients tend to present a higher number of mutations.
+                Mutations accumulate with age. As a consequence, <br>elderly people tend to have more mutations than young people. [cite?]
             </p>
             <p>
                 Please, select the age of your patient.
@@ -95,15 +95,15 @@
                 <div class="cards-container">
                     <div>
                         {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_1', 1, 'skin/riskFactor1_1.svg', 'Young',
-                        '') }}
+                        '(1-20 years old)') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_2', 2, 'skin/riskFactor1_2.svg', 'Middle age',
-                        '') }}
+                        '(21-60 years old)') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'SKIN_RISK_FACTOR_1_3', 3, 'skin/riskFactor1_3.svg','Elderly',
-                        '') }}
+                        '(61 years old or older)') }}
                     </div>
                 </div>
             </div>
@@ -113,15 +113,15 @@
                 <div class="cards-container">
                     <div>
                         {{ card('riskFactor1', 'LUNG_RISK_FACTOR_1_1', 1, 'lung/riskFactor1_1.svg', 'Young',
-                        '') }}
+                        '(1-20 years old)') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'LUNG_RISK_FACTOR_1_2', 2, 'lung/riskFactor1_2.svg', 'Middle age',
-                        '') }}
+                        '(21-60 years old)') }}
                     </div>
                     <div>
                         {{ card('riskFactor1', 'LUNG_RISK_FACTOR_1_3', 3, 'lung/riskFactor1_3.svg', 'Elderly',
-                        '') }}
+                        '(61 years old or older)') }}
                     </div>
                 </div>
             </div>
@@ -134,15 +134,14 @@
 
             <div class="branch-skin">
                 <p class="text-lead">
-                    Patient sun exposure
+                    Patient characteristics: Sun exposure <br>
                     {{ info('ttype') }}
                 </p>
                 <p class="explanation_exposure">
-                    A higher exposure to UV radiation is related <br>
-                    to a higher number of mutations. [cite]
+                    Ultraviolet (UV) radiation from the sun causes mutations. <br>The higher the solar exposure, the higher the chances to accumulate mutations. [cite?]
                 </p>
                 <p>
-                    Please, select the level of sun exposure of your patient.
+                    Please, select the level of sun exposure of the patient:
                 </p>
 
                 <div class="cards-container">
@@ -163,11 +162,11 @@
 
             <div class="branch-lung">
                 <p class="text-lead">
-                    Patient's smoking habits
+                    Patient characteristics: Smoking<br>
                     {{ info('ttype') }}
                 </p>
                 <p class="explanation_exposure">
-                    Smokers tend to present a higher number of mutations. [cite]
+                    Chemicals from tobacco cause mutations. <br>As a consequence, smokers tend to have more mutations than non-smokers. [cite?]
                 </p>
                 <p>
                     Please, select the smoking habits of your patient.
@@ -203,7 +202,7 @@
                 </p>
                 <p class="explanation_exposure">
                     The number of tumor mutations attributed to sun exposure  is likely to <br>
-                    be lower those with high protection than those with a low or non-protection. [cite]
+                    be lower those with high protection than those with a low or non-protection. [cite?]
                 </p>
                 <p>
                     Please, select the use of sun protection of your patient.
@@ -227,28 +226,29 @@
 
             <div class="branch-lung">
                 <p class="text-lead">
-                    Patient's exposure to smoke
+                    Patient characteristics: Secondhand smoking
                     {{ info('ttype') }}
                 </p>
                 <p class="explanation_exposure">
-                    A high exposition to smoke can cause mutations in lung cells. [cite]
+                    Lung cells can also be damaged by breathing tobacco smoke from <br>
+                    someone else. People that are exposed to tobacco smoke tend to have <br> more mutations than those that are non-exposed. [cite?]
                 </p>
                 <p>
-                    Please, select the smoke exposition of your patient.
+                    Please, select the level of secondhand smoking exposure of the patient: 
                 </p>
 
                 <div class="cards-container">
                     <div>
                         {{ card('riskFactor3', 'LUNG_RISK_FACTOR_3_1', 1, 'lung/riskFactor3_1.svg',
-                        'Stay apart', 'You keep distance with smokers') }}
+                        'Non-exposed', 'The patient is not exposed to secondhand smoking') }}
                     </div>
                     <div>
                         {{ card('riskFactor3', 'LUNG_RISK_FACTOR_3_2', 2, 'lung/riskFactor3_2.svg',
-                        'Ocassional passive smoker', 'You are a passive smoker in the terraces') }}
+                        'Occasionally exposed', 'The patient is exposed to secondhand smoking from time to time') }}
                     </div>
                     <div>
                         {{ card('riskFactor3', 'LUNG_RISK_FACTOR_3_3', 3, 'lung/riskFactor3_3.svg',
-                        'Passive smoker', 'Close relatives/friends are smokers and you are with them regularly') }}
+                        'Regularly exposed', 'The patient is exposed to secondhand smoking every day') }}
                     </div>
                 </div>
             </div>
