@@ -15,8 +15,12 @@
       "response": "true"
     },
     {
-      "sentence": "A mutation is something found on a crime scene",
-      "response": "false"
+      "sentence": "A mutation can affect DNA and proteins",
+      "response": "true"
+    },
+    {
+      "sentence": "When DNA sequence changes we say DNA is mutated",
+      "response": "true"
     }
   ],
   [
@@ -26,6 +30,14 @@
     },
     {
       "sentence": "Cells are the information to build the human body",
+      "response": "false"
+    },
+    {
+      "sentence": "Cells do not contain the information to build a human body",
+      "response": "false"
+    },
+    {
+      "sentence": "Cells do not contain DNA",
       "response": "false"
     }
   ],
@@ -51,11 +63,19 @@
   ],
   [
     {
-      "sentence": "UV light can cause mutations",
+      "sentence": "Ultraviolet rays from the Sun can cause mutations",
       "response": "true"
     },
     {
+      "sentence": "Sunscreen usage does not protect our skin from the Sun",
+      "response": "false"
+    },
+    {
       "sentence": "Mutations are not accumulated during aging",
+      "response": "false"
+    },
+    {
+      "sentence": "Generally, cells from young people have more mutations than those from elderly people",
       "response": "false"
     },
     {
@@ -63,7 +83,15 @@
       "response": "true"
     },
     {
+      "sentence": "Secondhand smoking can cause mutations",
+      "response": "true"
+    },
+    {
       "sentence": "Mutations are only caused by external agents like tobacco",
+      "response": "false"
+    },
+    {
+      "sentence": "Mutations are only caused by internal mechanisms like ageing",
       "response": "false"
     }
   ],
@@ -95,10 +123,6 @@
       "response": "true"
     },
     {
-      "sentence": "Cancer is caused by a tropical mosquito bite",
-      "response": "false"
-    },
-    {
       "sentence": "Cancer is caused by mutations in the DNA",
       "response": "true"
     }
@@ -109,7 +133,7 @@
       "response": "true"
     },
     {
-      "sentence": "Targeted therapies are the same as chemotherapy",
+      "sentence": "Targeted therapies work in the same way as as chemotherapy",
       "response": "false"
     }
   ],
@@ -121,6 +145,10 @@
     {
       "sentence": "IntOGen retrieves information about targeted therapies",
       "response": "false"
+    },
+    {
+      "sentence": "BoostDM predicts which mutations are drivers",
+      "response": "true"
     }
   ]
 ]
