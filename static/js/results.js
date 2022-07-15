@@ -22,7 +22,7 @@ function show_sequencer() {
             $("#step1").hide();
             $("#step2").show();
         },
-        4500);
+        45);
 }
 
 function show_computer() {
@@ -33,7 +33,7 @@ function show_computer() {
             $("#step4").show();
             $("#characteristics").show();
         },
-        4500);
+        45);
 }
 
 
@@ -51,6 +51,8 @@ function showCharacteristics() {
 }
 function showSurvey() {
     $("#surv_button").hide();
+    $("#new_sample_button").hide();
+    $("#learn_more_button").hide();
     $("#survey").show();
 }
 function hideCharacteristics() {
@@ -230,6 +232,8 @@ function submitTest(questions_general, questions_result) {
 
         const retake_test = document.getElementById("retake-test")
         retake_test.style.display = 'flex';
+
+
     }
 
 }

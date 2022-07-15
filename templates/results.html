@@ -93,8 +93,13 @@
 </div>
 
 <div>
-<button class="results-button" id="surv_button" onclick="showSurvey()" style="margin-bottom: 50px">Check if you are a good cancer detective!</button>
+<button class="results-button" id="surv_button" onclick="showSurvey()" style="margin-bottom: 50px;margin-top: 30px; ">Check if you are a good <br/> cancer detective!</button>
 </div>
+<div>
+<a class="small-buttons"  id="new_sample_button" href="play"  style="margin-bottom: 50px; margin-right: 20px ;margin-left: 20px">Analyze a new sample!</a>
+<a class="small-buttons"  id="learn_more_button" href="resources"  style="margin-bottom: 50px;margin-left: 20px">Learn more about cancer genomics!</a>
+</div>
+
 <div class="survey" id="survey">
 <p class="survey-title">Check if you are a good cancer detective! </p>
 <form id="test" action="result_test" method="get">
@@ -148,6 +153,10 @@
 
     <button id="check-results" class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }}, {{ questions_results|list }})">Check results !</button>
     <button id="retake-test" class="results-button check-test" type="submit" onclick="retakeTest({{ questions_general|list }}, {{ questions_results|list }})" style="display:none;">Retry test</button>
+    <div>
+        <a class="small-buttons check-test" id="new_sample_button2" href="play"  style="margin-bottom: 50px; margin-right: 50px ">Analyze a <br/>new sample!</a>
+        <a class="small-buttons check-test" id="learn_more_button2"  href="resources"  style="margin-bottom: 50px;margin-lef: 50px">Learn more about <br/> cancer genomics!</a>
+    </div>
 </div>
 
 </div>
