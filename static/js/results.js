@@ -22,7 +22,7 @@ function show_sequencer() {
             $("#step1").hide();
             $("#step2").show();
         },
-        45);
+        4500);
 }
 
 function show_computer() {
@@ -33,7 +33,7 @@ function show_computer() {
             $("#step4").show();
             $("#characteristics").show();
         },
-        45);
+        4500);
 }
 
 
@@ -233,6 +233,8 @@ function submitTest(questions_general, questions_result) {
         const retake_test = document.getElementById("retake-test")
         retake_test.style.display = 'flex';
 
+        const other_buttons = document.getElementById("other_buttons")
+        other_buttons.style.display = 'inline';
 
     }
 

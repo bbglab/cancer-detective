@@ -153,9 +153,9 @@
 
     <button id="check-results" class="results-button check-test" type="submit" onclick="submitTest({{ questions_general|list }}, {{ questions_results|list }})">Check results !</button>
     <button id="retake-test" class="results-button check-test" type="submit" onclick="retakeTest({{ questions_general|list }}, {{ questions_results|list }})" style="display:none;">Retry test</button>
-    <div>
-        <a class="small-buttons check-test" id="new_sample_button2" href="play"  style="margin-bottom: 50px; margin-right: 50px ">Analyze a <br/>new sample!</a>
-        <a class="small-buttons check-test" id="learn_more_button2"  href="resources"  style="margin-bottom: 50px;margin-lef: 50px">Learn more about <br/> cancer genomics!</a>
+    <div id="other_buttons" style="display:none;">
+        <a class="small-buttons check-test"  href="play"  style="margin-bottom: 50px; margin-right: 50px; ">Analyze a <br/>new sample!</a>
+        <a class="small-buttons check-test"  href="resources"  style="margin-bottom: 50px;margin-lef: 50px;">Learn more about <br/> cancer genomics!</a>
     </div>
 </div>
 
