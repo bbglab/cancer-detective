@@ -19,7 +19,7 @@ class Game:
         self._conf = {"/": {}}
 
         # static dirs for the server
-        static_dirs = ["css", "images", "js", "libs"]
+        static_dirs = ["css", "images", "js"]
         static_base_dir = path.abspath(path.join(_THIS_FOLDER, "static"))
         for dir in static_dirs:
             self._conf["/" + dir] = {
