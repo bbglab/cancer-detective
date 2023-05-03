@@ -4,9 +4,6 @@ cgi_game.egg-info
 # Python
 __pycache__
 
-# Config
-conf/game.cfg
-
 # CSS
 *.css.map
 
